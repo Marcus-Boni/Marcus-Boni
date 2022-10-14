@@ -4,8 +4,8 @@ My colleagues would describe me as a motivated, creative and astute person who m
 I am currently looking for opportunities that allow me to develop and promote diverse technologies.</h4><br>
 <div align="center">
   <a href="https://github.com/rafaballerini">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Marcus-Boni&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-  <img height="100em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marcus-Boni&layout=compact&langs_count=7&theme=dracula"/>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=Marcus-Boni&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+  <img height="90em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marcus-Boni&layout=compact&langs_count=7&theme=dracula"/>
 </div>
 <div style="display: inline_block" align="center" ><br>
 <h2>Skills</h2>
