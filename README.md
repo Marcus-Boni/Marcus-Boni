@@ -5,8 +5,8 @@ I am currently looking for opportunities that allow me to develop and promote di
 </div>
 <div align="center">
   <a href="https://github.com/Marcus-Boni">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Marcus-Boni&show_icons=true&theme=github_dark&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marcus-Boni&layout=compact&langs_count=7&theme=github_dark"/>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=Marcus-Boni&show_icons=true&theme=github_dark&include_all_commits=true&count_private=true"/>
+  <img height="140em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Marcus-Boni&layout=compact&langs_count=7&theme=github_dark"/>
 </div>
 <div style="display: inline_block" align="center" ><br>
 <h2>Skills</h2>
