@@ -30,4 +30,7 @@ I am currently looking for opportunities that allow me to develop and promote di
  </div>
  
  
+ 
 ![Snake animation](https://github.com/Marcus-boni/Marcus-Boni/blob/output/github-contribution-grid-snake.svg)
+
+
