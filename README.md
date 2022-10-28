@@ -1,5 +1,5 @@
 ## Hey, What's up?/E aí, tudo bem?  <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" alt="Hand greeting gif" width="30"/>
-<h4><code>I'm a programmer studying to become a Full Stack software developer. I am passionate about learning, generating new ideas and developing viable solutions to widely relevant problems.
+<h4><code>I'm a brazilian programmer studying to become a Full Stack software developer. I am passionate about learning, generating new ideas and developing viable solutions to widely relevant problems.
 My colleagues would describe me as a motivated, creative and astute person who maintains a confident and proactive attitude in the face of obstacles.
 I am currently looking for opportunities that allow me to develop and promote diverse technologies.</code></h4><br>
 </div>
