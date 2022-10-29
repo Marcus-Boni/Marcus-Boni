@@ -28,5 +28,6 @@ I am currently looking for opportunities that allow me to develop and promote di
   <a href = "mailto:mgalvaoboni@gmail.com" ?subject="E aí beleza?" ><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/marcus-boni-729a52243/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
  </div>
-  
+ 
+ 
 ![Snake animation](https://github.com/Marcus-boni/Marcus-Boni/blob/output/github-contribution-grid-snake.svg)
