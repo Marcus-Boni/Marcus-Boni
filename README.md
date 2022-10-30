@@ -18,10 +18,10 @@ I am currently looking for opportunities that allow me to develop and promote di
   <h2>Learning and upgrading</h2>
   <img align="center" alt="Marcus-GITHub" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
   <img align="center" alt="Marcus-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-</div><br><br><br><br>
+</div><br><br><br>
 <div align="center">
 <img src="https://media.tenor.com/GVk4jB2u_i8AAAAd/coding.gif">
-</div><br><br><br>
+</div><br><br>
   <div align="center"> 
   <a href="https://www.instagram.com/marcusegboni/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
  <a href="https://discord.gg/MwX9VMVT6k" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a> 
