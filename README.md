@@ -1,7 +1,7 @@
 ## Hey, What's up?/E aí, tudo bem?  <img src="https://raw.githubusercontent.com/kaueMarques/kaueMarques/master/hi.gif" alt="Hand greeting gif" width="30"/>
 <h4><code>I'm a brazilian programmer studying to become a Full Stack software developer. I am passionate about learning, generating new ideas and developing viable solutions to widely relevant problems.
 My colleagues would describe me as a motivated, creative and astute person who maintains a confident and proactive attitude in the face of obstacles.
-I am currently looking for opportunities that allow me to develop and promote diverse technologies.</code></h4><br>
+I am currently looking for opportunities that allow me to develop and promote diverse technologies. Currently studying typescript, nodejs, reactjs</code></h4><br>
 </div>
 <div align="center">
   <a href="https://github.com/Marcus-Boni">
@@ -16,6 +16,7 @@ I am currently looking for opportunities that allow me to develop and promote di
   <img align="center" alt="Marcus-SASS" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
   <img align="center" alt="Marcus-GITHub" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
   <img align="center" alt="Marcus-GIT" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+  <img align="center" alt="Marcus-BOOT" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
 </div><br><br><br>
 <div align="center">
 <img src="https://media.tenor.com/GVk4jB2u_i8AAAAd/coding.gif">
