@@ -30,4 +30,6 @@ I am currently looking for opportunities that allow me to develop and promote di
   <a href="https://www.linkedin.com/in/marcus-boni-729a52243/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
  </div>
  
-![snake gif](https://github.com/Marcus-Boni/Marcus-Boni/blob/output/github-contribution-grid-snake.gif)
+<h1 align="center">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&size=30&duration=4000&pause=1000&width=445&lines=Shoot+me+a+message+on+Linkedin!;Thanks+for+visiting+my+Github!+%F0%9F%A4%99" alt="Typing SVG" /></a>
+</h1>
