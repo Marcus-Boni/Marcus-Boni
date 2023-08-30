@@ -17,7 +17,7 @@ I am currently looking for opportunities that allow me to develop and promote di
 <h2>⚒️ Languages-Frameworks-Tools ⚒️</h2>
 <br/>
   
-  [![My Skills](https://skillicons.dev/icons?i=html,css,sass,bootstrap,git,js,ts,react,tailwindcss,github,vscode)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=html,css,sass,bootstrap,git,js,ts,next,react,tailwindcss,github,vscode)](https://skillicons.dev)
   
 </div><br><br><br>
 <div align="center">
