@@ -4,9 +4,9 @@
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&size=30&duration=4000&pause=1000&color=00AACB&width=370&lines=I'm+Marcus+Evandro+G.+Boni!;Welcome+to+my+Github!" alt="Typing SVG" /></a>
 </h1>
 
-<h3><code>I'm a brazilian programmer studying to become a Full Stack software developer. I am passionate about learning, generating new ideas and developing viable solutions to widely relevant problems.
+<h4><code>I'm a brazilian programmer studying to become a Full Stack software developer. I am passionate about learning, generating new ideas and developing viable solutions to widely relevant problems.
 My colleagues would describe me as a motivated, creative and astute person who maintains a confident and proactive attitude in the face of obstacles.
-Currently studying typescript and reactjs ecosystem</code></h3><br>
+Currently studying typescript and reactjs ecosystem</code></h4><br>
 </div>
 <div align="center">
   <a href="https://github.com/Marcus-Boni">
