@@ -17,7 +17,7 @@ Currently studying typescript and reactjs ecosystem</code></h4><br>
 <h2>⚒️ Languages-Frameworks-Tools ⚒️</h2>
 <br/>
   
-  [![My Skills](https://skillicons.dev/icons?i=html,css,sass,bootstrap,styledcomponents,mui,git,js,ts,next,react,tailwindcss,github,vscode)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=html,css,mui,git,js,ts,next,react,tailwindcss,docker,azure)](https://skillicons.dev)
   
 </div><br><br><br>
 <div align="center">
