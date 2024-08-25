@@ -5,8 +5,7 @@
 </h1>
 
 <h4><code>I'm a brazilian programmer studying to become a Full Stack software developer. I am passionate about learning, generating new ideas and developing viable solutions to widely relevant problems.
-My colleagues would describe me as a motivated, creative and astute person who maintains a confident and proactive attitude in the face of obstacles.
-Currently studying typescript and reactjs ecosystem</code></h4><br>
+My colleagues would describe me as a motivated, creative and astute person who maintains a confident and proactive attitude in the face of obstacles.</code></h4><br>
 </div>
 <div align="center">
   <a href="https://github.com/Marcus-Boni">
