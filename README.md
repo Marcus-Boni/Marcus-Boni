@@ -16,7 +16,7 @@ My colleagues would describe me as a motivated, creative and astute person who m
 <h2>⚒️ Languages-Frameworks-Tools ⚒️</h2>
 <br/>
   
-  [![My Skills](https://skillicons.dev/icons?i=html,css,mui,git,js,ts,next,react,tailwindcss,docker,azure)](https://skillicons.dev)
+  [![My Skills](https://skillicons.dev/icons?i=html,css,mui,git,js,ts,next,react,tailwindcss,docker,azure,firebase)](https://skillicons.dev)
   
 </div><br><br><br>
 <div align="center">
