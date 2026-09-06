@@ -1,0 +1,4 @@
+# Usado pelo GitHub Actions (diario). Leve de proposito: so o que o heatmap
+# e a barra de linguagens precisam.
+requests==2.32.3
+beautifulsoup4==4.12.3

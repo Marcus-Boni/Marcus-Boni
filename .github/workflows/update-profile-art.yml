@@ -1,0 +1,58 @@
+name: Update profile art
+
+# Redesenha o mapa de contribuicoes e a barra de linguagens todo dia.
+# O retrato e o cartao neofetch NAO entram aqui: sao gerados a mao quando a
+# foto ou os dados mudam, e nao ha por que gastar CI redesenhando o que nao muda.
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # ~03:17 no horario de Brasilia
+  workflow_dispatch: {} # permite rodar na hora, pela aba Actions
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/update-profile-art.yml"
+
+# Sem isso o job nao consegue commitar os SVGs de volta.
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch contribution calendar
+        run: python scripts/fetch_contributions.py "${{ github.repository_owner }}"
+
+      - name: Render contribution heatmap
+        run: python scripts/render_heatmap_svg.py
+
+      - name: Render language bar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/render_stack_svg.py "${{ github.repository_owner }}"
+
+      # Commita apenas se algo mudou de fato. [skip ci] evita que o commit do
+      # bot dispare este mesmo workflow de novo.
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(profile): refresh contribution art [skip ci]"
+          file_pattern: "data/contributions.json assets/contrib-heatmap.svg assets/language-bar.svg"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
