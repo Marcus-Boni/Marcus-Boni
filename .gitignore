@@ -1,0 +1,11 @@
+# Ambiente local
+.venv/
+__pycache__/
+*.pyc
+
+# Preview local do README (nao vai para o repo)
+preview.html
+t/
+contrib.html
+source-photo.jpg
+source-prepped.png

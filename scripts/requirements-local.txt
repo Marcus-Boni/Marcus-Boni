@@ -1,0 +1,7 @@
+# Usado so na sua maquina, quando voce troca a foto do retrato ASCII.
+# Nunca roda no CI - o retrato e regenerado a mao.
+-r requirements.txt
+pillow>=10.0
+numpy>=1.26
+rembg>=2.0
+onnxruntime>=1.17

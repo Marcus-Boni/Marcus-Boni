@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="132" viewBox="0 0 840 132" role="img" aria-label="Distribuicao de linguagens em 69 repositorios publicos">
+<style>
+  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace;font-size:11px;fill:#8b949e}
+  .h{font-size:12px;fill:#e6edf3}
+</style>
+<rect x="0.5" y="0.5" width="839" height="131" rx="10" fill="#0d1117" stroke="#30363d"/>
+<text x="22" y="34" class="h">language distribution</text>
+<text x="818" y="34" text-anchor="end">69 public repos - by primary language</text>
+<rect x="22.0" y="62" width="280.9" height="20" fill="#3178c6"><animate attributeName="width" values="0;0;280.9;280.9" keyTimes="0;0.0000;0.3529;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="302.9" y="62" width="105.4" height="20" fill="#f1e05a"><animate attributeName="width" values="0;0;105.4;105.4" keyTimes="0;0.3529;0.4853;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="408.3" y="62" width="93.6" height="20" fill="#3572A5"><animate attributeName="width" values="0;0;93.6;93.6" keyTimes="0;0.4853;0.6029;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="501.9" y="62" width="81.9" height="20" fill="#e34c26"><animate attributeName="width" values="0;0;81.9;81.9" keyTimes="0;0.6029;0.7059;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="583.9" y="62" width="70.2" height="20" fill="#b07219"><animate attributeName="width" values="0;0;70.2;70.2" keyTimes="0;0.7059;0.7941;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="654.1" y="62" width="58.5" height="20" fill="#DA5B0B"><animate attributeName="width" values="0;0;58.5;58.5" keyTimes="0;0.7941;0.8676;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="712.6" y="62" width="46.8" height="20" fill="#663399"><animate attributeName="width" values="0;0;46.8;46.8" keyTimes="0;0.8676;0.9265;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<rect x="759.5" y="62" width="58.5" height="20" fill="#6e7681"><animate attributeName="width" values="0;0;58.5;58.5" keyTimes="0;0.9265;1.0000;1" dur="1.6s" begin="0s" fill="freeze"/></rect>
+<circle cx="26" cy="104" r="4.5" fill="#3178c6"/>
+<text x="36" y="108">TypeScript 35.3%</text>
+<circle cx="162" cy="104" r="4.5" fill="#f1e05a"/>
+<text x="172" y="108">JavaScript 13.2%</text>
+<circle cx="297" cy="104" r="4.5" fill="#3572A5"/>
+<text x="307" y="108">Python 11.8%</text>
+<circle cx="406" cy="104" r="4.5" fill="#e34c26"/>
+<text x="416" y="108">HTML 10.3%</text>
+<circle cx="502" cy="104" r="4.5" fill="#b07219"/>
+<text x="512" y="108">Java 8.8%</text>
+<circle cx="592" cy="104" r="4.5" fill="#DA5B0B"/>
+<text x="602" y="108">Jupyter Notebook 7.4%</text>
+<circle cx="760" cy="104" r="4.5" fill="#663399"/>
+<text x="770" y="108">CSS 5.9%</text>
+<circle cx="843" cy="104" r="4.5" fill="#6e7681"/>
+<text x="853" y="108">Other 7.4%</text>
+</svg>

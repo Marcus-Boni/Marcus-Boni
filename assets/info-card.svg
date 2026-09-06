@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="422" viewBox="0 0 660 422" role="img" aria-label="Cartao de perfil de Marcus Boni no estilo neofetch">
+<style>
+  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace;font-size:13.0px}
+  .label{fill:#8b949e}
+  .dim{fill:#8b949e;font-size:12.0px}
+</style>
+<rect width="660" height="422" rx="10" fill="#0d1117" stroke="#30363d"/>
+<path d="M0 10a10 10 0 0 1 10-10h640a10 10 0 0 1 10 10v24H0z" fill="#161b22"/>
+<line x1="0" y1="34" x2="660" y2="34" stroke="#30363d"/>
+<circle cx="20" cy="17.0" r="5.5" fill="#ff5f56"/>
+<circle cx="38" cy="17.0" r="5.5" fill="#ffbd2e"/>
+<circle cx="56" cy="17.0" r="5.5" fill="#27c93f"/>
+<text x="330.0" y="21.5" class="dim" text-anchor="middle">marcus@github - neofetch</text>
+<g><text x="26" y="74" fill="#39d353" font-weight="bold">marcus@github</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2108;0.4075;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="89" class="label">----------------------------------</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2365;0.4333;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="113.0" class="label">Role......:</text><text x="122" y="113.0" fill="#e6edf3">Web Developer, full-stack leaning</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2623;0.4590;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="132.0" class="label">Company...:</text><text x="122" y="132.0" fill="#e6edf3">Optsolv</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.2881;0.4848;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="151.0" class="label">Location..:</text><text x="122" y="151.0" fill="#e6edf3">Espirito Santo, Brazil (UTC-3)</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3138;0.5105;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="170.0" class="label">Uptime....:</text><text x="122" y="170.0" fill="#e6edf3">since Oct 2022 - building in public</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3396;0.5363;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="197.6" class="label">Frontend..:</text><text x="122" y="197.6" fill="#7ee787">React . Next.js . TypeScript . Tailwind</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3653;0.5621;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="216.6" class="label">Backend...:</text><text x="122" y="216.6" fill="#7ee787">Node . Java/Spring . .NET . Python</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.3911;0.5878;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="235.6" class="label">Data......:</text><text x="122" y="235.6" fill="#7ee787">PostgreSQL . SQL Server . Supabase . Drizzle</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4169;0.6136;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="254.6" class="label">Cloud.....:</text><text x="122" y="254.6" fill="#7ee787">Azure . Docker . GitHub Actions</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4426;0.6393;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="273.6" class="label">Mobile....:</text><text x="122" y="273.6" fill="#7ee787">React Native . Flutter</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4684;0.6651;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="301.1" class="label">Focus.....:</text><text x="122" y="301.1" fill="#79c0ff">multi-tenant SaaS architecture</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.4941;0.6909;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="320.1" class="label">Learning..:</text><text x="122" y="320.1" fill="#79c0ff">Rust . MCP &amp; AI agents</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5199;0.7166;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="339.1" class="label">Repos.....:</text><text x="122" y="339.1" fill="#79c0ff">70 public . 3 yrs shipping</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5457;0.7424;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<g><text x="26" y="366.7" class="label">Web.......:</text><text x="122" y="366.7" fill="#d2a8ff">marcusboni.com.br</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5714;0.7681;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+<rect x="26" y="384.7" width="16" height="14" rx="3" fill="#39d353"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.5972;0.7939;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<rect x="48" y="384.7" width="16" height="14" rx="3" fill="#7ee787"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6112;0.8080;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<rect x="70" y="384.7" width="16" height="14" rx="3" fill="#79c0ff"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6253;0.8220;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<rect x="92" y="384.7" width="16" height="14" rx="3" fill="#d2a8ff"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6393;0.8361;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<rect x="114" y="384.7" width="16" height="14" rx="3" fill="#ffa657"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6534;0.8501;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<rect x="136" y="384.7" width="16" height="14" rx="3" fill="#ff7b72"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6674;0.8642;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<rect x="158" y="384.7" width="16" height="14" rx="3" fill="#8b949e"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6815;0.8782;1" dur="2.13s" begin="0s" fill="freeze"/></rect>
+<g><text x="634" y="395.7" class="dim" text-anchor="end">open to collaboration</text><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.6909;0.8876;1" dur="2.13s" begin="0s" fill="freeze"/></g>
+</svg>
