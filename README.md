@@ -50,19 +50,19 @@
 
 <table>
   <tr>
-    <td align="center" width="180">
+    <td align="center">
       <a href="https://marcusboni.com.br/">🌐<br /><strong>Portfólio</strong></a><br />
       <sub>marcusboni.com.br</sub>
     </td>
-    <td align="center" width="180">
+    <td align="center">
       <a href="https://www.linkedin.com/in/marcus-boni-729a52243/">💼<br /><strong>LinkedIn</strong></a><br />
       <sub>Marcus Boni</sub>
     </td>
-    <td align="center" width="180">
+    <td align="center">
       <a href="mailto:mgalvaoboni@gmail.com">✉️<br /><strong>E-mail</strong></a><br />
       <sub>mgalvaoboni@gmail.com</sub>
     </td>
-    <td align="center" width="180">
+    <td align="center">
       <a href="https://discord.gg/MwX9VMVT6k">💬<br /><strong>Discord</strong></a><br />
       <sub>entrar no servidor</sub>
     </td>
