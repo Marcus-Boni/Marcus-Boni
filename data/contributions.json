@@ -5,9 +5,9 @@
   "from": "2025-09-07",
   "to": "2026-09-06"
  },
- "total": 562,
- "active_days": 140,
- "current_streak": 2,
+ "total": 565,
+ "active_days": 141,
+ "current_streak": 3,
  "longest_streak": 12,
  "best_day": {
   "date": "2026-03-31",
@@ -26,7 +26,7 @@
   "2026-06": 58,
   "2026-07": 57,
   "2026-08": 76,
-  "2026-09": 14
+  "2026-09": 17
  },
  "raw_days": [
   {
@@ -1851,8 +1851,8 @@
   },
   {
    "date": "2026-09-06",
-   "level": 0,
-   "count": 0
+   "level": 1,
+   "count": 3
   }
  ]
 }
