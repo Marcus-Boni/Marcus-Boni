@@ -1,6 +1,6 @@
-<div align="center">
+<!-- marcus@github:~$ ./whoami --verbose -->
 
-<h3><code>marcus@github:~$ ./whoami --verbose</code></h3>
+<div align="center">
 
 <table>
   <tr>
@@ -8,28 +8,28 @@
       <img src="./assets/ascii-portrait.svg" width="370" alt="Retrato em ASCII de Marcus Boni, impresso linha a linha" />
     </td>
     <td valign="top">
-      <img src="./assets/info-card.svg" width="470" alt="Cartao de perfil no estilo neofetch" />
+      <img src="./assets/info-card.svg" width="470" alt="Cartao de perfil no estilo neofetch: Web Developer, Espirito Santo, stack e foco de trabalho" />
     </td>
   </tr>
 </table>
 
-</div>
+<br />
 
-<div align="center">
-
-<h3><code>marcus@github:~$ ./contributions --last-year --live</code></h3>
+<!-- marcus@github:~$ ./contributions --last-year --live -->
 
 <img src="./assets/contrib-heatmap.svg" width="840" alt="Mapa de calor das contribuicoes dos ultimos 12 meses" />
 
-<h3><code>marcus@github:~$ cat stack.json | jq .languages</code></h3>
+<br /><br />
+
+<!-- marcus@github:~$ cat stack.json | jq .languages -->
 
 <img src="./assets/language-bar.svg" width="840" alt="Distribuicao de linguagens nos repositorios publicos" />
 
 </div>
 
-<div align="center">
-<h3><code>marcus@github:~$ ls -la ~/work --sort=interesting</code></h3>
-</div>
+<br />
+
+<!-- marcus@github:~$ ls -la ~/work --sort=interesting -->
 
 | Projeto | O que é | Stack |
 | :--- | :--- | :--- |
@@ -40,22 +40,33 @@
 | **[Portfolio](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio)** | Portfólio editorial-brutalista com um campo de tinta em WebGL que reage ao ponteiro e à velocidade do scroll. | `Next.js` `WebGL` |
 | **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** | Demo de tempo real com SignalR, feita para uma apresentação de meetup da empresa. | `C#` `.NET` `TypeScript` |
 
-<div align="center">
-
-<h3><code>marcus@github:~$ ./connect.sh</code></h3>
-
-**[marcusboni.com.br](https://marcusboni.com.br/)** &nbsp;·&nbsp;
-**[LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)** &nbsp;·&nbsp;
-**[E-mail](mailto:mgalvaoboni@gmail.com)** &nbsp;·&nbsp;
-**[Discord](https://discord.gg/MwX9VMVT6k)**
-
 <br />
 
-<sub>
-Nada nesta página vem de serviço de terceiros. O retrato, o cartão e os gráficos são
-SVGs gerados por <a href="./scripts">scripts Python</a> neste repositório e mantidos
-atualizados por <a href="./.github/workflows/update-profile-art.yml">GitHub Actions</a>.
-Sem token, sem JavaScript, sem imagem quebrada. &nbsp;·&nbsp; <a href="./PROFILE.md">como funciona</a>
-</sub>
+<!-- marcus@github:~$ ./connect.sh -->
+
+<div align="center">
+
+### Vamos conversar
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://marcusboni.com.br/">🌐<br /><strong>Portfólio</strong></a><br />
+      <sub>marcusboni.com.br</sub>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/marcus-boni-729a52243/">💼<br /><strong>LinkedIn</strong></a><br />
+      <sub>Marcus Boni</sub>
+    </td>
+    <td align="center">
+      <a href="mailto:mgalvaoboni@gmail.com">✉️<br /><strong>E-mail</strong></a><br />
+      <sub>mgalvaoboni@gmail.com</sub>
+    </td>
+    <td align="center">
+      <a href="https://discord.gg/MwX9VMVT6k">💬<br /><strong>Discord</strong></a><br />
+      <sub>entrar no servidor</sub>
+    </td>
+  </tr>
+</table>
 
 </div>
