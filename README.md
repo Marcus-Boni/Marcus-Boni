@@ -55,5 +55,3 @@ A bilingual portfolio with an interactive WebGL ink field, a Markdown blog and f
 ---
 
 Interested in developer tools, practical AI or thoughtful web experiences? [Let’s talk.](mailto:mgalvaoboni@gmail.com)
-
-<sub>Original ASCII portrait, self-hosted SVGs and native Markdown. <a href="./PROFILE.md">How this profile is built</a>.</sub>

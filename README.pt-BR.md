@@ -55,5 +55,3 @@ Portfólio bilíngue com um campo de tinta interativo em WebGL, blog Markdown e 
 ---
 
 Interesse em ferramentas para desenvolvedores, IA aplicada ou boas experiências web? [Vamos conversar.](mailto:mgalvaoboni@gmail.com)
-
-<sub>Retrato original em ASCII, SVGs hospedados no repositório e Markdown nativo. <a href="./PROFILE.md">Como este perfil é construído</a>.</sub>
