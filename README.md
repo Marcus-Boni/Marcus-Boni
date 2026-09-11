@@ -1,72 +1,59 @@
-<!-- marcus@github:~$ ./whoami --verbose -->
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/profile-header-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg" />
+  <img src="./assets/profile-header.svg" width="100%" alt="Marcus Boni — software developer. Web apps, integrations and developer tools. An original ASCII portrait in a terminal." />
+</picture>
 
-<div align="center">
+<p align="right"><strong>English</strong> · <a href="./README.pt-BR.md">Português</a></p>
 
-<table>
-  <tr>
-    <td valign="top">
-      <img src="./assets/ascii-portrait.svg" width="370" alt="Retrato em ASCII de Marcus Boni, impresso linha a linha" />
-    </td>
-    <td valign="top">
-      <img src="./assets/info-card.svg" width="470" alt="Cartao de perfil no estilo neofetch: Web Developer, Espirito Santo, stack e foco de trabalho" />
-    </td>
-  </tr>
-</table>
+I’m **Marcus**, a software developer based in Espírito Santo, Brazil. I build full-stack applications, developer tools and AI-assisted workflows.
 
-<br />
+[Portfolio](https://marcusboni.com.br/) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email](mailto:mgalvaoboni@gmail.com)
 
-<!-- marcus@github:~$ ./contributions --last-year --live -->
+## Selected work
 
-<img src="./assets/contrib-heatmap.svg" width="840" alt="Mapa de calor das contribuicoes dos ultimos 12 meses" />
+### [OptTime](https://github.com/Marcus-Boni/OptTime) · Developer workflows
 
-<br /><br />
+Time tracking connected to Azure DevOps: timesheets, dashboards and automations in one application. Includes an Azure DevOps extension and an MCP server so agents can work with the same workflows.
 
-<!-- marcus@github:~$ cat stack.json | jq .languages -->
+`TypeScript` `Next.js` `PostgreSQL` `Drizzle` `MCP`
 
-<img src="./assets/language-bar.svg" width="840" alt="Distribuicao de linguagens nos repositorios publicos" />
+### [ISPer](https://github.com/Marcus-Boni/ISPer) · Desktop & audio
 
-</div>
+Local speech transcription with whisper.cpp, a Rust workspace and a Tauri desktop app. Separate audio, model and LLM components, with Windows CPU/CUDA build paths and release checks.
 
-<br />
+`Rust` `Tauri` `whisper.cpp` `Windows`
 
-<!-- marcus@github:~$ ls -la ~/work --sort=interesting -->
+### [chatbot-template](https://github.com/Marcus-Boni/chatbot-template) · Retrieval & AI
 
-| Projeto | O que é | Stack |
-| :--- | :--- | :--- |
-| **[ISPer](https://github.com/Marcus-Boni/ISPer)** | Transcrição local de reuniões via Whisper, direto no terminal, com sumarização por IA. Sem áudio saindo da máquina. | `Rust` |
-| **[OptTime](https://github.com/Marcus-Boni/OptTime)** | Ferramenta de agenda com agentes de IA, construída durante o hackathon da empresa. | `TypeScript` `AI Agents` |
-| **[Ferramenta de Estimativa](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** | Substitui as planilhas manuais de estimativa de horas do Azure DevOps por uma app web por equipe. | `TypeScript` `Azure DevOps` |
-| **[chatbot-template](https://github.com/Marcus-Boni/chatbot-template)** | Chatbot RAG sobre vaults do Obsidian para consultar transcrições de reuniões. | `TypeScript` `RAG` |
-| **[Portfolio](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio)** | Portfólio editorial-brutalista com um campo de tinta em WebGL que reage ao ponteiro e à velocidade do scroll. | `Next.js` `WebGL` |
-| **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** | Demo de tempo real com SignalR, feita para uma apresentação de meetup da empresa. | `C#` `.NET` `TypeScript` |
+A RAG template for searching Teams meeting transcripts. Combines pgvector retrieval, source citations and workspace-scoped search, with an evaluation harness for retrieval quality.
 
-<br />
+`TypeScript` `Next.js` `CopilotKit` `pgvector`
 
-<!-- marcus@github:~$ ./connect.sh -->
+### [Portfolio](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio) · Design & web engineering
 
-<div align="center">
+A bilingual portfolio with an interactive WebGL ink field, a Markdown blog and first-party analytics. A public API, OpenAPI contract and agent-readable pages make the content available beyond the visual interface.
 
-### Vamos conversar
+`React` `Vite` `TypeScript` `WebGL` `Firebase`
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://marcusboni.com.br/">🌐<br /><strong>Portfólio</strong></a><br />
-      <sub>marcusboni.com.br</sub>
-    </td>
-    <td align="center">
-      <a href="https://www.linkedin.com/in/marcus-boni-729a52243/">💼<br /><strong>LinkedIn</strong></a><br />
-      <sub>Marcus Boni</sub>
-    </td>
-    <td align="center">
-      <a href="mailto:mgalvaoboni@gmail.com">✉️<br /><strong>E-mail</strong></a><br />
-      <sub>mgalvaoboni@gmail.com</sub>
-    </td>
-    <td align="center">
-      <a href="https://discord.gg/MwX9VMVT6k">💬<br /><strong>Discord</strong></a><br />
-      <sub>entrar no servidor</sub>
-    </td>
-  </tr>
-</table>
+## How I build
 
-</div>
+- **Start with the workflow.** Turn repetitive operational steps into focused tools and integrations.
+- **Make boundaries explicit.** Separate local processing, external providers and data access.
+- **Make the work inspectable.** Document decisions, test meaningful behavior and keep builds reproducible.
+
+<details>
+<summary><strong>More projects & experiments</strong></summary>
+
+- **[Hour estimation](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — a team-based web workflow for task estimates, dashboards and Excel export.
+- **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — a local-first assistant experiment with FastAPI, Ollama, vector memory and a Next.js dashboard.
+- **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — a real-time demo covering tracking, multi-room chat and asynchronous payment status.
+
+</details>
+
+---
+
+Interested in developer tools, practical AI or thoughtful web experiences? [Let’s talk.](mailto:mgalvaoboni@gmail.com)
+
+<sub>Original ASCII portrait, self-hosted SVGs and native Markdown. <a href="./PROFILE.md">How this profile is built</a>.</sub>

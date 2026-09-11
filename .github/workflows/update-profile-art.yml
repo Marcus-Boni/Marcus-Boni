@@ -1,18 +1,10 @@
-name: Update profile art
+name: Generate legacy profile art (manual)
 
-# Redesenha o mapa de contribuicoes e a barra de linguagens todo dia.
-# O retrato e o cartao neofetch NAO entram aqui: sao gerados a mao quando a
-# foto ou os dados mudam, e nao ha por que gastar CI redesenhando o que nao muda.
+# Os graficos historicos continuam disponiveis sob demanda.
+# O README atual usa um cabecalho estatico validado em profile-checks.yml.
 
 on:
-  schedule:
-    - cron: "17 6 * * *" # ~03:17 no horario de Brasilia
-  workflow_dispatch: {} # permite rodar na hora, pela aba Actions
-  push:
-    branches: [main]
-    paths:
-      - "scripts/**"
-      - ".github/workflows/update-profile-art.yml"
+  workflow_dispatch: {}
 
 # Sem isso o job nao consegue commitar os SVGs de volta.
 permissions:
