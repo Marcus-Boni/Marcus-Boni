@@ -2,7 +2,7 @@
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-09-10
+- Last refreshed: 2026-09-12
 - Primary surfaces: GitHub profile README and its Portuguese translation.
 - Evidence: original README, `assets/ascii-portrait.svg`, `scripts/make_info_card.py`, public project READMEs, and the existing portfolio's charcoal / warm accent palette.
 - Direction chosen by Marcus: a more refined, readable authorial terminal; English first, Portuguese available.
@@ -25,7 +25,7 @@
 - Context: GitHub desktop or mobile, light or dark appearance, sometimes without images.
 
 ## Information architecture
-- Header → introduction and contact → selected work → engineering interests → optional further work.
+- Header → introduction and contact → selected work with source links → optional further work and engineering approach → contact.
 - English: `README.md`; Portuguese: `README.pt-BR.md`; implementation notes: `PROFILE.md`.
 - GitHub's native pins and activity remain separate profile surfaces.
 
@@ -39,13 +39,14 @@
 - Color: charcoal, warm white, restrained copper accent and a terminal green signal; explicit light variants.
 - Typography: system monospace inside SVG, GitHub native typography for prose.
 - Layout: one column; generous but restrained spacing; no fixed-width table for core content.
-- Shape: one terminal frame, quiet dividers, no stacked dashboard cards.
+- Shape: one terminal frame, quiet dividers and portrait corner marks, no stacked dashboard cards.
+- Detail: a restrained copper wash behind the portrait; higher portrait contrast in the light theme.
 - Motion: new header is static; no blinking or delayed essential information.
 - Imagery: reuse the original ASCII portrait as vector text, no external font/image requests.
 
 ## Components
 - Header: `scripts/render_profile_header.py` owns four versioned SVG variants (desktop/mobile × dark/light).
-- Project entry: linked heading, one short problem/implementation paragraph, compact technology line.
+- Project entry: linked heading, one short problem/implementation paragraph, compact technology line and one descriptive source permalink.
 - Contact row: native links which wrap naturally.
 - Further work: a native expandable section.
 - Historical art generators remain available for intentional manual use.
@@ -73,6 +74,8 @@
 - Describe projects as projects, prototypes or demonstrations according to their sources.
 - Never infer expertise from commit counts, repository counts, or language percentages.
 - Never add customers, adoption, commercial results, or private project details without a public source.
+- Keep source links pinned to the reviewed revision; their labels must explain what visitors can inspect.
+- Keep implementation credits out of the visible README footer, as requested by Marcus.
 
 ## Implementation constraints
 - GitHub Flavored Markdown and supported HTML only; no custom README CSS or JavaScript.
