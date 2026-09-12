@@ -5,60 +5,62 @@
   text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;dominant-baseline:alphabetic}
   svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}
 </style>
+<defs><radialGradient id="portrait-wash"><stop stop-color="#a65a35" stop-opacity="0.075"/><stop offset="1" stop-color="#a65a35" stop-opacity="0"/></radialGradient></defs>
 <rect width="960" height="310" rx="16" fill="#f6f8fa"/>
-<path d="M42 86 H316 M658 84 H884 M672 252 H904" fill="none" stroke="#8c959f" stroke-width="1" opacity="0.26"/>
 <rect x="28" y="24" width="904" height="262" rx="12" fill="#ffffff" stroke="#d0d7de"/>
 <rect x="28" y="24" width="904" height="38" rx="12" fill="#f1f4f8" stroke="#d0d7de"/>
 <circle cx="50" cy="43" r="5" fill="#ff5f56"/>
 <circle cx="68" cy="43" r="5" fill="#ffbd2e"/>
 <circle cx="86" cy="43" r="5" fill="#27c93f"/>
+<rect x="650" y="70" width="260" height="208" fill="url(#portrait-wash)"/>
+<path d="M686 103V85h18 M872 85h18v18 M686 245v18h18 M872 263h18v-18" fill="none" stroke="#a65a35" stroke-width="1" opacity="0.3"/>
 <text x="480" y="47" fill="#57606a" font-size="12" text-anchor="middle">marcus@github:~</text>
 <text x="58" y="96" fill="#1a7f37" font-size="16" font-weight="700">marcus@github:~</text>
 <text x="204" y="96" fill="#24292f" font-size="16" font-weight="700">$ whoami</text>
 <text x="58" y="154" fill="#24292f" font-size="51" font-weight="800">Marcus Boni</text>
 <text x="62" y="193" fill="#a65a35" font-size="23" font-weight="700">Software developer</text>
-<text x="62" y="227" fill="#57606a" font-size="19">Web apps. Integrations. Developer tools.</text>
+<text x="62" y="227" fill="#57606a" font-size="19">Full-stack products. Applied AI.</text>
 <rect x="62" y="252" width="430" height="1" fill="#d0d7de"/>
 <text x="62" y="273" fill="#57606a" font-size="14">Espírito Santo, Brazil</text>
 <text x="260" y="273" fill="#a65a35" font-size="14" font-weight="700">marcusboni.com.br</text>
-<text x="704" y="86.0" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">               `+*+----:`.`.`::`.....                     </text>
-<text x="704" y="90.9" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">            .:=S%%#SssSSscsS##ssscccc*=-:.                </text>
-<text x="704" y="95.8" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">          .*SSSs###SscscsssS##ScSSSSS###SS*`              </text>
-<text x="704" y="100.7" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">        .:s%S#SsSSss##SssSS###ScSSssSSSSss#s:.            </text>
-<text x="704" y="105.6" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">    .:=*sSSSS##%#sS#%%%%%%@@%######scssssccssc+==.        </text>
-<text x="704" y="110.5" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">    :%##SsSsccsSsc#S#SSssS%%#%%###Ss**SSssScsSss#S        </text>
-<text x="704" y="115.4" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">   :c#ScsSSc*ccsS**+sssccSScs##S###sc*SSS%%#SsccS%*.      </text>
-<text x="704" y="120.3" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">  =##s%%%%S*+*c#Ssc+cSSsSSc+S####S#SSc*S#%#sSs**s#@+      </text>
-<text x="704" y="125.2" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">  s%#S##%##%##scs###SSsccssSssssS##sc**ccscccccsS#Sc-     </text>
-<text x="704" y="130.1" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve"> :%%S##SS%###SsSSSSSscsSssc*===+++**+++++**ccsSSscsS%+    </text>
-<text x="704" y="135.0" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve"> -%%%%%%%%Sccsccc*****cc**=-:`:=++*+++=-=+*ccS##SS#%#-    </text>
-<text x="704" y="139.9" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve"> .%@%%@@@#s*c*++++++===---:```:---------:--=+*ssS##%#.    </text>
-<text x="704" y="144.8" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve"> `%@@@@%#Ssc**+++===--::::```::-----------===+*sS#%%c     </text>
-<text x="704" y="149.7" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">  c@@%##S#Sccc***+++=-::````::::``::--====+=+cSsS#%S.     </text>
-<text x="704" y="154.6" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">  .#@@%%%#sccc****+*+=-:`..`::```::-==+++++++*##SS#=      </text>
-<text x="704" y="159.5" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">   `%@@@%SsSSSSSSSsSsscc*+=--=+*cssSssSSSSscc*s%##c       </text>
-<text x="704" y="164.4" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">    *@@%#@%%@@@@@@@@@@%%%#SSss#%@@@@@@@@@%%%@#%%%%+       </text>
-<text x="704" y="169.3" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">    .%@##%%@@@@@@@@@@@@@@@@%#@@@@@@@@@@@@@%%%%%S%#.       </text>
-<text x="704" y="174.2" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">   .+S@@%SS@@@@@@@@@@@@@@@#=-+@@%@@@@@@@@@%%@#S%s+-.      </text>
-<text x="704" y="179.1" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">   .%##@#ss#@%@@@@@@@@@@@%s=--c@%%%@%%%@%%##%*c#-+c       </text>
-<text x="704" y="184.0" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">    c%#%#SSS%%%%%%%%@@@@%S*-:-=s%%%%%%%%%##%*=cS=++       </text>
-<text x="704" y="188.9" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">    -%%%SS##%%%%%%@@%%#SSs+:.`-+s###%%@%##s+-+cs*-:       </text>
-<text x="704" y="193.8" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">     S@%#S#####SSsc*+-*ss#Sc+*s++**csSSSs*=-=c*---.       </text>
-<text x="704" y="198.7" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">     -@%%###Ssc*+=-:`:S%#@@%#s##s-`::-====+*cS+-=-        </text>
-<text x="704" y="203.6" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">      +#@%#%#Sc*+=-::-+ssSc+*:-+-::``::-=+csSS++-         </text>
-<text x="704" y="208.5" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">       `+c##%#Sc*+==-::::-`.:`.``::----=+cssSc:`          </text>
-<text x="704" y="213.4" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">          s#S##Scc*===**sSSscsSc+=--===+csc*S=            </text>
-<text x="704" y="218.3" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">          =#ssS#Ss*++s#Ss*+*c*+cSSc*++**sc+*S`            </text>
-<text x="704" y="223.2" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">           S#Ss##Sc*+*csSs**cccsc*=+cccs***S+             </text>
-<text x="704" y="228.1" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">           s@#SSS#Sssscssssssscccccc*cc**s#S.             </text>
-<text x="704" y="233.0" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">           s@%%##Ssc++=-:``....`:--=+*cs##sc.             </text>
-<text x="704" y="237.9" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">           c@%%%%%#s*===-:::-:`:::-=cS##S*+*`             </text>
-<text x="704" y="242.8" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">           c@%%@%%%%#sccc*++cc*++*s#%#s*=-=*`             </text>
-<text x="704" y="247.7" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">           *%##%@@%%%@%%%%%%%%%%%%%#S*-::-=c:             </text>
-<text x="704" y="252.6" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">           c#SS#%@@@%@@@@@@@@%%#Sssc+-:::-=c:             </text>
-<text x="704" y="257.5" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">           cSsssS#%@@%%%#SSssc****c*-``:-=+**.            </text>
-<text x="704" y="262.4" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">         .=#SscccsS#%%%##s+=-=++*cc+::::-=+*s**+          </text>
-<text x="704" y="267.3" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">       -sS%#Ssc****s###S##s+=***cc+-::--==+*s**@S*-.      </text>
-<text x="704" y="272.2" fill="#57606a" font-size="4.45" opacity="0.66" xml:space="preserve">   .:c#@%cS#ssc*+===*sSscsSSc*++*+-::--===+*s+s%@@@#*-.   </text>
-<text x="704" y="277.1" fill="#a65a35" font-size="4.45" opacity="0.66" xml:space="preserve">.-*#@@@@@SsSsc***+--=*ssc*++==-=+=----=+++++*S@%%%%@@@#c=`</text>
+<text x="704" y="94.0" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">               `+*+----:`.`.`::`.....                     </text>
+<text x="704" y="98.35" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">            .:=S%%#SssSSscsS##ssscccc*=-:.                </text>
+<text x="704" y="102.7" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">          .*SSSs###SscscsssS##ScSSSSS###SS*`              </text>
+<text x="704" y="107.05" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">        .:s%S#SsSSss##SssSS###ScSSssSSSSss#s:.            </text>
+<text x="704" y="111.4" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">    .:=*sSSSS##%#sS#%%%%%%@@%######scssssccssc+==.        </text>
+<text x="704" y="115.75" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">    :%##SsSsccsSsc#S#SSssS%%#%%###Ss**SSssScsSss#S        </text>
+<text x="704" y="120.1" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">   :c#ScsSSc*ccsS**+sssccSScs##S###sc*SSS%%#SsccS%*.      </text>
+<text x="704" y="124.45" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">  =##s%%%%S*+*c#Ssc+cSSsSSc+S####S#SSc*S#%#sSs**s#@+      </text>
+<text x="704" y="128.8" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">  s%#S##%##%##scs###SSsccssSssssS##sc**ccscccccsS#Sc-     </text>
+<text x="704" y="133.15" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve"> :%%S##SS%###SsSSSSSscsSssc*===+++**+++++**ccsSSscsS%+    </text>
+<text x="704" y="137.5" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve"> -%%%%%%%%Sccsccc*****cc**=-:`:=++*+++=-=+*ccS##SS#%#-    </text>
+<text x="704" y="141.85" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve"> .%@%%@@@#s*c*++++++===---:```:---------:--=+*ssS##%#.    </text>
+<text x="704" y="146.2" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve"> `%@@@@%#Ssc**+++===--::::```::-----------===+*sS#%%c     </text>
+<text x="704" y="150.55" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">  c@@%##S#Sccc***+++=-::````::::``::--====+=+cSsS#%S.     </text>
+<text x="704" y="154.9" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">  .#@@%%%#sccc****+*+=-:`..`::```::-==+++++++*##SS#=      </text>
+<text x="704" y="159.25" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">   `%@@@%SsSSSSSSSsSsscc*+=--=+*cssSssSSSSscc*s%##c       </text>
+<text x="704" y="163.6" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">    *@@%#@%%@@@@@@@@@@%%%#SSss#%@@@@@@@@@%%%@#%%%%+       </text>
+<text x="704" y="167.95" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">    .%@##%%@@@@@@@@@@@@@@@@%#@@@@@@@@@@@@@%%%%%S%#.       </text>
+<text x="704" y="172.3" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">   .+S@@%SS@@@@@@@@@@@@@@@#=-+@@%@@@@@@@@@%%@#S%s+-.      </text>
+<text x="704" y="176.65" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">   .%##@#ss#@%@@@@@@@@@@@%s=--c@%%%@%%%@%%##%*c#-+c       </text>
+<text x="704" y="181.0" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">    c%#%#SSS%%%%%%%%@@@@%S*-:-=s%%%%%%%%%##%*=cS=++       </text>
+<text x="704" y="185.35" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">    -%%%SS##%%%%%%@@%%#SSs+:.`-+s###%%@%##s+-+cs*-:       </text>
+<text x="704" y="189.7" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">     S@%#S#####SSsc*+-*ss#Sc+*s++**csSSSs*=-=c*---.       </text>
+<text x="704" y="194.05" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">     -@%%###Ssc*+=-:`:S%#@@%#s##s-`::-====+*cS+-=-        </text>
+<text x="704" y="198.4" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">      +#@%#%#Sc*+=-::-+ssSc+*:-+-::``::-=+csSS++-         </text>
+<text x="704" y="202.75" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">       `+c##%#Sc*+==-::::-`.:`.``::----=+cssSc:`          </text>
+<text x="704" y="207.1" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">          s#S##Scc*===**sSSscsSc+=--===+csc*S=            </text>
+<text x="704" y="211.45" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">          =#ssS#Ss*++s#Ss*+*c*+cSSc*++**sc+*S`            </text>
+<text x="704" y="215.8" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">           S#Ss##Sc*+*csSs**cccsc*=+cccs***S+             </text>
+<text x="704" y="220.15" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">           s@#SSS#Sssscssssssscccccc*cc**s#S.             </text>
+<text x="704" y="224.5" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">           s@%%##Ssc++=-:``....`:--=+*cs##sc.             </text>
+<text x="704" y="228.85" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">           c@%%%%%#s*===-:::-:`:::-=cS##S*+*`             </text>
+<text x="704" y="233.2" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">           c@%%@%%%%#sccc*++cc*++*s#%#s*=-=*`             </text>
+<text x="704" y="237.55" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">           *%##%@@%%%@%%%%%%%%%%%%%#S*-::-=c:             </text>
+<text x="704" y="241.9" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">           c#SS#%@@@%@@@@@@@@%%#Sssc+-:::-=c:             </text>
+<text x="704" y="246.25" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">           cSsssS#%@@%%%#SSssc****c*-``:-=+**.            </text>
+<text x="704" y="250.6" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">         .=#SscccsS#%%%##s+=-=++*cc+::::-=+*s**+          </text>
+<text x="704" y="254.95" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">       -sS%#Ssc****s###S##s+=***cc+-::--==+*s**@S*-.      </text>
+<text x="704" y="259.3" fill="#57606a" font-size="3.95" opacity="0.92" xml:space="preserve">   .:c#@%cS#ssc*+===*sSscsSSc*++*+-::--===+*s+s%@@@#*-.   </text>
+<text x="704" y="263.65" fill="#a65a35" font-size="3.95" opacity="0.92" xml:space="preserve">.-*#@@@@@SsSsc***+--=*ssc*++==-=+=----=+++++*S@%%%%@@@#c=`</text>
 </svg>

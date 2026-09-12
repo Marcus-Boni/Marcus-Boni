@@ -42,6 +42,7 @@ def _palette(light: bool) -> dict[str, str]:
             "shadow": "#afb8c133",
             "portrait": "#57606a",
             "portrait_hi": "#a65a35",
+            "portrait_opacity": "0.92",
         }
     return {
         "bg": "#0d1117",
@@ -57,6 +58,7 @@ def _palette(light: bool) -> dict[str, str]:
         "shadow": "#01040966",
         "portrait": "#c9d1d9",
         "portrait_hi": "#efaa82",
+        "portrait_opacity": "0.78",
     }
 
 
@@ -159,16 +161,6 @@ def _desktop(palette: dict[str, str]) -> str:
     parts: list[str] = [
         _tag("rect", {"width": w, "height": h, "rx": 16, "fill": palette["bg"]}),
         _tag(
-            "path",
-            {
-                "d": "M42 86 H316 M658 84 H884 M672 252 H904",
-                "fill": "none",
-                "stroke": palette["soft"],
-                "stroke-width": 1,
-                "opacity": 0.26,
-            },
-        ),
-        _tag(
             "rect",
             {
                 "x": 28,
@@ -198,6 +190,8 @@ def _desktop(palette: dict[str, str]) -> str:
         parts.append(_tag("circle", {"cx": 50 + idx * 18, "cy": 43, "r": 5, "fill": color}))
     parts.extend(
         [
+            _tag("rect", {"x": 650, "y": 70, "width": 260, "height": 208, "fill": "url(#portrait-wash)"}),
+            _tag("path", {"d": "M686 103V85h18 M872 85h18v18 M686 245v18h18 M872 263h18v-18", "fill": "none", "stroke": palette["accent"], "stroke-width": 1, "opacity": 0.3}),
             _text(480, 47, "marcus@github:~", fill=palette["muted"], size=12, anchor="middle"),
             _text(58, 96, "marcus@github:~", fill=palette["green"], size=16, weight=700),
             _text(204, 96, "$ whoami", fill=palette["bone"], size=16, weight=700),
@@ -206,7 +200,7 @@ def _desktop(palette: dict[str, str]) -> str:
             _text(
                 62,
                 227,
-                "Web apps. Integrations. Developer tools.",
+                "Full-stack products. Applied AI.",
                 fill=palette["muted"],
                 size=19,
             ),
@@ -224,10 +218,10 @@ def _desktop(palette: dict[str, str]) -> str:
             _text(260, 273, "marcusboni.com.br", fill=palette["accent"], size=14, weight=700),
             _portrait(
                 x=704,
-                y=86,
-                height=196,
+                y=94,
+                height=174,
                 palette=palette,
-                opacity=0.66,
+                opacity=float(palette["portrait_opacity"]),
             ),
         ]
     )
@@ -268,19 +262,20 @@ def _mobile(palette: dict[str, str]) -> str:
 
     parts.extend(
         [
+            _tag("rect", {"x": 286, "y": 68, "width": 156, "height": 166, "fill": "url(#portrait-wash)"}),
             _text(244, 44, "marcus@github:~", fill=palette["muted"], size=16, anchor="middle"),
             _text(42, 88, "$ whoami", fill=palette["green"], size=16, weight=700),
             _text(42, 143, "Marcus", fill=palette["bone"], size=50, weight=800),
             _text(42, 196, "Boni", fill=palette["bone"], size=50, weight=800),
             _text(44, 236, "Software developer", fill=palette["accent"], size=25, weight=700),
-            _text(44, 275, "Web apps. Integrations.", fill=palette["muted"], size=22),
-            _text(44, 304, "Developer tools.", fill=palette["muted"], size=22),
+            _text(44, 275, "Full-stack products.", fill=palette["muted"], size=22),
+            _text(44, 304, "Applied AI.", fill=palette["muted"], size=22),
             _portrait(
-                x=324,
-                y=86,
-                height=156,
+                x=318,
+                y=94,
+                height=136,
                 palette=palette,
-                opacity=0.48,
+                opacity=float(palette["portrait_opacity"]),
             ),
         ]
     )
@@ -311,6 +306,10 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             f"  text{{font-family:{FONT_STACK};dominant-baseline:alphabetic}}",
             "  svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}",
             "</style>",
+            '<defs><radialGradient id="portrait-wash">'
+            f'<stop stop-color="{palette["accent"]}" stop-opacity="0.075"/>'
+            f'<stop offset="1" stop-color="{palette["accent"]}" stop-opacity="0"/>'
+            '</radialGradient></defs>',
             body,
             "</svg>",
             "",
