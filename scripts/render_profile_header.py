@@ -126,8 +126,8 @@ def _text(
 
 def _portrait(
     *,
-    x: float,
-    y: float,
+    center_x: float,
+    center_y: float,
     height: float,
     palette: dict[str, str],
     opacity: float = 0.72,
@@ -135,16 +135,22 @@ def _portrait(
     lines = _read_portrait_lines()
     line_height = height / len(lines)
     font_size = line_height * 10 / 11
-    rendered: list[str] = []
+    width = len(lines[0]) * line_height * 6 / 11
+    first_y = center_y - (len(lines) - 1) * line_height / 2
+    rendered: list[str] = ['<g id="portrait">']
     for index, line in enumerate(lines):
         fill = palette["portrait_hi"] if index % 9 in (3, 4) else palette["portrait"]
-        y_pos = round(y + index * line_height, 2)
+        y_pos = round(first_y + index * line_height, 2)
         rendered.append(
             _tag(
                 "text",
                 {
-                    "x": x,
+                    "x": center_x,
                     "y": y_pos,
+                    "class": "portrait-line",
+                    "text-anchor": "middle",
+                    "textLength": round(width, 3),
+                    "lengthAdjust": "spacingAndGlyphs",
                     "fill": fill,
                     "font-size": round(font_size, 2),
                     "opacity": opacity,
@@ -153,11 +159,14 @@ def _portrait(
                 escape(line),
             )
         )
-    return "\n".join(rendered)
+    return "\n".join(rendered + ["</g>"])
 
 
 def _desktop(palette: dict[str, str]) -> str:
     w, h = 960, 310
+    # One shared box positions both the corner marks and the portrait grid.
+    left, top, box_width, box_height = 686, 85, 204, 178
+    right, bottom = left + box_width, top + box_height
     parts: list[str] = [
         _tag("rect", {"width": w, "height": h, "rx": 16, "fill": palette["bg"]}),
         _tag(
@@ -190,8 +199,8 @@ def _desktop(palette: dict[str, str]) -> str:
         parts.append(_tag("circle", {"cx": 50 + idx * 18, "cy": 43, "r": 5, "fill": color}))
     parts.extend(
         [
-            _tag("rect", {"x": 650, "y": 70, "width": 260, "height": 208, "fill": "url(#portrait-wash)"}),
-            _tag("path", {"d": "M686 103V85h18 M872 85h18v18 M686 245v18h18 M872 263h18v-18", "fill": "none", "stroke": palette["accent"], "stroke-width": 1, "opacity": 0.3}),
+            _tag("rect", {"x": left + box_width / 2 - 130, "y": top + box_height / 2 - 104, "width": 260, "height": 208, "fill": "url(#portrait-wash)"}),
+            _tag("path", {"id": "portrait-corners", "d": f"M{left} {top + 18}v-18h18 M{right - 18} {top}h18v18 M{left} {bottom - 18}v18h18 M{right - 18} {bottom}h18v-18", "fill": "none", "stroke": palette["accent"], "stroke-width": 1, "opacity": 0.3}),
             _text(480, 47, "marcus@github:~", fill=palette["muted"], size=12, anchor="middle"),
             _text(58, 96, "marcus@github:~", fill=palette["green"], size=16, weight=700),
             _text(204, 96, "$ whoami", fill=palette["bone"], size=16, weight=700),
@@ -217,9 +226,9 @@ def _desktop(palette: dict[str, str]) -> str:
             _text(62, 273, "Espírito Santo, Brazil", fill=palette["muted"], size=14),
             _text(260, 273, "marcusboni.com.br", fill=palette["accent"], size=14, weight=700),
             _portrait(
-                x=704,
-                y=94,
-                height=174,
+                center_x=left + box_width / 2,
+                center_y=top + box_height / 2,
+                height=box_height - 22,
                 palette=palette,
                 opacity=float(palette["portrait_opacity"]),
             ),
@@ -271,8 +280,8 @@ def _mobile(palette: dict[str, str]) -> str:
             _text(44, 275, "Full-stack products.", fill=palette["muted"], size=22),
             _text(44, 304, "Applied AI.", fill=palette["muted"], size=22),
             _portrait(
-                x=318,
-                y=94,
+                center_x=364,
+                center_y=151,
                 height=136,
                 palette=palette,
                 opacity=float(palette["portrait_opacity"]),
@@ -304,6 +313,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             f"<desc id=\"desc\">{escape(desc)}</desc>",
             "<style>",
             f"  text{{font-family:{FONT_STACK};dominant-baseline:alphabetic}}",
+            "  .portrait-line{dominant-baseline:central}",
             "  svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}",
             "</style>",
             '<defs><radialGradient id="portrait-wash">'

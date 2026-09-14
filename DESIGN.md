@@ -2,7 +2,7 @@
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-09-12
+- Last refreshed: 2026-09-14
 - Primary surfaces: GitHub profile README and its Portuguese translation.
 - Evidence: original README, `assets/ascii-portrait.svg`, `scripts/make_info_card.py`, public project READMEs, and the existing portfolio's charcoal / warm accent palette.
 - Direction chosen by Marcus: a more refined, readable authorial terminal; English first, Portuguese available.
@@ -41,6 +41,7 @@
 - Layout: one column; generous but restrained spacing; no fixed-width table for core content.
 - Shape: one terminal frame, quiet dividers and portrait corner marks, no stacked dashboard cards.
 - Detail: a restrained copper wash behind the portrait; higher portrait contrast in the light theme.
+- Alignment: portrait and desktop corner marks share one box center. Keep equal opposing margins and an explicit fixed-width ASCII grid across font fallbacks.
 - Motion: new header is static; no blinking or delayed essential information.
 - Imagery: reuse the original ASCII portrait as vector text, no external font/image requests.
 
