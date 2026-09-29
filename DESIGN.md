@@ -2,7 +2,7 @@
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-09-14
+- Last refreshed: 2026-09-28
 - Primary surfaces: GitHub profile README and its Portuguese translation.
 - Evidence: original README, `assets/ascii-portrait.svg`, `scripts/make_info_card.py`, public project READMEs, and the existing portfolio's charcoal / warm accent palette.
 - Direction chosen by Marcus: a more refined, readable authorial terminal; English first, Portuguese available.
@@ -42,7 +42,7 @@
 - Shape: one terminal frame, quiet dividers and portrait corner marks, no stacked dashboard cards.
 - Detail: a restrained copper wash behind the portrait; higher portrait contrast in the light theme.
 - Alignment: portrait and desktop corner marks share one box center. Keep equal opposing margins and an explicit fixed-width ASCII grid across font fallbacks.
-- Motion: new header is static; no blinking or delayed essential information.
+- Motion: a slow ambient portrait glow and, on desktop, a signal travelling along the divider. Motion runs only when the viewer has no reduced-motion preference; all content is present in the first frame.
 - Imagery: reuse the original ASCII portrait as vector text, no external font/image requests.
 
 ## Components
@@ -57,7 +57,7 @@
 - SVG variants have `title`, `desc`, and meaningful image alternative text.
 - Use readable contrast in both themes; verify with browser rendering.
 - Native links and details retain GitHub keyboard/focus behavior.
-- No required animation, hover interaction, or icon-only link.
+- No required animation, hover interaction, or icon-only link. Reduced-motion viewers receive the complete static composition.
 
 ## Responsive behavior
 - Verify at 320px and 390px mobile, a narrow desktop profile column, and a wide repository view.
