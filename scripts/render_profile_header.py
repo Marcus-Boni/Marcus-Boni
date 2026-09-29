@@ -199,7 +199,7 @@ def _desktop(palette: dict[str, str]) -> str:
         parts.append(_tag("circle", {"cx": 50 + idx * 18, "cy": 43, "r": 5, "fill": color}))
     parts.extend(
         [
-            _tag("rect", {"x": left + box_width / 2 - 130, "y": top + box_height / 2 - 104, "width": 260, "height": 208, "fill": "url(#portrait-wash)"}),
+            _tag("rect", {"x": left + box_width / 2 - 130, "y": top + box_height / 2 - 104, "width": 260, "height": 208, "fill": "url(#portrait-wash)", "class": "portrait-wash"}),
             _tag("path", {"id": "portrait-corners", "d": f"M{left} {top + 18}v-18h18 M{right - 18} {top}h18v18 M{left} {bottom - 18}v18h18 M{right - 18} {bottom}h18v-18", "fill": "none", "stroke": palette["accent"], "stroke-width": 1, "opacity": 0.3}),
             _text(480, 47, "marcus@github:~", fill=palette["muted"], size=12, anchor="middle"),
             _text(58, 96, "marcus@github:~", fill=palette["green"], size=16, weight=700),
@@ -223,6 +223,7 @@ def _desktop(palette: dict[str, str]) -> str:
                     "fill": palette["stroke"],
                 },
             ),
+            _tag("rect", {"x": 62, "y": 252, "width": 86, "height": 1, "fill": palette["accent"], "opacity": 0.65, "class": "signal-line"}),
             _text(62, 273, "Espírito Santo, Brazil", fill=palette["muted"], size=14),
             _text(260, 273, "marcusboni.com.br", fill=palette["accent"], size=14, weight=700),
             _portrait(
@@ -271,7 +272,7 @@ def _mobile(palette: dict[str, str]) -> str:
 
     parts.extend(
         [
-            _tag("rect", {"x": 286, "y": 68, "width": 156, "height": 166, "fill": "url(#portrait-wash)"}),
+            _tag("rect", {"x": 286, "y": 68, "width": 156, "height": 166, "fill": "url(#portrait-wash)", "class": "portrait-wash"}),
             _text(244, 44, "marcus@github:~", fill=palette["muted"], size=16, anchor="middle"),
             _text(42, 88, "$ whoami", fill=palette["green"], size=16, weight=700),
             _text(42, 143, "Marcus", fill=palette["bone"], size=50, weight=800),
@@ -315,6 +316,12 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             f"  text{{font-family:{FONT_STACK};dominant-baseline:alphabetic}}",
             "  .portrait-line{dominant-baseline:central}",
             "  svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}",
+            "  @media (prefers-reduced-motion: no-preference){",
+            "    .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}",
+            "    .signal-line{animation:signal-travel 9s ease-in-out infinite}",
+            "  }",
+            "  @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}",
+            "  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(344px);opacity:.65}}",
             "</style>",
             '<defs><radialGradient id="portrait-wash">'
             f'<stop stop-color="{palette["accent"]}" stop-opacity="0.075"/>'

@@ -90,6 +90,12 @@ def validate_assets() -> None:
                     assert value.startswith("#"), "SVG must not request external resources"
         assert "@import" not in actual and "@font-face" not in actual
         assert not re.search(r"url\(\s*['\"]?(?:https?:|//|data:)", actual)
+        assert "@media (prefers-reduced-motion: no-preference)" in actual
+        assert "@keyframes ambient-glow" in actual
+        assert "class=\"portrait-wash\"" in actual
+        if not mobile:
+            assert "@keyframes signal-travel" in actual
+            assert "class=\"signal-line\"" in actual
         assert asset.stat().st_size < 75_000, f"Unexpectedly large header: {filename}"
 
 

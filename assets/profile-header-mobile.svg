@@ -5,6 +5,12 @@
   text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;dominant-baseline:alphabetic}
   .portrait-line{dominant-baseline:central}
   svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}
+  @media (prefers-reduced-motion: no-preference){
+    .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}
+    .signal-line{animation:signal-travel 9s ease-in-out infinite}
+  }
+  @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}
+  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(344px);opacity:.65}}
 </style>
 <defs><radialGradient id="portrait-wash"><stop stop-color="#efaa82" stop-opacity="0.075"/><stop offset="1" stop-color="#efaa82" stop-opacity="0"/></radialGradient></defs>
 <rect width="480" height="340" rx="18" fill="#0d1117"/>
@@ -13,7 +19,7 @@
 <circle cx="42" cy="38" r="5" fill="#ff5f56"/>
 <circle cx="59" cy="38" r="5" fill="#ffbd2e"/>
 <circle cx="76" cy="38" r="5" fill="#27c93f"/>
-<rect x="286" y="68" width="156" height="166" fill="url(#portrait-wash)"/>
+<rect x="286" y="68" width="156" height="166" fill="url(#portrait-wash)" class="portrait-wash"/>
 <text x="244" y="44" fill="#c9d1d9" font-size="16" text-anchor="middle">marcus@github:~</text>
 <text x="42" y="88" fill="#39d353" font-size="16" font-weight="700">$ whoami</text>
 <text x="42" y="143" fill="#f7efe7" font-size="50" font-weight="800">Marcus</text>
