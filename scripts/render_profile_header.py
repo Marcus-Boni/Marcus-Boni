@@ -40,9 +40,9 @@ def _palette(light: bool) -> dict[str, str]:
             "accent": "#a65a35",
             "green": "#1a7f37",
             "shadow": "#afb8c133",
-            "portrait": "#57606a",
-            "portrait_hi": "#a65a35",
-            "portrait_opacity": "0.92",
+            "portrait": "#30363d",
+            "portrait_hi": "#8b4526",
+            "portrait_opacity": "0.96",
         }
     return {
         "bg": "#0d1117",
