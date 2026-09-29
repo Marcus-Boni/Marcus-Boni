@@ -25,7 +25,7 @@
 - Context: GitHub desktop or mobile, light or dark appearance, sometimes without images.
 
 ## Information architecture
-- Header → introduction and contact → selected work with source links → optional further work and engineering approach → contact.
+- Header → introduction and contact → selected work with source links → optional further work → visible engineering approach → contact.
 - English: `README.md`; Portuguese: `README.pt-BR.md`; implementation notes: `PROFILE.md`.
 - GitHub's native pins and activity remain separate profile surfaces.
 
@@ -40,16 +40,16 @@
 - Typography: system monospace inside SVG, GitHub native typography for prose.
 - Layout: one column; generous but restrained spacing; no fixed-width table for core content.
 - Shape: one terminal frame, quiet dividers and portrait corner marks, no stacked dashboard cards.
-- Detail: a restrained copper wash behind the portrait; higher portrait contrast in the light theme.
+- Detail: a restrained copper wash behind the portrait, a fixed copper accent rail and a small terminal cursor; higher portrait contrast in the light theme.
 - Alignment: portrait and desktop corner marks share one box center. Keep equal opposing margins and an explicit fixed-width ASCII grid across font fallbacks.
-- Motion: a slow ambient portrait glow and, on desktop, a signal travelling along the divider. Motion runs only when the viewer has no reduced-motion preference; all content is present in the first frame.
+- Motion: a slow ambient portrait glow, a breathing cursor and, on desktop, a signal travelling along the divider. Motion runs only when the viewer has no reduced-motion preference; all content is present in the first frame.
 - Imagery: reuse the original ASCII portrait as vector text, no external font/image requests.
 
 ## Components
 - Header: `scripts/render_profile_header.py` owns four versioned SVG variants (desktop/mobile × dark/light).
 - Project entry: linked heading, one short problem/implementation paragraph, compact technology line and one descriptive source permalink.
 - Contact row: native links which wrap naturally.
-- Further work: a native expandable section.
+- Further work: a native expandable section; the engineering approach remains visible below it.
 - Historical art generators remain available for intentional manual use.
 
 ## Accessibility

@@ -204,6 +204,8 @@ def _desktop(palette: dict[str, str]) -> str:
             _text(480, 47, "marcus@github:~", fill=palette["muted"], size=12, anchor="middle"),
             _text(58, 96, "marcus@github:~", fill=palette["green"], size=16, weight=700),
             _text(204, 96, "$ whoami", fill=palette["bone"], size=16, weight=700),
+            _tag("rect", {"x": 292, "y": 82, "width": 8, "height": 15, "rx": 1, "fill": palette["green"], "opacity": 0.8, "class": "terminal-cursor"}),
+            _tag("rect", {"x": 49, "y": 121, "width": 3, "height": 111, "rx": 1.5, "fill": palette["accent"], "opacity": 0.8}),
             _text(58, 154, "Marcus Boni", fill=palette["bone"], size=51, weight=800),
             _text(62, 193, "Software developer", fill=palette["accent"], size=23, weight=700),
             _text(
@@ -223,7 +225,7 @@ def _desktop(palette: dict[str, str]) -> str:
                     "fill": palette["stroke"],
                 },
             ),
-            _tag("rect", {"x": 62, "y": 252, "width": 86, "height": 1, "fill": palette["accent"], "opacity": 0.65, "class": "signal-line"}),
+            _tag("rect", {"x": 62, "y": 251, "width": 102, "height": 3, "rx": 1.5, "fill": palette["accent"], "opacity": 0.8, "class": "signal-line"}),
             _text(62, 273, "Espírito Santo, Brazil", fill=palette["muted"], size=14),
             _text(260, 273, "marcusboni.com.br", fill=palette["accent"], size=14, weight=700),
             _portrait(
@@ -275,6 +277,8 @@ def _mobile(palette: dict[str, str]) -> str:
             _tag("rect", {"x": 286, "y": 68, "width": 156, "height": 166, "fill": "url(#portrait-wash)", "class": "portrait-wash"}),
             _text(244, 44, "marcus@github:~", fill=palette["muted"], size=16, anchor="middle"),
             _text(42, 88, "$ whoami", fill=palette["green"], size=16, weight=700),
+            _tag("rect", {"x": 130, "y": 74, "width": 8, "height": 15, "rx": 1, "fill": palette["green"], "opacity": 0.8, "class": "terminal-cursor"}),
+            _tag("rect", {"x": 32, "y": 112, "width": 3, "height": 96, "rx": 1.5, "fill": palette["accent"], "opacity": 0.8}),
             _text(42, 143, "Marcus", fill=palette["bone"], size=50, weight=800),
             _text(42, 196, "Boni", fill=palette["bone"], size=50, weight=800),
             _text(44, 236, "Software developer", fill=palette["accent"], size=25, weight=700),
@@ -319,9 +323,11 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             "  @media (prefers-reduced-motion: no-preference){",
             "    .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}",
             "    .signal-line{animation:signal-travel 9s ease-in-out infinite}",
+            "    .terminal-cursor{animation:cursor-breathe 2.6s ease-in-out infinite}",
             "  }",
             "  @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}",
-            "  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(344px);opacity:.65}}",
+            "  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(328px);opacity:.9}}",
+            "  @keyframes cursor-breathe{0%,100%{opacity:.8}50%{opacity:.22}}",
             "</style>",
             '<defs><radialGradient id="portrait-wash">'
             f'<stop stop-color="{palette["accent"]}" stop-opacity="0.075"/>'

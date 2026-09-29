@@ -27,7 +27,7 @@ The generator creates four assets from the existing portrait:
 
 Both README languages select the appropriate asset with `picture` and `source`.
 The mobile composition is separate so the name and role remain readable. The
-header is complete immediately. Its subtle SVG motion runs only when the viewer
+header is complete immediately. Its SVG motion runs only when the viewer
 has no reduced-motion preference; the still frame carries the full message.
 
 ## Edit the content

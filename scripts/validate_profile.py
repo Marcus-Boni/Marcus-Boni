@@ -63,6 +63,8 @@ def validate_documents() -> None:
             assert len(parser.sources) == 3, "Expected mobile and light header sources"
             assert "contrib-heatmap.svg" not in content, "Do not duplicate native activity"
             assert "language-bar.svg" not in content, "Do not use language counts as expertise"
+            approach_heading = "## Como construo" if filename.endswith("pt-BR.md") else "## How I build"
+            assert content.index(approach_heading) > content.index("</details>"), "Keep the engineering approach visible"
             project_sets.append(set(re.findall(r"https://github.com/Marcus-Boni/[\w.-]+", content)))
     assert project_sets[0] == project_sets[1], "README languages must link the same projects"
 
@@ -93,6 +95,8 @@ def validate_assets() -> None:
         assert "@media (prefers-reduced-motion: no-preference)" in actual
         assert "@keyframes ambient-glow" in actual
         assert "class=\"portrait-wash\"" in actual
+        assert "@keyframes cursor-breathe" in actual
+        assert "class=\"terminal-cursor\"" in actual
         if not mobile:
             assert "@keyframes signal-travel" in actual
             assert "class=\"signal-line\"" in actual
