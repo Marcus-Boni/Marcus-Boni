@@ -42,7 +42,7 @@
 - Shape: one terminal frame, quiet dividers and portrait corner marks, no stacked dashboard cards.
 - Detail: a restrained copper wash behind the portrait and a small terminal cursor; higher portrait contrast in the light theme.
 - Alignment: portrait and desktop corner marks share one box center. Keep equal opposing margins and an explicit fixed-width ASCII grid across font fallbacks.
-- Motion: a slow light pass across the original ASCII portrait lines, a quiet ambient glow, a breathing cursor and, on desktop, a signal travelling along the divider. The portrait never disappears or moves; motion runs only when the viewer has no reduced-motion preference.
+- Motion: a slow copper-to-bone light pass across the original ASCII portrait lines, a quiet ambient glow, a breathing cursor and, on desktop, a signal travelling along the divider. The portrait never disappears or moves; motion runs only when the viewer has no reduced-motion preference.
 - Imagery: reuse the original ASCII portrait as vector text, no external font/image requests.
 
 ## Components

@@ -139,7 +139,8 @@ def _portrait(
     first_y = center_y - (len(lines) - 1) * line_height / 2
     rendered: list[str] = ['<g id="portrait">']
     for index, line in enumerate(lines):
-        fill = palette["portrait_hi"] if index % 9 in (3, 4) else palette["portrait"]
+        highlight = index % 9 in (3, 4)
+        fill = palette["portrait_hi"] if highlight else palette["portrait"]
         y_pos = round(first_y + index * line_height, 2)
         rendered.append(
             _tag(
@@ -147,7 +148,7 @@ def _portrait(
                 {
                     "x": center_x,
                     "y": y_pos,
-                    "class": "portrait-line",
+                    "class": "portrait-line portrait-highlight" if highlight else "portrait-line portrait-neutral",
                     "text-anchor": "middle",
                     "textLength": round(width, 3),
                     "lengthAdjust": "spacingAndGlyphs",
@@ -323,12 +324,14 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             "    .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}",
             "    .signal-line{animation:signal-travel 9s ease-in-out infinite}",
             "    .terminal-cursor{animation:cursor-breathe 2.6s ease-in-out infinite}",
-            "    .portrait-line{animation:portrait-scan 8s ease-in-out infinite}",
+            "    .portrait-neutral{animation:portrait-scan 8s ease-in-out infinite}",
+            "    .portrait-highlight{animation:highlight-scan 8s ease-in-out infinite}",
             "  }",
             "  @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}",
             "  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(328px);opacity:.9}}",
             "  @keyframes cursor-breathe{0%,100%{opacity:.8}50%{opacity:.22}}",
-            f"  @keyframes portrait-scan{{0%,18%,100%{{opacity:{palette['portrait_opacity']}}}9%{{opacity:1}}}}",
+            f"  @keyframes portrait-scan{{0%,18%,100%{{opacity:{palette['portrait_opacity']};fill:{palette['portrait']}}}9%{{opacity:1;fill:{palette['portrait_hi']}}}}}",
+            f"  @keyframes highlight-scan{{0%,18%,100%{{opacity:{palette['portrait_opacity']};fill:{palette['portrait_hi']}}}9%{{opacity:1;fill:{palette['bone']}}}}}",
             "</style>",
             '<defs><radialGradient id="portrait-wash">'
             f'<stop stop-color="{palette["accent"]}" stop-opacity="0.075"/>'
