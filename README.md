@@ -1,8 +1,8 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/profile-header-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg" />
-  <img src="./assets/profile-header.svg" width="100%" alt="Marcus Boni — software developer. Full-stack products and applied AI. An original ASCII portrait in a terminal." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-mobile-light.svg?v=portrait-motion-1" />
+  <source media="(max-width: 600px)" srcset="./assets/profile-header-mobile.svg?v=portrait-motion-1" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg?v=portrait-motion-1" />
+  <img src="./assets/profile-header.svg?v=portrait-motion-1" width="100%" alt="Marcus Boni — software developer. Full-stack products and applied AI. An original ASCII portrait in a terminal." />
 </picture>
 
 <p align="right"><strong>English</strong> · <a href="./README.pt-BR.md">Português</a></p>

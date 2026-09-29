@@ -31,6 +31,9 @@ header is complete immediately. Its ASCII portrait lines gain a slow light pass
 when the viewer has no reduced-motion preference; the still frame carries the
 full message.
 
+When publishing a changed header, update the matching `?v=` asset reference in
+both READMEs so GitHub and browser image caches request the new SVG.
+
 ## Edit the content
 
 - Update `README.md` and `README.pt-BR.md` together.
