@@ -97,6 +97,10 @@ def validate_assets() -> None:
         assert "class=\"portrait-wash\"" in actual
         assert "@keyframes cursor-breathe" in actual
         assert "class=\"terminal-cursor\"" in actual
+        assert "@keyframes portrait-scan" in actual
+        portrait_lines = [node for node in root.iter() if node.get("class") == "portrait-line"]
+        assert len(portrait_lines) >= 30, "The ASCII portrait must retain its original line detail"
+        assert all(node.get("style", "").startswith("animation-delay:-") for node in portrait_lines)
         if not mobile:
             assert "@keyframes signal-travel" in actual
             assert "class=\"signal-line\"" in actual
