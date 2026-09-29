@@ -8,9 +8,11 @@
   @media (prefers-reduced-motion: no-preference){
     .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}
     .signal-line{animation:signal-travel 9s ease-in-out infinite}
+    .terminal-cursor{animation:cursor-breathe 2.6s ease-in-out infinite}
   }
   @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}
-  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(344px);opacity:.65}}
+  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(328px);opacity:.9}}
+  @keyframes cursor-breathe{0%,100%{opacity:.8}50%{opacity:.22}}
 </style>
 <defs><radialGradient id="portrait-wash"><stop stop-color="#efaa82" stop-opacity="0.075"/><stop offset="1" stop-color="#efaa82" stop-opacity="0"/></radialGradient></defs>
 <rect width="960" height="310" rx="16" fill="#0d1117"/>
@@ -24,11 +26,13 @@
 <text x="480" y="47" fill="#c9d1d9" font-size="12" text-anchor="middle">marcus@github:~</text>
 <text x="58" y="96" fill="#39d353" font-size="16" font-weight="700">marcus@github:~</text>
 <text x="204" y="96" fill="#f7efe7" font-size="16" font-weight="700">$ whoami</text>
+<rect x="292" y="82" width="8" height="15" rx="1" fill="#39d353" opacity="0.8" class="terminal-cursor"/>
+<rect x="49" y="121" width="3" height="111" rx="1.5" fill="#efaa82" opacity="0.8"/>
 <text x="58" y="154" fill="#f7efe7" font-size="51" font-weight="800">Marcus Boni</text>
 <text x="62" y="193" fill="#efaa82" font-size="23" font-weight="700">Software developer</text>
 <text x="62" y="227" fill="#c9d1d9" font-size="19">Full-stack products. Applied AI.</text>
 <rect x="62" y="252" width="430" height="1" fill="#30363d"/>
-<rect x="62" y="252" width="86" height="1" fill="#efaa82" opacity="0.65" class="signal-line"/>
+<rect x="62" y="251" width="102" height="3" rx="1.5" fill="#efaa82" opacity="0.8" class="signal-line"/>
 <text x="62" y="273" fill="#c9d1d9" font-size="14">Espírito Santo, Brazil</text>
 <text x="260" y="273" fill="#efaa82" font-size="14" font-weight="700">marcusboni.com.br</text>
 <g id="portrait">

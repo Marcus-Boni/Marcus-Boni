@@ -7,7 +7,7 @@
 
 <p align="right"><a href="./README.md">English</a> · <strong>Português</strong></p>
 
-Sou **Marcus**, desenvolvedor de software no Espírito Santo, Brasil. Construo **produtos full-stack e soluções de IA aplicada**, com foco em ferramentas para desenvolvedores, transcrição local e busca com citações.
+Sou **Marcus**, desenvolvedor de software no Espírito Santo, Brasil. Transformo fluxos complexos em **produtos full-stack e IA aplicada**: ferramentas para desenvolvedores, transcrição local e sistemas de busca que mostram suas fontes.
 
 [Portfólio](https://marcusboni.com.br/) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/) · [E-mail](mailto:mgalvaoboni@gmail.com)
 
@@ -38,19 +38,19 @@ Portfólio bilíngue com um campo de tinta interativo em WebGL, blog Markdown e 
 `React` `Vite` `TypeScript` `WebGL` `Firebase` · [Testes do contrato da API ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/d582da477ef60110f40652afc528a6d2f66fe77a/tests/openapi.test.ts)
 
 <details>
-<summary><strong>Mais projetos e como construo</strong></summary>
+<summary><strong>Mais projetos</strong></summary>
 
 - **[Estimativa de horas](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — fluxo web por equipe para estimar tarefas, acompanhar dashboards e exportar para Excel.
 - **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — experimento de assistente local-first com FastAPI, Ollama, memória vetorial e dashboard em Next.js.
 - **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — demonstração de tempo real com tracking, chat de múltiplas salas e status assíncrono de pagamentos.
 
-### Como construo
+</details>
+
+## Como construo
 
 - **Começar pelo fluxo de trabalho.** Transformar etapas operacionais repetitivas em ferramentas e integrações com um objetivo claro.
 - **Explicitar os limites.** Separar processamento local, provedores externos e acesso aos dados.
 - **Facilitar a inspeção.** Documentar decisões, testar comportamentos relevantes e manter builds reproduzíveis.
-
-</details>
 
 ---
 

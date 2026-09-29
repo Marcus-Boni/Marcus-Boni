@@ -7,7 +7,7 @@
 
 <p align="right"><strong>English</strong> · <a href="./README.pt-BR.md">Português</a></p>
 
-I’m **Marcus**, a software developer based in Espírito Santo, Brazil. I build **full-stack products and AI systems** — from developer workflows and local transcription to retrieval systems with source citations.
+I’m **Marcus**, a software developer based in Espírito Santo, Brazil. I turn complex workflows into **full-stack products and applied AI**: developer tools, local transcription and retrieval systems that show their sources.
 
 [Portfolio](https://marcusboni.com.br/) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email](mailto:mgalvaoboni@gmail.com)
 
@@ -38,19 +38,19 @@ A bilingual portfolio with an interactive WebGL ink field, a Markdown blog and f
 `React` `Vite` `TypeScript` `WebGL` `Firebase` · [API contract tests ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/d582da477ef60110f40652afc528a6d2f66fe77a/tests/openapi.test.ts)
 
 <details>
-<summary><strong>More work & how I build</strong></summary>
+<summary><strong>More work</strong></summary>
 
 - **[Hour estimation](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — a team-based web workflow for task estimates, dashboards and Excel export.
 - **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — a local-first assistant experiment with FastAPI, Ollama, vector memory and a Next.js dashboard.
 - **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — a real-time demo covering tracking, multi-room chat and asynchronous payment status.
 
-### How I build
+</details>
+
+## How I build
 
 - **Start with the workflow.** Turn repetitive operational steps into focused tools and integrations.
 - **Make boundaries explicit.** Separate local processing, external providers and data access.
 - **Make the work inspectable.** Document decisions, test meaningful behavior and keep builds reproducible.
-
-</details>
 
 ---
 
