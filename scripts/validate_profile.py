@@ -80,13 +80,14 @@ def validate_documents() -> None:
         if filename.startswith("README"):
             parser = ProfileHTML(document)
             parser.feed(content)
-            assert parser.images == 2, f"Expected 2 figure images (FIG.01 + FIG.02), got {parser.images}"
+            assert parser.images == 2, f"Expected 2 figure images (hero + architecture), got {parser.images}"
             assert parser.imgs == EXPECTED_IMGS, f"Unexpected <img> fallbacks in {filename}: {parser.imgs}"
             assert parser.sources == EXPECTED_SOURCES, f"Unexpected <source> variants in {filename}: {parser.sources}"
-            assert content.startswith("<picture>\n"), "Place FIG.01 hero directly at the top"
+            assert content.startswith("<picture>\n"), "Place the hero directly at the top"
+            assert "https://marcusboni.com.br/blog" in content, f"Blog reference missing in {filename}"
             assert "contrib-heatmap.svg" not in content, "Do not duplicate native activity"
             assert "language-bar.svg" not in content, "Do not use language counts as expertise"
-            approach_heading = "## Como construo" if filename.endswith("pt-BR.md") else "## How I engineer"
+            approach_heading = "## Como construo" if filename.endswith("pt-BR.md") else "## How I build"
             assert content.index(approach_heading) > content.rindex("</details>"), "Keep the engineering approach visible"
             project_sets.append(set(re.findall(r"https://github.com/Marcus-Boni/[\w.-]+", content)))
     assert project_sets[0] == project_sets[1], "README languages must link the same projects"
@@ -125,7 +126,6 @@ def validate_common_svg_safety(asset: Path, actual: str, namespace: dict[str, st
 def validate_assets() -> None:
     namespace = {"svg": "http://www.w3.org/2000/svg"}
 
-    # Validate avatar PNG integrity
     portrait = ROOT / "assets" / "chrome-portrait.png"
     with portrait.open("rb") as image:
         header = image.read(24)
@@ -133,7 +133,6 @@ def validate_assets() -> None:
     assert tuple(int.from_bytes(header[index : index + 4], "big") for index in (16, 20)) == (500, 500)
     assert portrait.stat().st_size < 1_000_000, "Avatar must fit GitHub's upload limit"
 
-    # Validate FIG.01 Hero Terminal variants
     expected_lines = [line.rstrip() for line in ASCII_SOURCE.read_text(encoding="ascii").splitlines()]
     for (mobile, light), filename in HERO_OUTPUTS.items():
         asset = ROOT / "assets" / filename
@@ -162,7 +161,6 @@ def validate_assets() -> None:
         )
         assert len({node.get("textLength") for node in portrait_lines}) == 1
 
-    # Validate FIG.02 Systems Blueprint variants
     for (mobile, light), filename in BLUEPRINT_OUTPUTS.items():
         asset = ROOT / "assets" / filename
         actual = asset.read_text(encoding="utf-8")
@@ -173,14 +171,14 @@ def validate_assets() -> None:
         root = validate_common_svg_safety(asset, actual, namespace)
         cards = root.findall(".//svg:g[@class]", namespace)
         layer_cards = [g for g in cards if "layer-card" in (g.get("class") or "")]
-        assert len(layer_cards) == 4, f"Expected 4 topology layer cards in {filename}, got {len(layer_cards)}"
+        assert len(layer_cards) == 4, f"Expected 4 architecture layer cards in {filename}, got {len(layer_cards)}"
 
 
 def main() -> None:
     validate_documents()
     validate_assets()
     print(
-        "PASS: local references, bilingual project parity, 8 accessible self-contained SVGs (FIG.01 + FIG.02), and reproducible assets"
+        "PASS: local references, blog links, bilingual parity, 8 monochrome self-contained SVGs, and reproducible assets"
     )
 
 

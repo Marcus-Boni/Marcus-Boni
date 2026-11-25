@@ -1,77 +1,81 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v2-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v2-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v2-light.svg" />
-  <img src="./assets/hero-terminal-v2.svg" width="100%" alt="Marcus Boni, engenheiro de software. Busto prateado animado em ASCII e terminal de sistemas." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v3-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v3-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v3-light.svg" />
+  <img src="./assets/hero-terminal-v3.svg" width="100%" alt="Marcus Boni, engenheiro de software. Busto prateado monocromático animado em ASCII e terminal de sistemas." />
 </picture>
 
 <p align="right"><a href="./README.md">English</a> · <strong>Português</strong></p>
 
-Sou **Marcus Boni**, engenheiro de software no Espírito Santo, Brasil. Projeto e entrego **sistemas ponta a ponta entre desktop nativo, web full-stack e IA aplicada** — de um motor local de transcrição em Rust com 12 crates e CUDA a servidores Model Context Protocol, pipelines RAG com `pgvector` e interfaces autorais em WebGL.
+Sou **Marcus Boni**, engenheiro de software no Espírito Santo, Brasil. Construo **produtos full-stack, sistemas desktop nativos e fluxos de IA aplicada** — unindo fundamentos sólidos de engenharia ao desenvolvimento assistido por IA e publicando notas técnicas no [meu blog](https://marcusboni.com.br/blog).
 
-**[Portfólio ↗](https://marcusboni.com.br/)** · **[LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/)** · **[E-mail ↗](mailto:mgalvaoboni@gmail.com)**
+[Portfólio ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/) · [E-mail ↗](mailto:mgalvaoboni@gmail.com)
 
 ---
 
-## Sistemas em destaque
+## Projetos em destaque
 
-### 01 · [ISPer](https://github.com/Marcus-Boni/ISPer) · Motor de voz local-first & GPU
+### 01 · [ISPer](https://github.com/Marcus-Boni/ISPer) · Motor de voz local-first
 
-Ditado por voz no Windows e transcrição de reuniões do Microsoft Teams 100% offline, estruturados em um **workspace Rust de 12 crates** (`core`, `diarize`, `llm`, `agent`, `mcp`, `sync`, `cli`, `mobile` via `uniffi-bindgen`) com Tauri 2 e `whisper.cpp` (CPU/CUDA). O áudio nunca sai da máquina; crates de produção aplicam lints estritos sem `unwrap` no Clippy e validações automatizadas ao longo de **25 releases (`v0.30.0`)**.
+Ditado offline no Windows e transcrição de reuniões do Teams construídos em um **workspace Rust de 12 crates**, Tauri 2 e `whisper.cpp` (CPU/CUDA). O áudio permanece na máquina; crates de produção aplicam regras estritas sem `unwrap` no Clippy ao longo de **25 releases (`v0.30.0`)**.
 
-`Rust` `Tauri 2` `whisper.cpp` `CUDA` `UniFFI` `MCP` · [Site ↗](https://isper.pages.dev) · [Última release ↗](https://github.com/Marcus-Boni/ISPer/releases/latest) · [Workspace de 12 crates ↗](https://github.com/Marcus-Boni/ISPer/blob/72ea1174c881e860a32b3aed58f75edbdb5a2f86/Cargo.toml)
+`Rust` `Tauri 2` `whisper.cpp` `CUDA` `MCP` · [Site ↗](https://isper.pages.dev) · [Releases ↗](https://github.com/Marcus-Boni/ISPer/releases/latest) · [Workspace ↗](https://github.com/Marcus-Boni/ISPer/blob/72ea1174c881e860a32b3aed58f75edbdb5a2f86/Cargo.toml)
 
-### 02 · [OptTime](https://github.com/Marcus-Boni/OptTime) · Fluxos de engenharia & servidor MCP
+### 02 · [OptTime](https://github.com/Marcus-Boni/OptTime) · Fluxos de engenharia & MCP
 
-Plataforma full-stack de apontamento de horas integrada bidirecionalmente ao **Azure DevOps**, com fluxos de aprovação, dashboards analíticos e exportação em Excel/PDF. Inclui extensão para Azure DevOps, autenticação Microsoft Entra ID e um **servidor Model Context Protocol** com transporte duplo (`stdio` / HTTP — 16 ferramentas, 4 recursos e 3 prompts) para agentes de IA operarem sob as mesmas regras auditadas.
+Apontamento de horas full-stack sincronizado bidirecionalmente com o **Azure DevOps**, incluindo fluxos de aprovação, dashboards, autenticação Entra ID e extensão nativa. Entrega também um **servidor MCP** de transporte duplo (`stdio`/HTTP — 16 ferramentas, 4 recursos, 3 prompts) para agentes de IA.
 
-`TypeScript` `Next.js 16` `PostgreSQL` `Drizzle` `Better Auth` `MCP` · [Aplicação ↗](https://opt-time.optsolv.com.br) · [Servidor MCP ↗](https://github.com/Marcus-Boni/OptTime/blob/1e492d2e74dad1024c22c2230f0e07cc58796ceb/packages/opt-time-mcp/src/server.ts) · [Documentação MCP ↗](https://github.com/Marcus-Boni/OptTime/blob/1e492d2e74dad1024c22c2230f0e07cc58796ceb/docs/mcp-server.md)
+`TypeScript` `Next.js 16` `PostgreSQL` `Drizzle` `MCP` · [Aplicação ↗](https://opt-time.optsolv.com.br) · [Servidor MCP ↗](https://github.com/Marcus-Boni/OptTime/blob/1e492d2e74dad1024c22c2230f0e07cc58796ceb/packages/opt-time-mcp/src/server.ts)
 
 ### 03 · [chatbot-template](https://github.com/Marcus-Boni/chatbot-template) · RAG com fontes & avaliação
 
-Arquitetura RAG orientada por configuração para consultar transcrições `.docx` de reuniões do Microsoft Teams com `pgvector` no Neon Postgres. Toda resposta exige citações rastreáveis (reunião, data e participante) com isolamento por workspace, apoiada por uma **suíte dedicada de avaliação de recuperação** para medir precisão com dados em vez de tentativa e erro.
+Template RAG orientado por configuração para consultar transcrições do Microsoft Teams com `pgvector` no Neon Postgres. Exige citações verificáveis das fontes, isolamento por workspace e uma **suíte de avaliação de busca** para medir qualidade com evidência.
 
-`TypeScript` `Next.js 16` `CopilotKit` `pgvector` `Drizzle` `Vitest` · [Avaliação da busca ↗](https://github.com/Marcus-Boni/chatbot-template/blob/a9969fc6695030d20b109159a81ee40a0c4b5cc5/src/core/rag/eval.ts)
+`TypeScript` `Next.js 16` `CopilotKit` `pgvector` `Vitest` · [Avaliação da busca ↗](https://github.com/Marcus-Boni/chatbot-template/blob/a9969fc6695030d20b109159a81ee40a0c4b5cc5/src/core/rag/eval.ts)
 
-### 04 · [Portfólio](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio) · Engenharia web criativa & OpenAPI
+### 04 · [Portfólio & Blog](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio) · Engenharia web & OpenAPI
 
-Portfólio editorial bilíngue com **campo de tinta interativo em WebGL/GLSL**, retrato procedural montado em código no Canvas, blog técnico em Markdown e analytics próprios no Firebase. Expõe uma API REST pública, **testes de contrato OpenAPI** e páginas legíveis por agentes além da interface visual.
+Portfólio bilíngue e caderno técnico com **campo de tinta em WebGL/GLSL**, retrato procedural em código, publicação em Markdown e analytics próprios. Expõe uma API REST pública com **testes de contrato OpenAPI** e páginas legíveis por agentes.
 
-`React` `Vite` `TypeScript` `WebGL / GLSL` `Firebase` `OpenAPI` · [Site ↗](https://marcusboni.com.br/) · [Shader GLSL ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/6d9e9b381e04c2a3689f5a1441089a8515d7b6ec/src/animations/glsl/inkField.ts) · [Testes OpenAPI ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/6d9e9b381e04c2a3689f5a1441089a8515d7b6ec/tests/openapi.test.ts)
+`React` `TypeScript` `WebGL` `Firebase` `OpenAPI` · [Site ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [Testes OpenAPI ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/6d9e9b381e04c2a3689f5a1441089a8515d7b6ec/tests/openapi.test.ts)
 
 ---
 
 ## Arquitetura e stack
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/systems-blueprint-v1-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/systems-blueprint-v1-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/systems-blueprint-v1-light.svg" />
-  <img src="./assets/systems-blueprint-v1.svg" width="100%" alt="Diagrama ASCII animado de topologia de sistemas em quatro camadas: Interfaces, IA Aplicada, Sistemas e Dados, e Nuvem e Entrega." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/systems-blueprint-v2-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/systems-blueprint-v2-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/systems-blueprint-v2-light.svg" />
+  <img src="./assets/systems-blueprint-v2.svg" width="100%" alt="Diagrama ASCII monocromático animado de arquitetura em quatro camadas: Interfaces, IA Aplicada, Sistemas e Dados, e Nuvem e Entrega." />
 </picture>
 
-- **01 · Interfaces & Web Criativa** — `TypeScript` `React` `Next.js` `WebGL / GLSL` `Tailwind CSS` `Flutter` `React Native`
-- **02 · IA Aplicada & Ferramentas para Agentes** — `Servidores MCP` `RAG com pgvector` `Avaliação de Busca` `whisper.cpp` `CopilotKit` `Ollama`
-- **03 · Sistemas, Backend & Dados** — `Rust` `Tauri 2` `UniFFI` `Node.js` `Python` `C#` `Java` `PostgreSQL` `Drizzle` `SQL Server`
-- **04 · Nuvem, Ops & Release** — `Azure` `Azure DevOps` `Docker` `GitHub Actions` `Firebase` `Pipelines CPU / CUDA`
+- **Interfaces** — TypeScript, React, Next.js, WebGL/GLSL, Tailwind CSS, Flutter, React Native
+- **IA Aplicada** — Servidores MCP, RAG com pgvector, Avaliação de Busca, whisper.cpp, CopilotKit, Ollama
+- **Sistemas & Dados** — Rust, Tauri 2, UniFFI, Node.js, Python, C#/.NET, Java/Spring, PostgreSQL, Drizzle
+- **Nuvem & Entrega** — Azure, Azure DevOps, Docker, GitHub Actions, Firebase, Releases CPU/CUDA
+
+## Escrita técnica
+
+Publico com frequência artigos sobre engenharia de software, arquitetura, IA aplicada e bastidores técnicos de projetos reais em **[marcusboni.com.br/blog ↗](https://marcusboni.com.br/blog)**.
 
 <details>
-<summary><strong>Mais ferramentas e experimentos</strong></summary>
+<summary><strong>Mais projetos</strong></summary>
 
-- **[Auto Daily](https://github.com/Marcus-Boni/Auto-Daily-App)** — rascunhos de daily com IA sintetizados a partir de commits no Azure DevOps e apontamentos no OptTime (`Next.js 16`, `React 19`, `TypeScript`) · [Aplicação ↗](https://auto-daily-app.vercel.app)
-- **[Estimativa de Horas](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — fluxo web por equipe que substitui planilhas frágeis de Excel, integrado ao Azure DevOps com dashboards e exportação (`Next.js`, `Firebase`) · [Aplicação ↗](https://ferramenta-estimativa-horas.vercel.app)
-- **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — assistente local-first para desenvolvedores combinando FastAPI, Ollama, memória vetorial e dashboard em Next.js (`Python`, `FastAPI`, `Ollama`)
-- **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — demonstração em tempo real com tracking ao vivo, chat em múltiplas salas e status assíncrono de pagamentos (`C#`, `.NET SignalR`, `TypeScript`)
+- **[Auto Daily](https://github.com/Marcus-Boni/Auto-Daily-App)** — rascunhos de daily com IA gerados a partir de commits no Azure DevOps e apontamentos do OptTime · [Aplicação ↗](https://auto-daily-app.vercel.app)
+- **[Estimativa de Horas](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — fluxo web por equipe integrado ao Azure DevOps com dashboards e exportação em Excel · [Aplicação ↗](https://ferramenta-estimativa-horas.vercel.app)
+- **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — assistente local-first para desenvolvedores com FastAPI, Ollama, memória vetorial e dashboard em Next.js
+- **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — demonstração em tempo real com .NET SignalR, tracking ao vivo, chat em salas e status assíncrono de pagamento
 
 </details>
 
 ## Como construo
 
-- **Começar pelo gargalo real.** Substituir planilhas frágeis e etapas operacionais repetitivas por software focado, integrado diretamente às ferramentas do time.
-- **Explicitar os limites do sistema.** Separar processamento local, inferência de modelos, camada de busca e APIs externas para manter privacidade, latência e falhas previsíveis.
-- **Validar comportamento com evidência.** Apoiar pipelines RAG com avaliações de busca, APIs com testes de contrato OpenAPI, workspaces Rust com lints rigorosos no Clippy e releases com CI reproduzível.
-- **Tratar acabamento como engenharia.** De pipelines de build CUDA e grafos de crates modulares a shaders GLSL autorais e SVGs auto-hospedados — precisão gera confiança.
+- **Engenharia assistida por IA com base em fundamentos.** Utilizo IA de forma deliberada para explorar arquiteturas, aprofundar entendimento técnico e acelerar entregas — sempre guiado por boas práticas de mercado, revisão crítica e clareza de código.
+- **Começar pelo fluxo real.** Transformar atritos operacionais repetitivos em ferramentas focadas e integradas diretamente ao ecossistema do time.
+- **Limites explícitos e comportamento verificável.** Isolar processamento local, inferência e acesso a dados; validar com avaliações de busca, testes de contrato OpenAPI, lints estritos e CI reproduzível.
+- **Evolução contínua em público.** Acompanhar de perto o avanço em sistemas, IA aplicada e engenharia web — documentando decisões técnicas e aprendizados reais no [blog](https://marcusboni.com.br/blog).
 
 ---
 
-Construindo ferramentas para desenvolvedores, software local-first, IA aplicada ou produtos web bem executados? **[Vamos conversar ↗](mailto:mgalvaoboni@gmail.com)** · [Portfólio](https://marcusboni.com.br/) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)
+Interesse em ferramentas para desenvolvedores, IA aplicada ou engenharia de software bem feita? **[Vamos conversar ↗](mailto:mgalvaoboni@gmail.com)** · [Portfólio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)

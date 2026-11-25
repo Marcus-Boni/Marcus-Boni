@@ -1,10 +1,8 @@
-"""Render the four self-contained animated ASCII hero terminal SVGs (FIG.01).
+"""Render the four self-contained monochrome chrome ASCII hero terminal SVGs.
 
-Generates desktop/mobile x dark/light variants from the committed
-assets/chrome-portrait.txt glyph grid using Python's standard library only.
-All animations use pure CSS keyframes inside prefers-reduced-motion so GitHub
-renders them natively inside <img> while reduced-motion viewers see the
-complete crisp composition immediately.
+Generates desktop/mobile x dark/light variants from assets/chrome-portrait.txt
+using Python's standard library only. Strictly follows a silver, white, gray,
+and black palette aligned with the GitHub chrome bust avatar.
 """
 
 from __future__ import annotations
@@ -17,10 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASCII_SOURCE = ROOT / "assets" / "chrome-portrait.txt"
 OUTPUTS = {
-    (False, False): "hero-terminal-v2.svg",
-    (False, True): "hero-terminal-v2-light.svg",
-    (True, False): "hero-terminal-v2-mobile.svg",
-    (True, True): "hero-terminal-v2-mobile-light.svg",
+    (False, False): "hero-terminal-v3.svg",
+    (False, True): "hero-terminal-v3-light.svg",
+    (True, False): "hero-terminal-v3-mobile.svg",
+    (True, True): "hero-terminal-v3-mobile-light.svg",
 }
 
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
@@ -28,21 +26,20 @@ FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monos
 PALETTES = {
     False: {
         "surface": "#0e1014",
-        "bar": "#15181e",
+        "bar": "#14171d",
         "border": "#2d333d",
         "divider": "#232832",
         "heading_top": "#ffffff",
-        "heading_bottom": "#ced6e0",
-        "subheading": "#d8dfe8",
-        "copy": "#c2cbd6",
-        "key": "#8b96a6",
-        "quiet": "#98a3b2",
-        "accent": "#ff5a26",
-        "accent_glow": "#ff7a4d",
-        "dots": ("#cdd4de", "#8893a3", "#505865"),
-        "plate_border": "#2a313c",
-        "plate_tick": "#4e596b",
-        "plate_meta": "#8e99a8",
+        "heading_bottom": "#cbd3de",
+        "subheading": "#d4dbe4",
+        "copy": "#bcc4d0",
+        "key": "#8892a0",
+        "quiet": "#929ca9",
+        "accent": "#f2f5f9",
+        "accent_glow": "#ffffff",
+        "dots": ("#d2d8e1", "#8b94a2", "#515966"),
+        "plate_border": "#282e38",
+        "plate_tick": "#47505e",
     },
     True: {
         "surface": "#f6f7f9",
@@ -50,34 +47,29 @@ PALETTES = {
         "border": "#c3cad4",
         "divider": "#d8dde6",
         "heading_top": "#12161c",
-        "heading_bottom": "#2c333f",
+        "heading_bottom": "#2e3541",
         "subheading": "#28303b",
-        "copy": "#37404e",
-        "key": "#505a68",
-        "quiet": "#4a5361",
-        "accent": "#c8370b",
-        "accent_glow": "#e04c1d",
-        "dots": ("#464e5a", "#727c8b", "#a0a9b6"),
+        "copy": "#38414e",
+        "key": "#555f6e",
+        "quiet": "#4d5664",
+        "accent": "#151921",
+        "accent_glow": "#ffffff",
+        "dots": ("#3f4754", "#707987", "#a1aab7"),
         "plate_border": "#2b323d",
-        "plate_tick": "#505c6e",
-        "plate_meta": "#9aa4b2",
+        "plate_tick": "#4d5766",
     },
 }
 
 DESKTOP_SPECS: list[tuple[str, str]] = [
-    ("systems", "Rust · Tauri 2 · whisper.cpp (CUDA) · C# · Python"),
-    ("web", "TypeScript · Next.js 16 · React · WebGL · Flutter"),
-    ("ai", "MCP Servers · pgvector RAG · Eval Harnesses"),
-    ("data/ops", "PostgreSQL · Drizzle · Azure · Docker · CI/CD"),
-    ("shipped", "ISPer v0.30 (12 crates) · OptTime · Portfolio"),
+    ("core", "TypeScript · Rust · Python · C#"),
+    ("ai", "MCP Servers · pgvector RAG · local whisper.cpp"),
+    ("web", "Next.js · React · Tauri · PostgreSQL · WebGL"),
 ]
 
 MOBILE_SPECS: list[tuple[str, str]] = [
-    ("systems", "Rust · Tauri 2 · whisper.cpp · C# · Python"),
-    ("web", "TypeScript · Next.js 16 · React · WebGL"),
-    ("ai", "MCP Servers · pgvector RAG · Eval Harnesses"),
-    ("data/ops", "PostgreSQL · Drizzle · Azure · Docker · CI"),
-    ("shipped", "ISPer v0.30 (12 crates) · OptTime · Portfolio"),
+    ("core", "TypeScript · Rust · Python · C#"),
+    ("ai", "MCP · pgvector RAG · local whisper.cpp"),
+    ("web", "Next.js · React · Tauri · PostgreSQL · WebGL"),
 ]
 
 
@@ -110,9 +102,9 @@ def text_el(
 
 
 def corner_ticks(x: int, y: int, width: int, height: int, stroke: str) -> str:
-    """Delicate technical crosshair corners around the ASCII sculpture plate."""
+    """Minimal crosshair corner marks inside the ASCII sculpture plate."""
     inset = 9
-    arm = 9
+    arm = 7
     x0, y0 = x + inset, y + inset
     x1, y1 = x + width - inset, y + height - inset
     d = (
@@ -126,7 +118,7 @@ def corner_ticks(x: int, y: int, width: int, height: int, stroke: str) -> str:
         d=d,
         fill="none",
         stroke=stroke,
-        **{"stroke-width": 1.15, "stroke-linecap": "square", "aria-hidden": "true"},
+        **{"stroke-width": 1.0, "stroke-linecap": "square", "aria-hidden": "true"},
     )
 
 
@@ -159,37 +151,37 @@ def portrait(center_x: int, top: int, height: int) -> str:
 
 
 def build_svg(mobile: bool = False, light: bool = False) -> str:
-    """Build one profile hero terminal SVG as a deterministic string."""
+    """Build one monochrome chrome profile hero SVG as a deterministic string."""
     p = PALETTES[light]
-    width, height = (480, 588) if mobile else (960, 380)
-    bar_h = 40 if mobile else 42
+    width, height = (480, 514) if mobile else (960, 336)
+    bar_h = 38 if mobile else 40
 
     plate = (
-        dict(x=16, y=52, width=448, height=264, rx=8)
+        dict(x=16, y=50, width=448, height=252, rx=8)
         if mobile
-        else dict(x=574, y=56, width=370, height=308, rx=8)
+        else dict(x=574, y=54, width=370, height=266, rx=8)
     )
     px, py, pw, ph = plate["x"], plate["y"], plate["width"], plate["height"]
 
     # Primary diagonal chrome reflection sweep
-    band_h = 122
+    band_h = 114
     band_angle = 8
     skew = tan(radians(band_angle))
     band_y = py - band_h - 10
     travel = ph + band_h + ceil(pw * skew) + 20
 
-    # Secondary gentle counter-angle specular glint
-    glint_h = 68
+    # Secondary gentle counter-angle specular glint (cool silver-white)
+    glint_h = 62
     glint_angle = -6
     glint_skew = tan(radians(abs(glint_angle)))
     glint_y = py - glint_h - 10
     glint_travel = ph + glint_h + ceil(pw * glint_skew) + 20
 
-    # Initial laser raster scanline across the portrait height
-    scan_top = 62 if mobile else 68
-    scan_span = 234 if mobile else 264
+    # Initial horizontal silver scanline across the portrait height
+    scan_top = 60 if mobile else 64
+    scan_span = 232 if mobile else 244
 
-    # Outer terminal frame + title bar
+    # Frame & title bar
     surface = tag(
         "rect",
         x=0.5,
@@ -206,53 +198,48 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     dot_x0 = 20 if mobile else 22
     dot_gap = 13 if mobile else 14
     dots = [
-        tag("circle", cx=dot_x0 + i * dot_gap, cy=bar_h / 2, r=3.4, fill=fill)
+        tag("circle", cx=dot_x0 + i * dot_gap, cy=bar_h / 2, r=3.3, fill=fill)
         for i, fill in enumerate(p["dots"])
     ]
 
     if mobile:
-        bar_left = text_el(64, 24.5, "marcus@boni: ~/systems", fill=p["quiet"], size=12.5)
+        bar_left = text_el(64, 23.5, "marcus@github", fill=p["quiet"], size=12.5)
         bar_right_x = 460
-        bar_right_text = "FIG.01 · ES-BR"
-        bar_dot_x = 355
+        bar_right_text = "ES-BR · UTC-3"
+        bar_dot_x = 362
     else:
-        bar_left = text_el(72, 25.5, "marcus@boni: ~/systems — zsh", fill=p["quiet"], size=13)
+        bar_left = text_el(72, 24.5, "marcus@github: ~/systems", fill=p["quiet"], size=12.5)
         bar_right_x = 938
-        bar_right_text = "FIG.01 · ES-BR · UTC-3"
-        bar_dot_x = 778
+        bar_right_text = "ES-BR · UTC-3"
+        bar_dot_x = 834
 
     status_dot_halo = tag(
         "circle",
         cx=bar_dot_x,
         cy=bar_h / 2,
-        r=5.5,
+        r=5.2,
         fill=p["accent"],
-        **{"class": "status-halo", "opacity": 0.24, "aria-hidden": "true"},
+        **{"class": "status-halo", "opacity": 0.2, "aria-hidden": "true"},
     )
     status_dot = tag(
         "circle",
         cx=bar_dot_x,
         cy=bar_h / 2,
-        r=3.0,
+        r=2.8,
         fill=p["accent"],
-        **{"class": "status-led", "aria-hidden": "true"},
+        **{"aria-hidden": "true"},
     )
     bar_right = text_el(
         bar_right_x,
-        24.5 if mobile else 25.5,
+        23.5 if mobile else 24.5,
         bar_right_text,
         fill=p["quiet"],
-        size=11.5 if mobile else 12,
+        size=11.5,
         **{"text-anchor": "end"},
     )
 
-    # Sculpture plate & subtle CRT micro-grid
-    plate_rect = tag(
-        "rect",
-        fill="url(#obsidian)",
-        stroke=p["plate_border"],
-        **plate,
-    )
+    # Obsidian sculpture plate
+    plate_rect = tag("rect", fill="url(#obsidian)", stroke=p["plate_border"], **plate)
     plate_grid = tag(
         "rect",
         x=px + 1,
@@ -266,89 +253,73 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     plate_corners = corner_ticks(px, py, pw, ph, p["plate_tick"])
 
     if mobile:
-        artwork = portrait(center_x=240, top=62, height=234)
-        plate_meta = text_el(
-            240,
-            308,
-            "ASCII · 82x39 · CHROME LUMA",
-            fill=p["plate_meta"],
-            size=9.5,
-            **{"text-anchor": "middle", "letter-spacing": "0.08em"},
-        )
+        artwork = portrait(center_x=240, top=60, height=232)
     else:
-        artwork = portrait(center_x=759, top=68, height=264)
-        plate_meta = text_el(
-            759,
-            353,
-            "ASCII · 82x39 · CHROME LUMA",
-            fill=p["plate_meta"],
-            size=9.5,
-            **{"text-anchor": "middle", "letter-spacing": "0.08em"},
-        )
+        artwork = portrait(center_x=759, top=64, height=246)
 
-    # Initial horizontal raster beam aligned with portrait assembly
+    # Crisp monochrome silver raster scan beam
     scan_beam = "\n".join(
         [
             '<g class="scan-beam" clip-path="url(#plate-clip)" aria-hidden="true">',
             f'  <rect x="{px}" y="{scan_top - 16}" width="{pw}" height="18" fill="url(#beam-glow)"/>',
-            f'  <rect x="{px}" y="{scan_top}" width="{pw}" height="1.6" fill="{p["accent_glow"]}" opacity="0.92"/>',
+            f'  <rect x="{px}" y="{scan_top}" width="{pw}" height="1.5" fill="#ffffff" opacity="0.88"/>',
             "</g>",
         ]
     )
 
-    # Terminal text content (left pane on desktop, lower pane on mobile)
+    # Minimalist terminal content
     terminal_nodes: list[str] = []
     if mobile:
         tx = 24
         terminal_nodes.append(
             '<g class="cli-line" style="--cli-delay:0.04s">'
-            + text_el(tx, 344, "$", fill=p["accent"], size=14, weight=700)
-            + text_el(tx + 14, 344, "whoami --verbose", fill=p["quiet"], size=14, weight=600)
+            + text_el(tx, 332, "$", fill=p["accent"], size=14, weight=700)
+            + text_el(tx + 14, 332, "whoami", fill=p["quiet"], size=14, weight=600)
             + "</g>"
         )
         terminal_nodes.append(
             '<g class="cli-hero" style="--cli-delay:0.12s">'
-            + text_el(tx - 2, 394, "Marcus Boni", fill="url(#heading-fill)", size=46, weight=800)
+            + text_el(tx - 2, 380, "Marcus Boni", fill="url(#heading-fill)", size=44, weight=800)
             + text_el(
                 tx,
-                421,
-                "Full-Stack, Systems & Applied AI Engineer",
+                405,
+                "Software Engineer · Full-Stack, Systems & AI",
                 fill=p["subheading"],
-                size=13.5,
+                size=13,
                 weight=500,
             )
             + "</g>"
         )
         terminal_nodes.append(
-            tag("line", x1=tx, y1=436, x2=456, y2=436, stroke=p["divider"], **{"class": "cli-line", "style": "--cli-delay:0.24s"})
+            tag("line", x1=tx, y1=420, x2=456, y2=420, stroke=p["divider"], **{"class": "cli-line", "style": "--cli-delay:0.22s"})
         )
         for idx, (k, v) in enumerate(MOBILE_SPECS):
-            row_y = 458 + idx * 19.5
-            delay = 0.30 + idx * 0.09
+            row_y = 442 + idx * 20
+            delay = 0.28 + idx * 0.10
             terminal_nodes.append(
                 f'<g class="cli-line" style="--cli-delay:{delay:.2f}s">'
                 + text_el(tx, row_y, k, fill=p["key"], size=11.5, weight=600)
-                + text_el(tx + 68, row_y, v, fill=p["copy"], size=11.5)
+                + text_el(tx + 54, row_y, v, fill=p["copy"], size=11.5)
                 + "</g>"
             )
-        status_str = "ready --open-to-sharp-engineering"
-        status_w = 246
+        status_str = "marcusboni.com.br/blog"
+        status_w = 166
         terminal_nodes.append(
-            '<g class="cli-line" style="--cli-delay:0.80s">'
-            + text_el(tx, 567, "$", fill=p["accent"], size=12.5, weight=700)
+            '<g class="cli-line" style="--cli-delay:0.62s">'
+            + text_el(tx, 502, "$", fill=p["accent"], size=12.5, weight=700)
             + text_el(
                 tx + 14,
-                567,
+                502,
                 status_str,
                 fill=p["quiet"],
-                size=12.0,
+                size=12,
                 textLength=status_w,
                 lengthAdjust="spacingAndGlyphs",
             )
             + tag(
                 "rect",
                 x=tx + 14 + status_w + 5,
-                y=556.5,
+                y=491.5,
                 width=7.5,
                 height=13,
                 rx=1.5,
@@ -358,62 +329,56 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             + "</g>"
         )
     else:
-        tx = 34
+        tx = 36
         terminal_nodes.append(
             '<g class="cli-line" style="--cli-delay:0.04s">'
-            + text_el(tx, 82, "$", fill=p["accent"], size=15, weight=700)
-            + text_el(tx + 15, 82, "whoami --verbose", fill=p["quiet"], size=15, weight=600)
+            + text_el(tx, 84, "$", fill=p["accent"], size=15, weight=700)
+            + text_el(tx + 15, 84, "whoami", fill=p["quiet"], size=15, weight=600)
             + "</g>"
         )
         terminal_nodes.append(
             '<g class="cli-hero" style="--cli-delay:0.12s">'
-            + text_el(tx - 2, 140, "Marcus Boni", fill="url(#heading-fill)", size=52, weight=800)
+            + text_el(tx - 2, 142, "Marcus Boni", fill="url(#heading-fill)", size=54, weight=800)
             + text_el(
                 tx,
-                169,
-                "Software Engineer · Full-Stack, Systems & Applied AI",
+                172,
+                "Software Engineer · Full-Stack, Systems & AI",
                 fill=p["subheading"],
-                size=14.5,
+                size=15,
                 weight=500,
             )
             + "</g>"
         )
         terminal_nodes.append(
-            tag("line", x1=tx, y1=188, x2=544, y2=188, stroke=p["divider"], **{"class": "cli-line", "style": "--cli-delay:0.24s"})
-        )
-        terminal_nodes.append(
-            '<g class="cli-line" style="--cli-delay:0.28s">'
-            + text_el(tx, 212, "$", fill=p["accent"], size=13.5, weight=700)
-            + text_el(tx + 14, 212, "inspect --capabilities", fill=p["quiet"], size=13.5, weight=600)
-            + "</g>"
+            tag("line", x1=tx, y1=192, x2=542, y2=192, stroke=p["divider"], **{"class": "cli-line", "style": "--cli-delay:0.22s"})
         )
         for idx, (k, v) in enumerate(DESKTOP_SPECS):
-            row_y = 237 + idx * 21.5
-            delay = 0.36 + idx * 0.09
+            row_y = 220 + idx * 23.5
+            delay = 0.28 + idx * 0.10
             terminal_nodes.append(
                 f'<g class="cli-line" style="--cli-delay:{delay:.2f}s">'
-                + text_el(tx, row_y, k, fill=p["key"], size=12.5, weight=600)
-                + text_el(tx + 78, row_y, v, fill=p["copy"], size=12.5)
+                + text_el(tx, row_y, k, fill=p["key"], size=13, weight=600)
+                + text_el(tx + 58, row_y, v, fill=p["copy"], size=13)
                 + "</g>"
             )
-        status_str = "status: shipping local-first & agentic systems"
-        status_w = 358
+        status_str = "marcusboni.com.br/blog"
+        status_w = 174
         terminal_nodes.append(
-            '<g class="cli-line" style="--cli-delay:0.86s">'
-            + text_el(tx, 354, "$", fill=p["accent"], size=13, weight=700)
+            '<g class="cli-line" style="--cli-delay:0.64s">'
+            + text_el(tx, 306, "$", fill=p["accent"], size=13.5, weight=700)
             + text_el(
-                tx + 14,
-                354,
+                tx + 15,
+                306,
                 status_str,
                 fill=p["quiet"],
-                size=12.5,
+                size=13,
                 textLength=status_w,
                 lengthAdjust="spacingAndGlyphs",
             )
             + tag(
                 "rect",
-                x=tx + 14 + status_w + 6,
-                y=343,
+                x=tx + 15 + status_w + 6,
+                y=294.5,
                 width=8,
                 height=14,
                 rx=1.5,
@@ -426,8 +391,8 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     return "\n".join(
         [
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-            '<title id="title">Marcus Boni — Systems, Full-Stack &amp; Applied AI Engineer</title>',
-            '<desc id="desc">Animated graphite-and-chrome developer terminal featuring an ASCII bust portrait of Marcus Boni and core engineering stack readout.</desc>',
+            '<title id="title">Marcus Boni — Software Engineer</title>',
+            '<desc id="desc">Monochrome silver-and-graphite developer terminal with an animated ASCII bust portrait of Marcus Boni and core engineering stack.</desc>',
             "<style>",
             f"  text{{font-family:{FONT_STACK}}}",
             "  .portrait-line{white-space:pre}",
@@ -441,16 +406,16 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             "    .portrait-glint{display:inline}",
             "    #reflection-band{animation:sweep 4.8s linear 1.7s infinite backwards}",
             "    #glint-band{animation:glint 7.6s linear 3.6s infinite backwards}",
-            "    .cursor-block{animation:cursor-blink 1.05s steps(2,end) 1.2s infinite}",
+            "    .cursor-block{animation:cursor-blink 1.05s steps(2,end) 1.0s infinite}",
             "    .status-halo{animation:led-pulse 2.8s ease-in-out infinite}",
-            "    @keyframes cli-in{from{opacity:.24;transform:translateX(-6px)} to{opacity:1;transform:translateX(0)}}",
-            "    @keyframes hero-in{from{opacity:.38;transform:translateY(4px)} to{opacity:1;transform:translateY(0)}}",
+            "    @keyframes cli-in{from{opacity:.26;transform:translateX(-5px)} to{opacity:1;transform:translateX(0)}}",
+            "    @keyframes hero-in{from{opacity:.40;transform:translateY(4px)} to{opacity:1;transform:translateY(0)}}",
             "    @keyframes assemble{from{opacity:.34} to{opacity:1}}",
             f"    @keyframes raster-scan{{0%{{opacity:0;transform:translateY(0)}} 6%{{opacity:1}} 92%{{opacity:1;transform:translateY({scan_span}px)}} 100%{{opacity:0;transform:translateY({scan_span + 10}px)}}}}",
             f"    @keyframes sweep{{from{{transform:translateY(0)}} to{{transform:translateY({travel}px)}}}}",
             f"    @keyframes glint{{from{{transform:translateY(0)}} to{{transform:translateY({glint_travel}px)}}}}",
             "    @keyframes cursor-blink{0%,49%{opacity:1} 50%,100%{opacity:0}}",
-            "    @keyframes led-pulse{0%,100%{opacity:.14} 50%{opacity:.46}}",
+            "    @keyframes led-pulse{0%,100%{opacity:.12} 50%{opacity:.42}}",
             "  }",
             "</style>",
             "<defs>",
@@ -466,17 +431,17 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             '    <stop offset="1" stop-color="#191e27"/>',
             "  </linearGradient>",
             '  <pattern id="scan-grid" width="4" height="4" patternUnits="userSpaceOnUse">',
-            '    <line x1="0" y1="0" x2="4" y2="0" stroke="#ffffff" stroke-opacity="0.028" stroke-width="1"/>',
+            '    <line x1="0" y1="0" x2="4" y2="0" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1"/>',
             "  </pattern>",
-            '  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="55" x2="0" y2="350">',
+            '  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="0" y2="320">',
             '    <stop stop-color="#b4bfd0"/>',
-            '    <stop offset=".34" stop-color="#ffffff"/>',
-            '    <stop offset=".68" stop-color="#e0e6ef"/>',
+            '    <stop offset=".35" stop-color="#ffffff"/>',
+            '    <stop offset=".68" stop-color="#dfe5ee"/>',
             '    <stop offset="1" stop-color="#aeb9c9"/>',
             "  </linearGradient>",
             '  <linearGradient id="beam-glow" x1="0" y1="0" x2="0" y2="1">',
-            f'    <stop stop-color="{p["accent_glow"]}" stop-opacity="0"/>',
-            f'    <stop offset="1" stop-color="{p["accent_glow"]}" stop-opacity=".30"/>',
+            '    <stop stop-color="#ffffff" stop-opacity="0"/>',
+            '    <stop offset="1" stop-color="#ffffff" stop-opacity=".22"/>',
             "  </linearGradient>",
             '  <linearGradient id="reflection-falloff" x2="0" y2="1">',
             '    <stop stop-color="#fff" stop-opacity="0"/>',
@@ -487,7 +452,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             "  </linearGradient>",
             '  <linearGradient id="glint-falloff" x2="0" y2="1">',
             '    <stop stop-color="#fff" stop-opacity="0"/>',
-            '    <stop offset=".50" stop-color="#ffd5c6" stop-opacity=".46"/>',
+            '    <stop offset=".50" stop-color="#e4ebf5" stop-opacity=".42"/>',
             '    <stop offset="1" stop-color="#fff" stop-opacity="0"/>',
             "  </linearGradient>",
             f'  <mask id="reflection-mask" maskUnits="userSpaceOnUse" x="{px}" y="{py}" width="{pw}" height="{ph}">',
@@ -514,9 +479,8 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             plate_corners,
             artwork,
             '<use class="portrait-reflection" href="#portrait-glyphs" fill="#ffffff" mask="url(#reflection-mask)" aria-hidden="true"/>',
-            '<use class="portrait-glint" href="#portrait-glyphs" fill="#ffe7de" mask="url(#glint-mask)" aria-hidden="true"/>',
+            '<use class="portrait-glint" href="#portrait-glyphs" fill="#e8eef7" mask="url(#glint-mask)" aria-hidden="true"/>',
             scan_beam,
-            plate_meta,
             *terminal_nodes,
             "</svg>",
             "",
