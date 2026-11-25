@@ -2,10 +2,10 @@
 
 ## Source of truth
 - Status: Active
-- Last refreshed: 2026-09-28
+- Last refreshed: 2026-11-25
 - Primary surfaces: GitHub profile README and its Portuguese translation.
-- Evidence: original README, `assets/ascii-portrait.svg`, `scripts/make_info_card.py`, public project READMEs, and the existing portfolio's charcoal / warm accent palette.
-- Direction chosen by Marcus: a more refined, readable authorial terminal; English first, Portuguese available.
+- Evidence: the approved chrome portrait, its extracted glyph grid, and the public project READMEs.
+- Direction chosen by Marcus: a graphite and silver terminal drawn from the same chrome portrait as the GitHub avatar. English first, with a Portuguese translation.
 
 ## Brand
 - Personality: technical, deliberate, approachable.
@@ -36,14 +36,11 @@
 - Keep secondary content expandable using native `details`.
 
 ## Visual language
-- Color: charcoal, warm white, restrained copper accent and a terminal green signal; explicit light variants.
-- Typography: system monospace inside SVG, GitHub native typography for prose.
-- Layout: one column; generous but restrained spacing; no fixed-width table for core content.
-- Shape: one terminal frame, quiet dividers and portrait corner marks, no stacked dashboard cards.
-- Detail: a restrained copper wash behind the portrait and a small terminal cursor; higher portrait contrast in the light theme.
-- Alignment: portrait and desktop corner marks share one box center. Keep equal opposing margins and an explicit fixed-width ASCII grid across font fallbacks.
-- Motion: a slow copper-to-bone light pass across the original ASCII portrait lines, a quiet ambient glow, a breathing cursor and, on desktop, a signal travelling along the divider. The portrait never disappears or moves; motion runs only when the viewer has no reduced-motion preference.
-- Imagery: reuse the original ASCII portrait as vector text, no external font/image requests.
+- The terminal frame uses graphite and cool silver in dark mode and pale silver in light mode. Both render the chrome as bright glyphs on a dark plate.
+- The name carries the hierarchy. Terminal commands and the portrait use system monospace, and the README body uses native GitHub typography.
+- Desktop places the text beside the portrait. Mobile gives the artwork its own full-width plate so the curls, eyes and jaw hold up in a narrow profile column.
+- The glyph grid comes from the luminance of the approved avatar. Preserve the image's downward gaze and reflection pattern across themes.
+- A single silver fade settles the portrait on load when motion is enabled. The fully visible still frame carries the same information.
 
 ## Components
 - Header: `scripts/render_profile_header.py` owns four versioned SVG variants (desktop/mobile × dark/light).

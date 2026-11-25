@@ -10,6 +10,7 @@ tipo de animacao que o GitHub deixa passar dentro de <img>.
 Uso:
     python scripts/make_ascii_svg.py [entrada.png] [saida.svg]
     STATIC=1 python scripts/make_ascii_svg.py     # quadro congelado p/ preview
+    python scripts/make_ascii_svg.py --chrome avatar.png retrato.txt
 """
 
 from __future__ import annotations
@@ -59,12 +60,13 @@ def staggered(attr: str, hidden: str, shown: str, delay: float, dur: float, tota
     )
 
 
-def load_grid(path: Path) -> np.ndarray:
+def load_grid(path: Path, cols: int = COLS) -> np.ndarray:
     """Reamostra a imagem para a grade de caracteres e devolve luminancia 0..1."""
-    img = Image.open(path).convert("L")
+    with Image.open(path) as image:
+        img = image.convert("L")
     w, h = img.size
-    rows = max(1, round(COLS * (h / w) * CHAR_ASPECT))
-    small = img.resize((COLS, rows), Image.Resampling.LANCZOS)
+    rows = max(1, round(cols * (h / w) * CHAR_ASPECT))
+    small = img.resize((cols, rows), Image.Resampling.LANCZOS)
     return np.asarray(small, dtype=np.float64) / 255.0
 
 
@@ -139,7 +141,30 @@ def build_svg(lines: list[str], static: bool) -> str:
     return "\n".join(out)
 
 
+def write_chrome_grid(source: Path, destination: Path) -> None:
+    """Map silver reflections directly to glyph density against the black backdrop."""
+    luminance = load_grid(source, cols=82)
+    # Drop near-black noise before lifting midtones around the eyes and hair.
+    normalized = np.clip((luminance - 0.035) / 0.965, 0, 1)
+    lines = to_chars(1 - normalized ** 0.74)
+    visible_rows = [index for index, line in enumerate(lines) if line.strip()]
+    if not visible_rows:
+        raise ValueError(f"No visible highlights in {source}")
+    first, last = visible_rows[0], visible_rows[-1]
+    destination.write_text(
+        "\n".join(line.rstrip() for line in lines[first:last + 1]) + "\n",
+        encoding="ascii",
+        newline="\n",
+    )
+
+
 def main() -> None:
+    if len(sys.argv) > 1 and sys.argv[1] == "--chrome":
+        if len(sys.argv) != 4:
+            raise SystemExit("Usage: make_ascii_svg.py --chrome input.png output.txt")
+        write_chrome_grid(Path(sys.argv[2]), Path(sys.argv[3]))
+        return
+
     src = Path(sys.argv[1] if len(sys.argv) > 1 else "source-prepped.png")
     dst = Path(sys.argv[2] if len(sys.argv) > 2 else "assets/ascii-portrait.svg")
     static = os.environ.get("STATIC") == "1"

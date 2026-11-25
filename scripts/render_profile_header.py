@@ -1,360 +1,144 @@
-"""Render the profile hero header SVG assets.
-
-The generator is intentionally dependency-free and deterministic. It reuses the
-ASCII portrait glyphs from assets/ascii-portrait.svg while leaving that source
-asset untouched.
-"""
+"""Render the four self-contained profile headers from the committed ASCII grid."""
 
 from __future__ import annotations
 
 from html import escape
 from pathlib import Path
-import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ASCII_SOURCE = ROOT / "assets" / "ascii-portrait.svg"
+ASCII_SOURCE = ROOT / "assets" / "chrome-portrait.txt"
 OUTPUTS = {
-    (False, False): ROOT / "assets" / "profile-header.svg",
-    (False, True): ROOT / "assets" / "profile-header-light.svg",
-    (True, False): ROOT / "assets" / "profile-header-mobile.svg",
-    (True, True): ROOT / "assets" / "profile-header-mobile-light.svg",
+    (False, False): "profile-header.svg",
+    (False, True): "profile-header-light.svg",
+    (True, False): "profile-header-mobile.svg",
+    (True, True): "profile-header-mobile-light.svg",
 }
 
-FONT_STACK = (
-    "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
-)
+FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
+
+PALETTES = {
+    False: {
+        "surface": "#111316",
+        "bar": "#181b1f",
+        "border": "#3b4047",
+        "heading": "#f5f6f7",
+        "copy": "#c1c7cf",
+        "quiet": "#a9b1bc",
+        "dots": ("#e0e3e8", "#a0a8b2", "#686f79"),
+    },
+    True: {
+        "surface": "#f5f6f8",
+        "bar": "#e9ecf0",
+        "border": "#b7bdc5",
+        "heading": "#16191e",
+        "copy": "#343b45",
+        "quiet": "#4e5662",
+        "dots": ("#454d58", "#687380", "#909aa6"),
+    },
+}
 
 
-def _palette(light: bool) -> dict[str, str]:
-    if light:
-        return {
-            "bg": "#f6f8fa",
-            "panel": "#ffffff",
-            "panel_2": "#f1f4f8",
-            "stroke": "#d0d7de",
-            "soft": "#8c959f",
-            "text": "#24292f",
-            "muted": "#57606a",
-            "bone": "#24292f",
-            "accent": "#a65a35",
-            "green": "#1a7f37",
-            "shadow": "#afb8c133",
-            "portrait": "#30363d",
-            "portrait_hi": "#8b4526",
-            "portrait_opacity": "0.96",
-        }
-    return {
-        "bg": "#0d1117",
-        "panel": "#111820",
-        "panel_2": "#161b22",
-        "stroke": "#30363d",
-        "soft": "#6e7681",
-        "text": "#f0f6fc",
-        "muted": "#c9d1d9",
-        "bone": "#f7efe7",
-        "accent": "#efaa82",
-        "green": "#39d353",
-        "shadow": "#01040966",
-        "portrait": "#c9d1d9",
-        "portrait_hi": "#efaa82",
-        "portrait_opacity": "0.78",
-    }
+def tag(name: str, *, content: str | None = None, **attributes: str | int | float) -> str:
+    attrs = " ".join(f'{key}="{escape(str(value), quote=True)}"' for key, value in attributes.items())
+    opening = f"<{name} {attrs}" if attrs else f"<{name}"
+    return f"{opening}/>" if content is None else f"{opening}>{content}</{name}>"
 
 
-def _read_portrait_lines() -> list[str]:
-    tree = ET.parse(ASCII_SOURCE)
-    root = tree.getroot()
-    namespace = ""
-    if root.tag.startswith("{"):
-        namespace = root.tag.split("}", 1)[0] + "}"
-
-    lines = [
-        node.text
-        for node in root.iter(f"{namespace}text")
-        if node.text and node.text.strip()
-    ]
-    if not lines:
-        raise RuntimeError(f"No ASCII portrait text found in {ASCII_SOURCE}")
-
-    common_indent = min(len(line) - len(line.lstrip(" ")) for line in lines)
-    trimmed = [line[common_indent:].rstrip() for line in lines]
-    max_cols = max(len(line) for line in trimmed)
-    return [line.ljust(max_cols) for line in trimmed]
+def label(x: float, y: float, value: str, *, fill: str, size: int, weight: int = 400) -> str:
+    return tag("text", x=x, y=y, fill=fill, content=escape(value),
+               **{"font-size": size, "font-weight": weight})
 
 
-def _tag(
-    name: str,
-    attrs: dict[str, str | int | float] | None = None,
-    content: str | None = None,
-) -> str:
-    rendered_attrs = ""
-    if attrs:
-        rendered_attrs = " " + " ".join(
-            f'{key}="{escape(str(value), quote=True)}"' for key, value in attrs.items()
-        )
-    if content is None:
-        return f"<{name}{rendered_attrs}/>"
-    return f"<{name}{rendered_attrs}>{content}</{name}>"
-
-
-def _text(
-    x: float,
-    y: float,
-    value: str,
-    *,
-    fill: str,
-    size: float,
-    weight: int | None = None,
-    opacity: float | None = None,
-    anchor: str | None = None,
-) -> str:
-    attrs: dict[str, str | int | float] = {
-        "x": x,
-        "y": y,
-        "fill": fill,
-        "font-size": size,
-    }
-    if weight is not None:
-        attrs["font-weight"] = weight
-    if opacity is not None:
-        attrs["opacity"] = opacity
-    if anchor is not None:
-        attrs["text-anchor"] = anchor
-    return _tag("text", attrs, escape(value))
-
-
-def _portrait(
-    *,
-    center_x: float,
-    center_y: float,
-    height: float,
-    palette: dict[str, str],
-    opacity: float = 0.72,
-) -> str:
-    lines = _read_portrait_lines()
+def portrait(center_x: int, top: int, height: int) -> str:
+    lines = ASCII_SOURCE.read_text(encoding="ascii").splitlines()
+    columns = max(map(len, lines))
     line_height = height / len(lines)
-    font_size = line_height * 10 / 11
-    width = len(lines[0]) * line_height * 6 / 11
-    first_y = center_y - (len(lines) - 1) * line_height / 2
-    rendered: list[str] = ['<g id="portrait">']
+    font_size = line_height * 0.93
+    width = columns * font_size * 0.60
+    x = round(center_x - width / 2, 2)
+    group = ['<g id="portrait" fill="url(#silver)">']
     for index, line in enumerate(lines):
-        highlight = index % 9 in (3, 4)
-        fill = palette["portrait_hi"] if highlight else palette["portrait"]
-        y_pos = round(first_y + index * line_height, 2)
-        rendered.append(
-            _tag(
-                "text",
-                {
-                    "x": center_x,
-                    "y": y_pos,
-                    "class": "portrait-line portrait-highlight" if highlight else "portrait-line portrait-neutral",
-                    "text-anchor": "middle",
-                    "textLength": round(width, 3),
-                    "lengthAdjust": "spacingAndGlyphs",
-                    "fill": fill,
-                    "font-size": round(font_size, 2),
-                    "opacity": opacity,
-                    "style": f"animation-delay:-{index * 0.18:.2f}s",
-                    "xml:space": "preserve",
-                },
-                escape(line),
-            )
-        )
-    return "\n".join(rendered + ["</g>"])
-
-
-def _desktop(palette: dict[str, str]) -> str:
-    w, h = 960, 310
-    # One shared box positions both the corner marks and the portrait grid.
-    left, top, box_width, box_height = 686, 85, 204, 178
-    right, bottom = left + box_width, top + box_height
-    parts: list[str] = [
-        _tag("rect", {"width": w, "height": h, "rx": 16, "fill": palette["bg"]}),
-        _tag(
-            "rect",
-            {
-                "x": 28,
-                "y": 24,
-                "width": 904,
-                "height": 262,
-                "rx": 12,
-                "fill": palette["panel"],
-                "stroke": palette["stroke"],
-            },
-        ),
-        _tag(
-            "rect",
-            {
-                "x": 28,
-                "y": 24,
-                "width": 904,
-                "height": 38,
-                "rx": 12,
-                "fill": palette["panel_2"],
-                "stroke": palette["stroke"],
-            },
-        ),
-    ]
-
-    for idx, color in enumerate(("#ff5f56", "#ffbd2e", "#27c93f")):
-        parts.append(_tag("circle", {"cx": 50 + idx * 18, "cy": 43, "r": 5, "fill": color}))
-    parts.extend(
-        [
-            _tag("rect", {"x": left + box_width / 2 - 130, "y": top + box_height / 2 - 104, "width": 260, "height": 208, "fill": "url(#portrait-wash)", "class": "portrait-wash"}),
-            _tag("path", {"id": "portrait-corners", "d": f"M{left} {top + 18}v-18h18 M{right - 18} {top}h18v18 M{left} {bottom - 18}v18h18 M{right - 18} {bottom}h18v-18", "fill": "none", "stroke": palette["accent"], "stroke-width": 1, "opacity": 0.3}),
-            _text(480, 47, "marcus@github:~", fill=palette["muted"], size=12, anchor="middle"),
-            _text(58, 96, "marcus@github:~", fill=palette["green"], size=16, weight=700),
-            _text(204, 96, "$ whoami", fill=palette["bone"], size=16, weight=700),
-            _tag("rect", {"x": 292, "y": 82, "width": 8, "height": 15, "rx": 1, "fill": palette["green"], "opacity": 0.8, "class": "terminal-cursor"}),
-            _text(58, 154, "Marcus Boni", fill=palette["bone"], size=51, weight=800),
-            _text(62, 193, "Software developer", fill=palette["accent"], size=23, weight=700),
-            _text(
-                62,
-                227,
-                "Full-stack products. Applied AI.",
-                fill=palette["muted"],
-                size=19,
-            ),
-            _tag(
-                "rect",
-                {
-                    "x": 62,
-                    "y": 252,
-                    "width": 430,
-                    "height": 1,
-                    "fill": palette["stroke"],
-                },
-            ),
-            _tag("rect", {"x": 62, "y": 251, "width": 102, "height": 3, "rx": 1.5, "fill": palette["accent"], "opacity": 0.8, "class": "signal-line"}),
-            _text(62, 273, "Espírito Santo, Brazil", fill=palette["muted"], size=14),
-            _text(260, 273, "marcusboni.com.br", fill=palette["accent"], size=14, weight=700),
-            _portrait(
-                center_x=left + box_width / 2,
-                center_y=top + box_height / 2,
-                height=box_height - 22,
-                palette=palette,
-                opacity=float(palette["portrait_opacity"]),
-            ),
-        ]
-    )
-    return "\n".join(parts)
-
-
-def _mobile(palette: dict[str, str]) -> str:
-    w, h = 480, 340
-    parts: list[str] = [
-        _tag("rect", {"width": w, "height": h, "rx": 18, "fill": palette["bg"]}),
-        _tag(
-            "rect",
-            {
-                "x": 22,
-                "y": 20,
-                "width": 436,
-                "height": 298,
-                "rx": 13,
-                "fill": palette["panel"],
-                "stroke": palette["stroke"],
-            },
-        ),
-        _tag(
-            "rect",
-            {
-                "x": 22,
-                "y": 20,
-                "width": 436,
-                "height": 38,
-                "rx": 13,
-                "fill": palette["panel_2"],
-                "stroke": palette["stroke"],
-            },
-        ),
-    ]
-    for idx, color in enumerate(("#ff5f56", "#ffbd2e", "#27c93f")):
-        parts.append(_tag("circle", {"cx": 42 + idx * 17, "cy": 38, "r": 5, "fill": color}))
-
-    parts.extend(
-        [
-            _tag("rect", {"x": 286, "y": 68, "width": 156, "height": 166, "fill": "url(#portrait-wash)", "class": "portrait-wash"}),
-            _text(244, 44, "marcus@github:~", fill=palette["muted"], size=16, anchor="middle"),
-            _text(42, 88, "$ whoami", fill=palette["green"], size=16, weight=700),
-            _tag("rect", {"x": 130, "y": 74, "width": 8, "height": 15, "rx": 1, "fill": palette["green"], "opacity": 0.8, "class": "terminal-cursor"}),
-            _text(42, 143, "Marcus", fill=palette["bone"], size=50, weight=800),
-            _text(42, 196, "Boni", fill=palette["bone"], size=50, weight=800),
-            _text(44, 236, "Software developer", fill=palette["accent"], size=25, weight=700),
-            _text(44, 275, "Full-stack products.", fill=palette["muted"], size=22),
-            _text(44, 304, "Applied AI.", fill=palette["muted"], size=22),
-            _portrait(
-                center_x=364,
-                center_y=151,
-                height=136,
-                palette=palette,
-                opacity=float(palette["portrait_opacity"]),
-            ),
-        ]
-    )
-    return "\n".join(parts)
+        group.append(tag(
+            "text",
+            x=x,
+            y=round(top + (index + 0.85) * line_height, 2),
+            textLength=round(width, 2),
+            lengthAdjust="spacingAndGlyphs",
+            content=escape(line.ljust(columns)),
+            **{"class": "portrait-line", "font-size": round(font_size, 2), "xml:space": "preserve"},
+        ))
+    return "\n".join([*group, "</g>"])
 
 
 def build_svg(mobile: bool = False, light: bool = False) -> str:
     """Build one profile header SVG as a deterministic string."""
-    palette = _palette(light)
-    width, height = (480, 340) if mobile else (960, 310)
-    title = "Marcus Boni profile header"
-    desc = (
-        "Mobile terminal-style profile header for Marcus Boni, software developer."
-        if mobile
-        else (
-            "Terminal-style profile header for Marcus Boni, software developer in "
-            "Espírito Santo, Brazil."
-        )
+    palette = PALETTES[light]
+    width, height = (480, 466) if mobile else (960, 330)
+    bar_height = 48
+    plate = (
+        dict(x=16, y=59, width=448, height=265, rx=8)
+        if mobile else dict(x=567, y=59, width=377, height=255, rx=8)
     )
-    body = _mobile(palette) if mobile else _desktop(palette)
-
-    return "\n".join(
-        [
-            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-            f"<title id=\"title\">{escape(title)}</title>",
-            f"<desc id=\"desc\">{escape(desc)}</desc>",
-            "<style>",
-            f"  text{{font-family:{FONT_STACK};dominant-baseline:alphabetic}}",
-            "  .portrait-line{dominant-baseline:central}",
-            "  svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}",
-            "  @media (prefers-reduced-motion: no-preference){",
-            "    .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}",
-            "    .signal-line{animation:signal-travel 9s ease-in-out infinite}",
-            "    .terminal-cursor{animation:cursor-breathe 2.6s ease-in-out infinite}",
-            "    .portrait-neutral{animation:portrait-scan 8s ease-in-out infinite}",
-            "    .portrait-highlight{animation:highlight-scan 8s ease-in-out infinite}",
-            "  }",
-            "  @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}",
-            "  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(328px);opacity:.9}}",
-            "  @keyframes cursor-breathe{0%,100%{opacity:.8}50%{opacity:.22}}",
-            f"  @keyframes portrait-scan{{0%,18%,100%{{opacity:{palette['portrait_opacity']};fill:{palette['portrait']}}}9%{{opacity:1;fill:{palette['portrait_hi']}}}}}",
-            f"  @keyframes highlight-scan{{0%,18%,100%{{opacity:{palette['portrait_opacity']};fill:{palette['portrait_hi']}}}9%{{opacity:1;fill:{palette['bone']}}}}}",
-            "</style>",
-            '<defs><radialGradient id="portrait-wash">'
-            f'<stop stop-color="{palette["accent"]}" stop-opacity="0.075"/>'
-            f'<stop offset="1" stop-color="{palette["accent"]}" stop-opacity="0"/>'
-            '</radialGradient></defs>',
-            body,
-            "</svg>",
-            "",
+    surface = tag("rect", x=0.5, y=0.5, width=width - 1, height=height - 1, rx=12,
+                  fill=palette["surface"], stroke=palette["border"])
+    bar = tag("rect", width=width, height=bar_height, fill=palette["bar"],
+              **{"clip-path": "url(#frame)"})
+    dots = [
+        tag("circle", cx=25 + index * 14, cy=24, r=3.5, fill=fill)
+        for index, fill in enumerate(palette["dots"])
+    ]
+    caption = label(82, 30, "marcus@github", fill=palette["quiet"], size=16)
+    field = tag("rect", fill="url(#graphite)", **plate)
+    if mobile:
+        artwork = portrait(center_x=240, top=67, height=248)
+        intro = [
+            label(25, 357, "$ whoami", fill=palette["quiet"], size=17, weight=600),
+            label(23, 409, "Marcus Boni", fill=palette["heading"], size=54, weight=800),
+            label(25, 442, "Software developer", fill=palette["copy"], size=23),
         ]
-    )
+    else:
+        artwork = portrait(center_x=754, top=65, height=240)
+        intro = [
+            label(46, 127, "$ whoami", fill=palette["quiet"], size=21, weight=600),
+            label(43, 201, "Marcus Boni", fill=palette["heading"], size=60, weight=800),
+            label(46, 248, "Software developer", fill=palette["copy"], size=26),
+        ]
+
+    return "\n".join([
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+        '<title id="title">Marcus Boni</title>',
+        '<desc id="desc">Silver ASCII portrait of Marcus Boni in a terminal.</desc>',
+        "<style>",
+        f"  text{{font-family:{FONT_STACK}}}",
+        "  .portrait-line{white-space:pre}",
+        "  @media (prefers-reduced-motion: no-preference){",
+        "    #portrait{animation:silver-light 2.4s ease-out both}",
+        "    @keyframes silver-light{from{opacity:.83} to{opacity:1}}",
+        "  }",
+        "</style>",
+        "<defs>",
+        f'  <clipPath id="frame"><rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="11"/></clipPath>',
+        '  <linearGradient id="graphite" x2="1" y2="1">',
+        '    <stop stop-color="#08090b"/>',
+        '    <stop offset="1" stop-color="#1f2329"/>',
+        "  </linearGradient>",
+        '  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="330">',
+        '    <stop stop-color="#8d98a5"/>',
+        '    <stop offset=".42" stop-color="#f4f6f8"/>',
+        '    <stop offset=".72" stop-color="#cbd2da"/>',
+        '    <stop offset="1" stop-color="#8d98a5"/>',
+        "  </linearGradient>",
+        "</defs>",
+        surface, bar, *dots, caption, field, artwork, *intro,
+        "</svg>",
+        "",
+    ])
 
 
 def main() -> None:
-    first_pass: dict[tuple[bool, bool], str] = {}
-    second_pass: dict[tuple[bool, bool], str] = {}
-    for key in OUTPUTS:
-        first_pass[key] = build_svg(mobile=key[0], light=key[1])
-        second_pass[key] = build_svg(mobile=key[0], light=key[1])
-    if first_pass != second_pass:
-        raise RuntimeError("Non-deterministic SVG output")
-
-    for key, path in OUTPUTS.items():
-        path.write_text(first_pass[key], encoding="utf-8", newline="\n")
+    for (mobile, light), filename in OUTPUTS.items():
+        (ROOT / "assets" / filename).write_text(build_svg(mobile, light), encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

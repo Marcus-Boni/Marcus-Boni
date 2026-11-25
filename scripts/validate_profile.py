@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 
-from render_profile_header import build_svg
+from render_profile_header import ASCII_SOURCE, build_svg
 
 ROOT = Path(__file__).resolve().parents[1]
 VARIANTS = {
@@ -71,6 +71,12 @@ def validate_documents() -> None:
 
 def validate_assets() -> None:
     namespace = {"svg": "http://www.w3.org/2000/svg"}
+    portrait = ROOT / "assets" / "chrome-portrait.png"
+    with portrait.open("rb") as image:
+        header = image.read(24)
+    assert header[:8] == b"\x89PNG\r\n\x1a\n" and header[12:16] == b"IHDR", "Avatar must be a PNG"
+    assert tuple(int.from_bytes(header[index:index + 4], "big") for index in (16, 20)) == (500, 500)
+    assert portrait.stat().st_size < 1_000_000, "Avatar must fit GitHub's upload limit"
     for filename, (mobile, light) in VARIANTS.items():
         asset = ROOT / "assets" / filename
         actual = asset.read_text(encoding="utf-8")
@@ -93,21 +99,13 @@ def validate_assets() -> None:
         assert "@import" not in actual and "@font-face" not in actual
         assert not re.search(r"url\(\s*['\"]?(?:https?:|//|data:)", actual)
         assert "@media (prefers-reduced-motion: no-preference)" in actual
-        assert "@keyframes ambient-glow" in actual
-        assert "class=\"portrait-wash\"" in actual
-        assert "@keyframes cursor-breathe" in actual
-        assert "class=\"terminal-cursor\"" in actual
-        assert "@keyframes portrait-scan" in actual
-        assert "@keyframes highlight-scan" in actual
-        portrait_lines = [node for node in root.iter() if "portrait-line" in node.get("class", "").split()]
-        assert len(portrait_lines) >= 30, "The ASCII portrait must retain its original line detail"
-        assert {"portrait-neutral", "portrait-highlight"}.issubset(
-            {name for node in portrait_lines for name in node.get("class", "").split()}
-        )
-        assert all(node.get("style", "").startswith("animation-delay:-") for node in portrait_lines)
-        if not mobile:
-            assert "@keyframes signal-travel" in actual
-            assert "class=\"signal-line\"" in actual
+        assert "@keyframes silver-light" in actual
+        portrait_lines = root.findall(".//svg:g[@id='portrait']/svg:text", namespace)
+        assert len(portrait_lines) >= 30, "The ASCII portrait must keep enough detail"
+        assert [line.text.rstrip() for line in portrait_lines] == [
+            line.rstrip() for line in ASCII_SOURCE.read_text(encoding="ascii").splitlines()
+        ], f"Portrait glyphs do not match the source grid: {filename}"
+        assert len({node.get("textLength") for node in portrait_lines}) == 1
         assert asset.stat().st_size < 75_000, f"Unexpectedly large header: {filename}"
 
 

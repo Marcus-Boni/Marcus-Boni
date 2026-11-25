@@ -1,79 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="340" viewBox="0 0 480 340" role="img" aria-labelledby="title desc">
-<title id="title">Marcus Boni profile header</title>
-<desc id="desc">Mobile terminal-style profile header for Marcus Boni, software developer.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="466" viewBox="0 0 480 466" role="img" aria-labelledby="title desc">
+<title id="title">Marcus Boni</title>
+<desc id="desc">Silver ASCII portrait of Marcus Boni in a terminal.</desc>
 <style>
-  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;dominant-baseline:alphabetic}
-  .portrait-line{dominant-baseline:central}
-  svg{shape-rendering:geometricPrecision;text-rendering:optimizeLegibility}
+  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+  .portrait-line{white-space:pre}
   @media (prefers-reduced-motion: no-preference){
-    .portrait-wash{animation:ambient-glow 8s ease-in-out infinite}
-    .signal-line{animation:signal-travel 9s ease-in-out infinite}
-    .terminal-cursor{animation:cursor-breathe 2.6s ease-in-out infinite}
-    .portrait-neutral{animation:portrait-scan 8s ease-in-out infinite}
-    .portrait-highlight{animation:highlight-scan 8s ease-in-out infinite}
+    #portrait{animation:silver-light 2.4s ease-out both}
+    @keyframes silver-light{from{opacity:.83} to{opacity:1}}
   }
-  @keyframes ambient-glow{0%,100%{opacity:.65}50%{opacity:1}}
-  @keyframes signal-travel{0%,12%,88%,100%{transform:translateX(0);opacity:.35}50%{transform:translateX(328px);opacity:.9}}
-  @keyframes cursor-breathe{0%,100%{opacity:.8}50%{opacity:.22}}
-  @keyframes portrait-scan{0%,18%,100%{opacity:0.96;fill:#30363d}9%{opacity:1;fill:#8b4526}}
-  @keyframes highlight-scan{0%,18%,100%{opacity:0.96;fill:#8b4526}9%{opacity:1;fill:#24292f}}
 </style>
-<defs><radialGradient id="portrait-wash"><stop stop-color="#a65a35" stop-opacity="0.075"/><stop offset="1" stop-color="#a65a35" stop-opacity="0"/></radialGradient></defs>
-<rect width="480" height="340" rx="18" fill="#f6f8fa"/>
-<rect x="22" y="20" width="436" height="298" rx="13" fill="#ffffff" stroke="#d0d7de"/>
-<rect x="22" y="20" width="436" height="38" rx="13" fill="#f1f4f8" stroke="#d0d7de"/>
-<circle cx="42" cy="38" r="5" fill="#ff5f56"/>
-<circle cx="59" cy="38" r="5" fill="#ffbd2e"/>
-<circle cx="76" cy="38" r="5" fill="#27c93f"/>
-<rect x="286" y="68" width="156" height="166" fill="url(#portrait-wash)" class="portrait-wash"/>
-<text x="244" y="44" fill="#57606a" font-size="16" text-anchor="middle">marcus@github:~</text>
-<text x="42" y="88" fill="#1a7f37" font-size="16" font-weight="700">$ whoami</text>
-<rect x="130" y="74" width="8" height="15" rx="1" fill="#1a7f37" opacity="0.8" class="terminal-cursor"/>
-<text x="42" y="143" fill="#24292f" font-size="50" font-weight="800">Marcus</text>
-<text x="42" y="196" fill="#24292f" font-size="50" font-weight="800">Boni</text>
-<text x="44" y="236" fill="#a65a35" font-size="25" font-weight="700">Software developer</text>
-<text x="44" y="275" fill="#57606a" font-size="22">Full-stack products.</text>
-<text x="44" y="304" fill="#57606a" font-size="22">Applied AI.</text>
-<g id="portrait">
-<text x="364" y="84.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-0.00s" xml:space="preserve">               `+*+----:`.`.`::`.....                     </text>
-<text x="364" y="88.1" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-0.18s" xml:space="preserve">            .:=S%%#SssSSscsS##ssscccc*=-:.                </text>
-<text x="364" y="91.5" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-0.36s" xml:space="preserve">          .*SSSs###SscscsssS##ScSSSSS###SS*`              </text>
-<text x="364" y="94.9" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-0.54s" xml:space="preserve">        .:s%S#SsSSss##SssSS###ScSSssSSSSss#s:.            </text>
-<text x="364" y="98.3" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-0.72s" xml:space="preserve">    .:=*sSSSS##%#sS#%%%%%%@@%######scssssccssc+==.        </text>
-<text x="364" y="101.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-0.90s" xml:space="preserve">    :%##SsSsccsSsc#S#SSssS%%#%%###Ss**SSssScsSss#S        </text>
-<text x="364" y="105.1" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-1.08s" xml:space="preserve">   :c#ScsSSc*ccsS**+sssccSScs##S###sc*SSS%%#SsccS%*.      </text>
-<text x="364" y="108.5" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-1.26s" xml:space="preserve">  =##s%%%%S*+*c#Ssc+cSSsSSc+S####S#SSc*S#%#sSs**s#@+      </text>
-<text x="364" y="111.9" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-1.44s" xml:space="preserve">  s%#S##%##%##scs###SSsccssSssssS##sc**ccscccccsS#Sc-     </text>
-<text x="364" y="115.3" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-1.62s" xml:space="preserve"> :%%S##SS%###SsSSSSSscsSssc*===+++**+++++**ccsSSscsS%+    </text>
-<text x="364" y="118.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-1.80s" xml:space="preserve"> -%%%%%%%%Sccsccc*****cc**=-:`:=++*+++=-=+*ccS##SS#%#-    </text>
-<text x="364" y="122.1" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-1.98s" xml:space="preserve"> .%@%%@@@#s*c*++++++===---:```:---------:--=+*ssS##%#.    </text>
-<text x="364" y="125.5" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-2.16s" xml:space="preserve"> `%@@@@%#Ssc**+++===--::::```::-----------===+*sS#%%c     </text>
-<text x="364" y="128.9" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-2.34s" xml:space="preserve">  c@@%##S#Sccc***+++=-::````::::``::--====+=+cSsS#%S.     </text>
-<text x="364" y="132.3" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-2.52s" xml:space="preserve">  .#@@%%%#sccc****+*+=-:`..`::```::-==+++++++*##SS#=      </text>
-<text x="364" y="135.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-2.70s" xml:space="preserve">   `%@@@%SsSSSSSSSsSsscc*+=--=+*cssSssSSSSscc*s%##c       </text>
-<text x="364" y="139.1" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-2.88s" xml:space="preserve">    *@@%#@%%@@@@@@@@@@%%%#SSss#%@@@@@@@@@%%%@#%%%%+       </text>
-<text x="364" y="142.5" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-3.06s" xml:space="preserve">    .%@##%%@@@@@@@@@@@@@@@@%#@@@@@@@@@@@@@%%%%%S%#.       </text>
-<text x="364" y="145.9" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-3.24s" xml:space="preserve">   .+S@@%SS@@@@@@@@@@@@@@@#=-+@@%@@@@@@@@@%%@#S%s+-.      </text>
-<text x="364" y="149.3" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-3.42s" xml:space="preserve">   .%##@#ss#@%@@@@@@@@@@@%s=--c@%%%@%%%@%%##%*c#-+c       </text>
-<text x="364" y="152.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-3.60s" xml:space="preserve">    c%#%#SSS%%%%%%%%@@@@%S*-:-=s%%%%%%%%%##%*=cS=++       </text>
-<text x="364" y="156.1" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-3.78s" xml:space="preserve">    -%%%SS##%%%%%%@@%%#SSs+:.`-+s###%%@%##s+-+cs*-:       </text>
-<text x="364" y="159.5" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-3.96s" xml:space="preserve">     S@%#S#####SSsc*+-*ss#Sc+*s++**csSSSs*=-=c*---.       </text>
-<text x="364" y="162.9" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-4.14s" xml:space="preserve">     -@%%###Ssc*+=-:`:S%#@@%#s##s-`::-====+*cS+-=-        </text>
-<text x="364" y="166.3" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-4.32s" xml:space="preserve">      +#@%#%#Sc*+=-::-+ssSc+*:-+-::``::-=+csSS++-         </text>
-<text x="364" y="169.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-4.50s" xml:space="preserve">       `+c##%#Sc*+==-::::-`.:`.``::----=+cssSc:`          </text>
-<text x="364" y="173.1" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-4.68s" xml:space="preserve">          s#S##Scc*===**sSSscsSc+=--===+csc*S=            </text>
-<text x="364" y="176.5" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-4.86s" xml:space="preserve">          =#ssS#Ss*++s#Ss*+*c*+cSSc*++**sc+*S`            </text>
-<text x="364" y="179.9" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-5.04s" xml:space="preserve">           S#Ss##Sc*+*csSs**cccsc*=+cccs***S+             </text>
-<text x="364" y="183.3" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-5.22s" xml:space="preserve">           s@#SSS#Sssscssssssscccccc*cc**s#S.             </text>
-<text x="364" y="186.7" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-5.40s" xml:space="preserve">           s@%%##Ssc++=-:``....`:--=+*cs##sc.             </text>
-<text x="364" y="190.1" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-5.58s" xml:space="preserve">           c@%%%%%#s*===-:::-:`:::-=cS##S*+*`             </text>
-<text x="364" y="193.5" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-5.76s" xml:space="preserve">           c@%%@%%%%#sccc*++cc*++*s#%#s*=-=*`             </text>
-<text x="364" y="196.9" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-5.94s" xml:space="preserve">           *%##%@@%%%@%%%%%%%%%%%%%#S*-::-=c:             </text>
-<text x="364" y="200.3" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-6.12s" xml:space="preserve">           c#SS#%@@@%@@@@@@@@%%#Sssc+-:::-=c:             </text>
-<text x="364" y="203.7" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-6.30s" xml:space="preserve">           cSsssS#%@@%%%#SSssc****c*-``:-=+**.            </text>
-<text x="364" y="207.1" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-6.48s" xml:space="preserve">         .=#SscccsS#%%%##s+=-=++*cc+::::-=+*s**+          </text>
-<text x="364" y="210.5" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-6.66s" xml:space="preserve">       -sS%#Ssc****s###S##s+=***cc+-::--==+*s**@S*-.      </text>
-<text x="364" y="213.9" class="portrait-line portrait-neutral" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#30363d" font-size="3.09" opacity="0.96" style="animation-delay:-6.84s" xml:space="preserve">   .:c#@%cS#ssc*+===*sSscsSSc*++*+-::--===+*s+s%@@@#*-.   </text>
-<text x="364" y="217.3" class="portrait-line portrait-highlight" text-anchor="middle" textLength="107.564" lengthAdjust="spacingAndGlyphs" fill="#8b4526" font-size="3.09" opacity="0.96" style="animation-delay:-7.02s" xml:space="preserve">.-*#@@@@@SsSsc***+--=*ssc*++==-=+=----=+++++*S@%%%%@@@#c=`</text>
+<defs>
+  <clipPath id="frame"><rect x="1" y="1" width="478" height="464" rx="11"/></clipPath>
+  <linearGradient id="graphite" x2="1" y2="1">
+    <stop stop-color="#08090b"/>
+    <stop offset="1" stop-color="#1f2329"/>
+  </linearGradient>
+  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="330">
+    <stop stop-color="#8d98a5"/>
+    <stop offset=".42" stop-color="#f4f6f8"/>
+    <stop offset=".72" stop-color="#cbd2da"/>
+    <stop offset="1" stop-color="#8d98a5"/>
+  </linearGradient>
+</defs>
+<rect x="0.5" y="0.5" width="479" height="465" rx="12" fill="#f5f6f8" stroke="#b7bdc5"/>
+<rect width="480" height="48" fill="#e9ecf0" clip-path="url(#frame)"/>
+<circle cx="25" cy="24" r="3.5" fill="#454d58"/>
+<circle cx="39" cy="24" r="3.5" fill="#687380"/>
+<circle cx="53" cy="24" r="3.5" fill="#909aa6"/>
+<text x="82" y="30" fill="#4e5662" font-size="16" font-weight="400">marcus@github</text>
+<rect fill="url(#graphite)" x="16" y="59" width="448" height="265" rx="8"/>
+<g id="portrait" fill="url(#silver)">
+<text x="98.07" y="72.41" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                                      .. ..                                     </text>
+<text x="98.07" y="78.76" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                                `:`..`-*==:.:-.                                 </text>
+<text x="98.07" y="85.12" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                              =c=.... ...    ``:-:`..                           </text>
+<text x="98.07" y="91.48" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                         -`.:.-c===:   `    ..:::=:-`:`                         </text>
+<text x="98.07" y="97.84" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                      ..*-:c-  `s#+          `::`+=`.:=-..                      </text>
+<text x="98.07" y="104.2" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                     c=:*-*=`-::--` .`::`.`-*+`  .`:*=s=.:++                    </text>
+<text x="98.07" y="110.56" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                   .-c`:` :::=:      `*s=`:*s=.:` .``-*:`.:++                   </text>
+<text x="98.07" y="116.92" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                 -+`` `sc`.  :=..`  .`.      `=*+`.+=   :=::s:                  </text>
+<text x="98.07" y="123.28" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                .*``.:+c*`   : =:  `+-`.   .:cc:   ** -+`.-* =c`                </text>
+<text x="98.07" y="129.64" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                `.+-`s: ::.:=-==` .=c*=`.=c*:`. `: :-..--` `-:sc                </text>
+<text x="98.07" y="135.99" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                :*- `+.  -+*-:+-...-=*::sSc-:```:S* c:  *-==+c*-                </text>
+<text x="98.07" y="142.35" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                *-:- `-.`--:    `:`+`c: -+=:-`.`:=--:``:`.*+`::+:               </text>
+<text x="98.07" y="148.71" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                  `+*`-`  :-..``.-`.  .`     .``` .` . .--. .cc-:               </text>
+<text x="98.07" y="155.07" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                 ``c= `-`. .`:=-....-`++-`-sc-::. .  ..:+- +-.-*-               </text>
+<text x="98.07" y="161.43" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                 *::     +=  .`...:``..`=*#@@c+=``:.  . :--*` .+`               </text>
+<text x="98.07" y="167.79" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                 =` -::  =:-- .-.:+:`..=*+ssc*+-:+s:. .`:-c.-s=                 </text>
+<text x="98.07" y="174.15" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                   +- `  c.`*`  .   :*`..   .` `:-::.: =+ :`.-c=                </text>
+<text x="98.07" y="180.51" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                  .=   -`SS-:` .:` `*S..`--::===c*= +* :. -:  :+                </text>
+<text x="98.07" y="186.87" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                   .`  ::=*-  -++.`-*S-::S%c*#@s+*-=s-+.==::  .=.               </text>
+<text x="98.07" y="193.23" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                      : ```-. `=- `-*s+:`*#c**=. ==S.:=`-`.`.:`:                </text>
+<text x="98.07" y="199.58" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                          :++. .::s-cs=+-=cc*- `:`s#c*c`  `:+-                  </text>
+<text x="98.07" y="205.94" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                           =-*. `::`:--:s@#s= `=+-+@@s@*  :*.                   </text>
+<text x="98.07" y="212.3" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                           .-+s  . .-`+=*cc+:.-#c=+S+-%%==:`                    </text>
+<text x="98.07" y="218.66" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                            .-- .::`::-c-.:` .c%SSc:`:#@c:                      </text>
+<text x="98.07" y="225.02" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                             .-.. ```.:=-``. :s+=S#+:`s@#+:                     </text>
+<text x="98.07" y="231.38" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                              -s*= ::`+#S-`=-=-:*@#=:.c@#+ss=.                  </text>
+<text x="98.07" y="237.74" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                               S=--``:-+=`:-`  :*@#=`.=*..:=*c*=`               </text>
+<text x="98.07" y="244.1" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                               +s c+.     .`:..:s@#=:.   ::=+:-====-`           </text>
+<text x="98.07" y="250.46" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                              `-S``=    `+*-`  `=c*-:`..  `-cs-   .:=+*=`       </text>
+<text x="98.07" y="256.82" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                           `=cSc+- `  ::-cc: . .*%%s+:.:-:=+`::. .    `+ss+:.   </text>
+<text x="98.07" y="263.17" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                         .=*cs%%+: :-+--:+- .- `+%%S*c ````..  .. ..``::-*+=-:: </text>
+<text x="98.07" y="269.53" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                    .:-+*-:=c#%s*-.`:`:-`.  :` .::`.+*    .`--``..:. ::::=+++++.</text>
+<text x="98.07" y="275.89" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">               `::--+cssSc*+==`:-.: +* .:*.:=::. `*=*c=`....:`:`-s=-+:.      .. </text>
+<text x="98.07" y="282.25" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">            :+*+=+cSS+-*+*ssSc=**s- :@- =`.:`.   ``:=+=-`.`. =+.``-+*:``..      </text>
+<text x="98.07" y="288.61" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">          `=csS##Ssc-`=ss*s%@%S**+c-.==-*c**=:`.. `=`  ..   .:+` -- .:==-:`.    </text>
+<text x="98.07" y="294.97" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">         :=s%@%S*: -Sc=:-+S%#c-:c+::=s+*c++sc+--`.    -= :=:.``    .`:=*sc=:.   </text>
+<text x="98.07" y="301.33" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">       .:=cSs*-`. =#c-:-=+*=-:`.   .+s-.. ..``````````---*#s=-      .`-+#@#+:.  </text>
+<text x="98.07" y="307.69" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">       `:=-`     `=:.`:---:`..    `.  =+:`:----:`..  ...```::``      .`-+s#*-`  </text>
+<text x="98.07" y="314.05" textLength="283.86" lengthAdjust="spacingAndGlyphs" class="portrait-line" font-size="5.91" xml:space="preserve">                                      `     .                              .    </text>
 </g>
+<text x="25" y="357" fill="#4e5662" font-size="17" font-weight="600">$ whoami</text>
+<text x="23" y="409" fill="#16191e" font-size="54" font-weight="800">Marcus Boni</text>
+<text x="25" y="442" fill="#343b45" font-size="23" font-weight="400">Software developer</text>
 </svg>
