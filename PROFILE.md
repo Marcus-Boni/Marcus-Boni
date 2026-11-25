@@ -29,9 +29,8 @@ Both README languages select the appropriate asset with `picture` and `source`.
 Mobile stacks the portrait and name for a wider portrait at narrow viewports.
 When motion is enabled, the glyph rows assemble from the crown to the shoulders.
 An angled reflection then makes a continuous 5.4-second pass across the assembled
-portrait. The open disclosure lets readers hide the animation with the keyboard
-or pointer. Both READMEs link to the standalone SVG for replay. Viewers who prefer
-reduced motion get the complete still frame.
+portrait. Both READMEs embed the responsive image directly in the header. Viewers
+who prefer reduced motion get the complete still frame.
 
 A new visual edition gets new filenames in both READMEs. The GitHub profile
 can serve stale SVG bytes when only a query parameter changes.
