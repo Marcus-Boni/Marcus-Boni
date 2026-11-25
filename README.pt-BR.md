@@ -1,8 +1,8 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-mobile-light.svg?v=silver-ascii-1" />
-  <source media="(max-width: 600px)" srcset="./assets/profile-header-mobile.svg?v=silver-ascii-1" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-light.svg?v=silver-ascii-1" />
-  <img src="./assets/profile-header.svg?v=silver-ascii-1" width="100%" alt="Marcus Boni, desenvolvedor de software. Retrato prateado em ASCII num terminal." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-silver-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/profile-header-silver-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-silver-light.svg" />
+  <img src="./assets/profile-header-silver.svg" width="100%" alt="Marcus Boni, desenvolvedor de software. Retrato prateado em ASCII num terminal." />
 </picture>
 
 <p align="right"><a href="./README.md">English</a> · <strong>Português</strong></p>

@@ -20,18 +20,18 @@ The generator creates four assets from the versioned `assets/chrome-portrait.txt
 
 | Asset | Use |
 | :--- | :--- |
-| `assets/profile-header.svg` | Desktop, dark theme and fallback |
-| `assets/profile-header-light.svg` | Desktop, light theme |
-| `assets/profile-header-mobile.svg` | Mobile, dark theme |
-| `assets/profile-header-mobile-light.svg` | Mobile, light theme |
+| `assets/profile-header-silver.svg` | Desktop, dark theme and fallback |
+| `assets/profile-header-silver-light.svg` | Desktop, light theme |
+| `assets/profile-header-silver-mobile.svg` | Mobile, dark theme |
+| `assets/profile-header-silver-mobile-light.svg` | Mobile, light theme |
 
 Both README languages select the appropriate asset with `picture` and `source`.
 Mobile stacks the portrait and name for a wider portrait at narrow viewports.
 The full portrait is visible on load, with a brief silver fade when the viewer
 has no reduced-motion preference.
 
-When publishing a changed header, update the matching `?v=` asset reference in
-both READMEs so GitHub and browser image caches request the new SVG.
+A new visual edition gets new filenames in both READMEs. The GitHub profile
+can serve stale SVG bytes when only a query parameter changes.
 
 ## Edit the content
 

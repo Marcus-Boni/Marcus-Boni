@@ -12,10 +12,10 @@ from render_profile_header import ASCII_SOURCE, build_svg
 
 ROOT = Path(__file__).resolve().parents[1]
 VARIANTS = {
-    "profile-header.svg": (False, False),
-    "profile-header-light.svg": (False, True),
-    "profile-header-mobile.svg": (True, False),
-    "profile-header-mobile-light.svg": (True, True),
+    "profile-header-silver.svg": (False, False),
+    "profile-header-silver-light.svg": (False, True),
+    "profile-header-silver-mobile.svg": (True, False),
+    "profile-header-silver-mobile-light.svg": (True, True),
 }
 
 

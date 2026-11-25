@@ -9,10 +9,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASCII_SOURCE = ROOT / "assets" / "chrome-portrait.txt"
 OUTPUTS = {
-    (False, False): "profile-header.svg",
-    (False, True): "profile-header-light.svg",
-    (True, False): "profile-header-mobile.svg",
-    (True, True): "profile-header-mobile-light.svg",
+    (False, False): "profile-header-silver.svg",
+    (False, True): "profile-header-silver-light.svg",
+    (True, False): "profile-header-silver-mobile.svg",
+    (True, True): "profile-header-silver-mobile-light.svg",
 }
 
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
