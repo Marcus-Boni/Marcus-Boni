@@ -40,7 +40,7 @@
 - The name carries the hierarchy. Terminal commands and the portrait use system monospace, and the README body uses native GitHub typography.
 - Desktop places the text beside the portrait. Mobile gives the artwork its own full-width plate so the curls, eyes and jaw hold up in a narrow profile column.
 - The glyph grid comes from the luminance of the approved avatar. Preserve the image's downward gaze and reflection pattern across themes.
-- A single silver fade settles the portrait on load when motion is enabled. The fully visible still frame carries the same information.
+- The glyph rows assemble from top to bottom, followed by one angled reflection across the silver. The terminal frame and typography stay fixed. The complete still frame carries the same information.
 
 ## Components
 - Header: `scripts/render_profile_header.py` owns four versioned SVG variants (desktop/mobile × dark/light).

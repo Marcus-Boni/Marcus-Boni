@@ -9,10 +9,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASCII_SOURCE = ROOT / "assets" / "chrome-portrait.txt"
 OUTPUTS = {
-    (False, False): "profile-header-silver.svg",
-    (False, True): "profile-header-silver-light.svg",
-    (True, False): "profile-header-silver-mobile.svg",
-    (True, True): "profile-header-silver-mobile-light.svg",
+    (False, False): "profile-header-silver-motion.svg",
+    (False, True): "profile-header-silver-motion-light.svg",
+    (True, False): "profile-header-silver-motion-mobile.svg",
+    (True, True): "profile-header-silver-motion-mobile-light.svg",
 }
 
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
@@ -57,7 +57,7 @@ def portrait(center_x: int, top: int, height: int) -> str:
     font_size = line_height * 0.93
     width = columns * font_size * 0.60
     x = round(center_x - width / 2, 2)
-    group = ['<g id="portrait" fill="url(#silver)">']
+    group = ['<g id="portrait" fill="url(#silver)"><g id="portrait-glyphs">']
     for index, line in enumerate(lines):
         group.append(tag(
             "text",
@@ -66,9 +66,14 @@ def portrait(center_x: int, top: int, height: int) -> str:
             textLength=round(width, 2),
             lengthAdjust="spacingAndGlyphs",
             content=escape(line.ljust(columns)),
-            **{"class": "portrait-line", "font-size": round(font_size, 2), "xml:space": "preserve"},
+            style=f"--row-delay:{0.18 + index * 0.061:.3f}s",
+            **{
+                "class": "portrait-line",
+                "font-size": round(font_size, 2),
+                "xml:space": "preserve",
+            },
         ))
-    return "\n".join([*group, "</g>"])
+    return "\n".join([*group, "</g></g>"])
 
 
 def build_svg(mobile: bool = False, light: bool = False) -> str:
@@ -105,6 +110,13 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             label(46, 248, "Software developer", fill=palette["copy"], size=26),
         ]
 
+    # The mask moves across the glyphs. The artwork and terminal stay fixed.
+    mask_x, mask_y = plate["x"], plate["y"]
+    mask_width, mask_height = plate["width"], plate["height"]
+    band_height = 92
+    band_y = mask_y - band_height - 40
+    travel = mask_height + band_height + 80
+
     return "\n".join([
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
         '<title id="title">Marcus Boni</title>',
@@ -112,9 +124,13 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
         "<style>",
         f"  text{{font-family:{FONT_STACK}}}",
         "  .portrait-line{white-space:pre}",
+        "  .portrait-reflection{display:none}",
         "  @media (prefers-reduced-motion: no-preference){",
-        "    #portrait{animation:silver-light 2.4s ease-out both}",
-        "    @keyframes silver-light{from{opacity:.83} to{opacity:1}}",
+        "    #portrait .portrait-line{animation:assemble .58s cubic-bezier(.2,.75,.25,1) var(--row-delay) backwards}",
+        "    .portrait-reflection{display:inline}",
+        "    #reflection-band{animation:sweep 2s cubic-bezier(.3,.45,.45,1) 2.65s backwards}",
+        "    @keyframes assemble{from{opacity:.28} to{opacity:1}}",
+        f"    @keyframes sweep{{from{{transform:translateY(0)}} to{{transform:translateY({travel}px)}}}}",
         "  }",
         "</style>",
         "<defs>",
@@ -129,8 +145,22 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
         '    <stop offset=".72" stop-color="#cbd2da"/>',
         '    <stop offset="1" stop-color="#8d98a5"/>',
         "  </linearGradient>",
+        '  <linearGradient id="reflection-falloff" x2="0" y2="1">',
+        '    <stop stop-color="#fff" stop-opacity="0"/>',
+        '    <stop offset=".34" stop-color="#fff" stop-opacity=".65"/>',
+        '    <stop offset=".54" stop-color="#fff"/>',
+        '    <stop offset=".78" stop-color="#fff" stop-opacity=".35"/>',
+        '    <stop offset="1" stop-color="#fff" stop-opacity="0"/>',
+        "  </linearGradient>",
+        f'  <mask id="reflection-mask" maskUnits="userSpaceOnUse" x="{mask_x}" y="{mask_y}" width="{mask_width}" height="{mask_height}">',
+        f'    <g transform="skewY(-7) translate(0 {round(mask_x * .123)})">',
+        f'      <rect id="reflection-band" x="{mask_x}" y="{band_y}" width="{mask_width}" height="{band_height}" fill="url(#reflection-falloff)"/>',
+        "    </g>",
+        "  </mask>",
         "</defs>",
-        surface, bar, *dots, caption, field, artwork, *intro,
+        surface, bar, *dots, caption, field, artwork,
+        '<use class="portrait-reflection" href="#portrait-glyphs" fill="#fff" mask="url(#reflection-mask)" aria-hidden="true"/>',
+        *intro,
         "</svg>",
         "",
     ])
