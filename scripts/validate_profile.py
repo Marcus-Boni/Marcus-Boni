@@ -8,15 +8,10 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from xml.etree import ElementTree as ET
 
-from render_profile_header import ASCII_SOURCE, build_svg
+from render_profile_header import ASCII_SOURCE, OUTPUTS, build_svg
 
 ROOT = Path(__file__).resolve().parents[1]
-VARIANTS = {
-    "profile-header-silver.svg": (False, False),
-    "profile-header-silver-light.svg": (False, True),
-    "profile-header-silver-mobile.svg": (True, False),
-    "profile-header-silver-mobile-light.svg": (True, True),
-}
+
 
 
 def check_reference(reference: str, document: Path) -> None:
@@ -60,7 +55,8 @@ def validate_documents() -> None:
             parser = ProfileHTML(document)
             parser.feed(content)
             assert parser.images == 1, "Keep one header image and native text for the body"
-            assert len(parser.sources) == 3, "Expected mobile and light header sources"
+            assert parser.sources == {name for variant, name in OUTPUTS.items() if variant != (False, False)}
+            assert f'./assets/{OUTPUTS[False, False]}?raw=true' in content, "Provide a replay link"
             assert "contrib-heatmap.svg" not in content, "Do not duplicate native activity"
             assert "language-bar.svg" not in content, "Do not use language counts as expertise"
             approach_heading = "## Como construo" if filename.endswith("pt-BR.md") else "## How I build"
@@ -77,7 +73,7 @@ def validate_assets() -> None:
     assert header[:8] == b"\x89PNG\r\n\x1a\n" and header[12:16] == b"IHDR", "Avatar must be a PNG"
     assert tuple(int.from_bytes(header[index:index + 4], "big") for index in (16, 20)) == (500, 500)
     assert portrait.stat().st_size < 1_000_000, "Avatar must fit GitHub's upload limit"
-    for filename, (mobile, light) in VARIANTS.items():
+    for (mobile, light), filename in OUTPUTS.items():
         asset = ROOT / "assets" / filename
         actual = asset.read_text(encoding="utf-8")
         expected = build_svg(mobile=mobile, light=light)
@@ -98,9 +94,18 @@ def validate_assets() -> None:
                     assert value.startswith("#"), "SVG must not request external resources"
         assert "@import" not in actual and "@font-face" not in actual
         assert not re.search(r"url\(\s*['\"]?(?:https?:|//|data:)", actual)
-        assert "@media (prefers-reduced-motion: no-preference)" in actual
-        assert "@keyframes silver-light" in actual
-        portrait_lines = root.findall(".//svg:g[@id='portrait']/svg:text", namespace)
+        style = root.findtext("svg:style", namespaces=namespace)
+        static_style, media_rule, motion_style = style.partition(
+            "@media (prefers-reduced-motion: no-preference)"
+        )
+        assert media_rule and "animation:" not in static_style
+        assert ".portrait-reflection{display:none}" in static_style
+        assert "@keyframes assemble" in motion_style and "@keyframes sweep" in motion_style
+        assert "infinite" not in motion_style
+        assert root.find("svg:use[@href='#portrait-glyphs']", namespace) is not None
+        portrait_lines = root.findall(".//svg:g[@id='portrait-glyphs']/svg:text", namespace)
+        delays = [float(node.get("style").removeprefix("--row-delay:").removesuffix("s")) for node in portrait_lines]
+        assert delays == sorted(set(delays)), "Every portrait row must have a distinct delay in print order"
         assert len(portrait_lines) >= 30, "The ASCII portrait must keep enough detail"
         assert [line.text.rstrip() for line in portrait_lines] == [
             line.rstrip() for line in ASCII_SOURCE.read_text(encoding="ascii").splitlines()
