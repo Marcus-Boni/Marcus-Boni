@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="248" viewBox="0 0 960 248" role="img" aria-labelledby="bp-title bp-desc">
+<title id="bp-title">Marcus Boni — Systems Architecture</title>
+<desc id="bp-desc">Minimalist monochrome ASCII architecture schematic showing four connected engineering layers: Interfaces, Applied AI, Systems and Data, and Cloud and Ship.</desc>
+<style>
+  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+  .packet,.bus-signal{display:none}
+  @media (prefers-reduced-motion: no-preference){
+    .packet,.bus-signal{display:inline}
+    .bus-signal{animation:bus-flow 6.4s linear infinite}
+    .packet-1{animation:hop-1 6.4s linear infinite}
+    .packet-2{animation:hop-2 6.4s linear infinite}
+    .packet-3{animation:hop-3 6.4s linear infinite}
+    .glow-1{animation:card-lit-1 6.4s ease-in-out infinite}
+    .glow-2{animation:card-lit-2 6.4s ease-in-out infinite}
+    .glow-3{animation:card-lit-3 6.4s ease-in-out infinite}
+    .glow-4{animation:card-lit-4 6.4s ease-in-out infinite}
+    .dot-1{animation:dot-lit-1 6.4s ease-in-out infinite}
+    .dot-2{animation:dot-lit-2 6.4s ease-in-out infinite}
+    .dot-3{animation:dot-lit-3 6.4s ease-in-out infinite}
+    .dot-4{animation:dot-lit-4 6.4s ease-in-out infinite}
+    .tx-bar-1{animation:io-pulse 1.6s ease-in-out 0s infinite}
+    .tx-bar-2{animation:io-pulse 1.6s ease-in-out .22s infinite}
+    .tx-bar-3{animation:io-pulse 1.6s ease-in-out .44s infinite}
+    .rx-bar-1{animation:io-pulse 1.6s ease-in-out .84s infinite}
+    .rx-bar-2{animation:io-pulse 1.6s ease-in-out .62s infinite}
+    .rx-bar-3{animation:io-pulse 1.6s ease-in-out .40s infinite}
+    .bus-led{animation:io-pulse 2.4s ease-in-out infinite}
+    @keyframes bus-flow{0%{stroke-dashoffset:750} 100%{stroke-dashoffset:-54}}
+    @keyframes hop-1{0%,16%{opacity:0;transform:translateX(0)} 18%{opacity:1;transform:translateX(0)} 27%{opacity:1;transform:translateX(24px)} 29%,100%{opacity:0;transform:translateX(24px)}}
+    @keyframes hop-2{0%,40%{opacity:0;transform:translateX(0)} 42%{opacity:1;transform:translateX(0)} 51%{opacity:1;transform:translateX(24px)} 53%,100%{opacity:0;transform:translateX(24px)}}
+    @keyframes hop-3{0%,64%{opacity:0;transform:translateX(0)} 66%{opacity:1;transform:translateX(0)} 75%{opacity:1;transform:translateX(24px)} 77%,100%{opacity:0;transform:translateX(24px)}}
+    @keyframes card-lit-1{0%,100%{opacity:0} 4%,18%{opacity:.78} 26%{opacity:0}}
+    @keyframes card-lit-2{0%,22%{opacity:0} 28%,42%{opacity:.78} 50%,100%{opacity:0}}
+    @keyframes card-lit-3{0%,46%{opacity:0} 52%,66%{opacity:.78} 74%,100%{opacity:0}}
+    @keyframes card-lit-4{0%,70%{opacity:0} 76%,90%{opacity:.78} 98%,100%{opacity:0}}
+    @keyframes dot-lit-1{0%,100%{opacity:.28} 4%,18%{opacity:1} 26%{opacity:.28}}
+    @keyframes dot-lit-2{0%,22%{opacity:.28} 28%,42%{opacity:1} 50%,100%{opacity:.28}}
+    @keyframes dot-lit-3{0%,46%{opacity:.28} 52%,66%{opacity:1} 74%,100%{opacity:.28}}
+    @keyframes dot-lit-4{0%,70%{opacity:.28} 76%,90%{opacity:1} 98%,100%{opacity:.28}}
+    @keyframes io-pulse{0%,100%{opacity:.2} 50%{opacity:.95}}
+  }
+</style>
+<defs>
+  <clipPath id="bp-frame"><rect x="1" y="1" width="958" height="246" rx="11"/></clipPath>
+</defs>
+<rect x="0.5" y="0.5" width="959" height="247" rx="12" fill="#0e1014" stroke="#2d333d"/>
+<rect width="960" height="36" fill="#14171d" clip-path="url(#bp-frame)"/>
+<line x1="1" y1="36" x2="959" y2="36" stroke="#222730"/>
+<text x="22" y="22" fill="#929ca9" font-size="11.5" font-weight="600" letter-spacing="0.06em">SYSTEMS ARCHITECTURE</text>
+<circle cx="830" cy="18" r="2.8" fill="#f1f4f8" class="bus-led" aria-hidden="true"/>
+<text x="938" y="22" fill="#929ca9" font-size="11.5" font-weight="400" text-anchor="end">[ 4 LAYERS ]</text>
+<path d="M132 180V214H828V180" fill="none" stroke="#3e4654" stroke-width="1.15" stroke-dasharray="4 3" aria-hidden="true"/>
+<line x1="364" y1="180" x2="364" y2="214" stroke="#3e4654" stroke-width="1.15" stroke-dasharray="4 3" aria-hidden="true"/>
+<circle cx="364" cy="214" r="2.3" fill="#3e4654" aria-hidden="true"/>
+<line x1="596" y1="180" x2="596" y2="214" stroke="#3e4654" stroke-width="1.15" stroke-dasharray="4 3" aria-hidden="true"/>
+<circle cx="596" cy="214" r="2.3" fill="#3e4654" aria-hidden="true"/>
+<line x1="132" y1="214" x2="828" y2="214" stroke="#ffffff" class="bus-signal" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="54 696" aria-hidden="true"/>
+<rect x="292" y="203" width="376" height="22" rx="4" fill="#141820" stroke="#282e38"/>
+<text x="480.0" y="217.5" fill="#929ca9" font-size="10.2" font-weight="600" text-anchor="middle" letter-spacing="0.04em">DISCOVERY  →  ARCHITECTURE  →  EVAL  →  DEPLOY</text>
+<text x="32" y="217.5" fill="#929ca9" font-size="10" font-weight="700">TX</text>
+<rect x="50" y="209.5" width="3.5" height="9" rx="1" fill="#f1f4f8" opacity="0.9" class="tx-bar-1" aria-hidden="true"/>
+<rect x="56" y="209.5" width="3.5" height="9" rx="1" fill="#f1f4f8" opacity="0.55" class="tx-bar-2" aria-hidden="true"/>
+<rect x="62" y="209.5" width="3.5" height="9" rx="1" fill="#f1f4f8" opacity="0.25" class="tx-bar-3" aria-hidden="true"/>
+<rect x="891" y="209.5" width="3.5" height="9" rx="1" fill="#f1f4f8" opacity="0.9" class="rx-bar-1" aria-hidden="true"/>
+<rect x="897" y="209.5" width="3.5" height="9" rx="1" fill="#f1f4f8" opacity="0.55" class="rx-bar-2" aria-hidden="true"/>
+<rect x="903" y="209.5" width="3.5" height="9" rx="1" fill="#f1f4f8" opacity="0.25" class="rx-bar-3" aria-hidden="true"/>
+<text x="928" y="217.5" fill="#929ca9" font-size="10" font-weight="700" text-anchor="end">RX</text>
+<line x1="233" y1="122" x2="257" y2="122" stroke="#3e4654" stroke-width="1.3" stroke-dasharray="3 3" aria-hidden="true"/>
+<path d="M257 118.5L263 122L257 125.5Z" fill="#3e4654" aria-hidden="true"/>
+<circle cx="235" cy="122" r="2.5" fill="#ffffff" class="packet packet-1" aria-hidden="true"/>
+<line x1="465" y1="122" x2="489" y2="122" stroke="#3e4654" stroke-width="1.3" stroke-dasharray="3 3" aria-hidden="true"/>
+<path d="M489 118.5L495 122L489 125.5Z" fill="#3e4654" aria-hidden="true"/>
+<circle cx="467" cy="122" r="2.5" fill="#ffffff" class="packet packet-2" aria-hidden="true"/>
+<line x1="697" y1="122" x2="721" y2="122" stroke="#3e4654" stroke-width="1.3" stroke-dasharray="3 3" aria-hidden="true"/>
+<path d="M721 118.5L727 122L721 125.5Z" fill="#3e4654" aria-hidden="true"/>
+<circle cx="699" cy="122" r="2.5" fill="#ffffff" class="packet packet-3" aria-hidden="true"/>
+<g class="layer-card layer-1">
+<rect x="32" y="54" width="200" height="126" rx="6" fill="#11141a" stroke="#282e38"/>
+<rect x="32" y="54" width="200" height="126" rx="6" fill="none" stroke="#f1f4f8" class="layer-glow glow-1" stroke-width="1.3" opacity="0" aria-hidden="true"/>
+<path d="M33 60a5 5 0 0 1 5-5h188a5 5 0 0 1 5 5v24H33z" fill="#171b22"/>
+<line x1="33" y1="84" x2="231" y2="84" stroke="#222730"/>
+<path d="M32 59V54H37M227 54H232V59M32 175V180H37M227 180H232V175" fill="none" stroke="#3e4654" stroke-width="1.15" stroke-linecap="square" aria-hidden="true"/>
+<text x="44" y="73.5" fill="#929ca9" font-size="11" font-weight="700">01</text>
+<text x="66" y="73.5" fill="#f4f6f9" font-size="11.5" font-weight="700">INTERFACES</text>
+<circle cx="218" cy="69.5" r="2.8" fill="#f1f4f8" class="node-dot dot-1" opacity="0.28" aria-hidden="true"/>
+<text x="45" y="110" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="57" y="110" fill="#bcc4d0" font-size="11.2" font-weight="400">React · Next.js 16</text>
+<text x="45" y="134" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="57" y="134" fill="#bcc4d0" font-size="11.2" font-weight="400">TypeScript · Tailwind</text>
+<text x="45" y="158" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="57" y="158" fill="#bcc4d0" font-size="11.2" font-weight="400">WebGL · Flutter</text>
+</g>
+<g class="layer-card layer-2">
+<rect x="264" y="54" width="200" height="126" rx="6" fill="#11141a" stroke="#282e38"/>
+<rect x="264" y="54" width="200" height="126" rx="6" fill="none" stroke="#f1f4f8" class="layer-glow glow-2" stroke-width="1.3" opacity="0" aria-hidden="true"/>
+<path d="M265 60a5 5 0 0 1 5-5h188a5 5 0 0 1 5 5v24H265z" fill="#171b22"/>
+<line x1="265" y1="84" x2="463" y2="84" stroke="#222730"/>
+<path d="M264 59V54H269M459 54H464V59M264 175V180H269M459 180H464V175" fill="none" stroke="#3e4654" stroke-width="1.15" stroke-linecap="square" aria-hidden="true"/>
+<text x="276" y="73.5" fill="#929ca9" font-size="11" font-weight="700">02</text>
+<text x="298" y="73.5" fill="#f4f6f9" font-size="11.5" font-weight="700">APPLIED AI</text>
+<circle cx="450" cy="69.5" r="2.8" fill="#f1f4f8" class="node-dot dot-2" opacity="0.28" aria-hidden="true"/>
+<text x="277" y="110" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="289" y="110" fill="#bcc4d0" font-size="11.2" font-weight="400">MCP Servers (16 tools)</text>
+<text x="277" y="134" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="289" y="134" fill="#bcc4d0" font-size="11.2" font-weight="400">pgvector · Grounded RAG</text>
+<text x="277" y="158" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="289" y="158" fill="#bcc4d0" font-size="11.2" font-weight="400">whisper.cpp · Evals</text>
+</g>
+<g class="layer-card layer-3">
+<rect x="496" y="54" width="200" height="126" rx="6" fill="#11141a" stroke="#282e38"/>
+<rect x="496" y="54" width="200" height="126" rx="6" fill="none" stroke="#f1f4f8" class="layer-glow glow-3" stroke-width="1.3" opacity="0" aria-hidden="true"/>
+<path d="M497 60a5 5 0 0 1 5-5h188a5 5 0 0 1 5 5v24H497z" fill="#171b22"/>
+<line x1="497" y1="84" x2="695" y2="84" stroke="#222730"/>
+<path d="M496 59V54H501M691 54H696V59M496 175V180H501M691 180H696V175" fill="none" stroke="#3e4654" stroke-width="1.15" stroke-linecap="square" aria-hidden="true"/>
+<text x="508" y="73.5" fill="#929ca9" font-size="11" font-weight="700">03</text>
+<text x="530" y="73.5" fill="#f4f6f9" font-size="11.5" font-weight="700">SYSTEMS &amp; DATA</text>
+<circle cx="682" cy="69.5" r="2.8" fill="#f1f4f8" class="node-dot dot-3" opacity="0.28" aria-hidden="true"/>
+<text x="509" y="110" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="521" y="110" fill="#bcc4d0" font-size="11.2" font-weight="400">Rust · Tauri 2 · UniFFI</text>
+<text x="509" y="134" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="521" y="134" fill="#bcc4d0" font-size="11.2" font-weight="400">Node · C# · Python</text>
+<text x="509" y="158" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="521" y="158" fill="#bcc4d0" font-size="11.2" font-weight="400">PostgreSQL · Drizzle</text>
+</g>
+<g class="layer-card layer-4">
+<rect x="728" y="54" width="200" height="126" rx="6" fill="#11141a" stroke="#282e38"/>
+<rect x="728" y="54" width="200" height="126" rx="6" fill="none" stroke="#f1f4f8" class="layer-glow glow-4" stroke-width="1.3" opacity="0" aria-hidden="true"/>
+<path d="M729 60a5 5 0 0 1 5-5h188a5 5 0 0 1 5 5v24H729z" fill="#171b22"/>
+<line x1="729" y1="84" x2="927" y2="84" stroke="#222730"/>
+<path d="M728 59V54H733M923 54H928V59M728 175V180H733M923 180H928V175" fill="none" stroke="#3e4654" stroke-width="1.15" stroke-linecap="square" aria-hidden="true"/>
+<text x="740" y="73.5" fill="#929ca9" font-size="11" font-weight="700">04</text>
+<text x="762" y="73.5" fill="#f4f6f9" font-size="11.5" font-weight="700">CLOUD &amp; SHIP</text>
+<circle cx="914" cy="69.5" r="2.8" fill="#f1f4f8" class="node-dot dot-4" opacity="0.28" aria-hidden="true"/>
+<text x="741" y="110" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="753" y="110" fill="#bcc4d0" font-size="11.2" font-weight="400">Azure · Entra ID</text>
+<text x="741" y="134" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="753" y="134" fill="#bcc4d0" font-size="11.2" font-weight="400">Azure DevOps · Docker</text>
+<text x="741" y="158" fill="#aeb7c4" font-size="11.5" font-weight="700">›</text>
+<text x="753" y="158" fill="#bcc4d0" font-size="11.2" font-weight="400">CPU/CUDA · CI Releases</text>
+</g>
+</svg>

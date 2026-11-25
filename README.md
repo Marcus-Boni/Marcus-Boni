@@ -1,57 +1,81 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-silver-loop-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/profile-header-silver-loop-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-silver-loop-light.svg" />
-  <img src="./assets/profile-header-silver-loop.svg" width="100%" alt="Marcus Boni, software developer. Silver ASCII portrait in a terminal." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v4-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v4-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v4-light.svg" />
+  <img src="./assets/hero-terminal-v4.svg" width="100%" alt="Marcus Boni, Forward Deployed Engineer. Monochrome silver ASCII bust portrait in a terminal." />
 </picture>
 
 <p align="right"><strong>English</strong> · <a href="./README.pt-BR.md">Português</a></p>
 
-I’m **Marcus**, a software developer based in Espírito Santo, Brazil. I turn complex workflows into **full-stack products and applied AI**: developer tools, local transcription and retrieval systems that show their sources.
+I’m **Marcus Boni**, a **Forward Deployed Engineer** based in Espírito Santo, Brazil. I work directly with clients from discovery to production deployment — turning real operational needs into **full-stack software, native tools, and applied AI** built for real-world environments, while sharing engineering notes on [my blog](https://marcusboni.com.br/blog).
 
-[Portfolio](https://marcusboni.com.br/) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email](mailto:mgalvaoboni@gmail.com)
+[Portfolio ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email ↗](mailto:mgalvaoboni@gmail.com)
+
+---
 
 ## Selected work
 
-### [OptTime](https://github.com/Marcus-Boni/OptTime) · Developer workflows
+### 01 · [ISPer](https://github.com/Marcus-Boni/ISPer) · Local-first voice engine
 
-Time tracking connected to Azure DevOps: timesheets, dashboards and automations in one application. Includes an Azure DevOps extension and an MCP server so agents can work with the same workflows.
+Offline Windows dictation and Teams meeting transcription built on a **12-crate Rust workspace**, Tauri 2, and `whisper.cpp` (CPU/CUDA). Audio stays on-device; production crates enforce strict zero-`unwrap` Clippy rules across **25 releases (`v0.30.0`)**.
 
-`TypeScript` `Next.js` `PostgreSQL` `Drizzle` `MCP` · [MCP server ↗](https://github.com/Marcus-Boni/OptTime/blob/44a6c930d0725996a23b97cb003ec5df4b9aca57/packages/opt-time-mcp/src/server.ts)
+`Rust` `Tauri 2` `whisper.cpp` `CUDA` `MCP` · [Site ↗](https://isper.pages.dev) · [Releases ↗](https://github.com/Marcus-Boni/ISPer/releases/latest) · [Workspace ↗](https://github.com/Marcus-Boni/ISPer/blob/72ea1174c881e860a32b3aed58f75edbdb5a2f86/Cargo.toml)
 
-### [ISPer](https://github.com/Marcus-Boni/ISPer) · Desktop & audio
+### 02 · [OptTime](https://github.com/Marcus-Boni/OptTime) · Developer workflows & MCP
 
-Local speech transcription with whisper.cpp, a Rust workspace and a Tauri desktop app. Separate audio, model and LLM components, with Windows CPU/CUDA build paths and release checks.
+Full-stack time tracking synced bi-directionally with **Azure DevOps**, featuring approval workflows, dashboards, Entra ID auth, and an Azure DevOps extension. Ships with a dual-transport (`stdio`/HTTP) **MCP server** (16 tools, 4 resources, 3 prompts) for AI agents.
 
-`Rust` `Tauri` `whisper.cpp` `Windows` · [Rust workspace ↗](https://github.com/Marcus-Boni/ISPer/blob/de736db67379d2bddbb11328f917788bc19577e5/Cargo.toml)
+`TypeScript` `Next.js 16` `PostgreSQL` `Drizzle` `MCP` · [Live ↗](https://opt-time.optsolv.com.br) · [MCP server ↗](https://github.com/Marcus-Boni/OptTime/blob/1e492d2e74dad1024c22c2230f0e07cc58796ceb/packages/opt-time-mcp/src/server.ts)
 
-### [chatbot-template](https://github.com/Marcus-Boni/chatbot-template) · Retrieval & AI
+### 03 · [chatbot-template](https://github.com/Marcus-Boni/chatbot-template) · Grounded RAG & evals
 
-A RAG template for searching Teams meeting transcripts. Combines pgvector retrieval, source citations and workspace-scoped search, with an evaluation harness for retrieval quality.
+Config-driven RAG template for Microsoft Teams transcripts over `pgvector` on Neon Postgres. Enforces mandatory source citations, workspace isolation, and a dedicated **retrieval evaluation harness** to measure search quality.
 
-`TypeScript` `Next.js` `CopilotKit` `pgvector` · [Retrieval evaluation ↗](https://github.com/Marcus-Boni/chatbot-template/blob/a9969fc6695030d20b109159a81ee40a0c4b5cc5/src/core/rag/eval.ts)
+`TypeScript` `Next.js 16` `CopilotKit` `pgvector` `Vitest` · [Retrieval eval ↗](https://github.com/Marcus-Boni/chatbot-template/blob/a9969fc6695030d20b109159a81ee40a0c4b5cc5/src/core/rag/eval.ts)
 
-### [Portfolio](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio) · Design & web engineering
+### 04 · [Portfolio & Blog](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio) · Web engineering & OpenAPI
 
-A bilingual portfolio with an interactive WebGL ink field, a Markdown blog and first-party analytics. A public API, OpenAPI contract and agent-readable pages make the content available beyond the visual interface.
+Bilingual portfolio and technical journal with a custom **WebGL/GLSL ink field**, procedural code portrait, Markdown publishing, and first-party analytics. Exposes a public REST API with **OpenAPI contract tests** and agent-readable pages.
 
-`React` `Vite` `TypeScript` `WebGL` `Firebase` · [API contract tests ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/d582da477ef60110f40652afc528a6d2f66fe77a/tests/openapi.test.ts)
+`React` `TypeScript` `WebGL` `Firebase` `OpenAPI` · [Site ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [OpenAPI tests ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/6d9e9b381e04c2a3689f5a1441089a8515d7b6ec/tests/openapi.test.ts)
+
+---
+
+## Architecture & stack
+
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/systems-blueprint-v2-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/systems-blueprint-v2-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/systems-blueprint-v2-light.svg" />
+  <img src="./assets/systems-blueprint-v2.svg" width="100%" alt="Monochrome animated ASCII architecture diagram covering four layers: Interfaces, Applied AI, Systems and Data, and Cloud and Ship." />
+</picture>
+
+- **Interfaces** — TypeScript, React, Next.js, WebGL/GLSL, Tailwind CSS, Flutter, React Native
+- **Applied AI** — MCP Servers, pgvector RAG, Retrieval Evals, whisper.cpp, CopilotKit, Ollama
+- **Systems & Data** — Rust, Tauri 2, UniFFI, Node.js, Python, C#/.NET, Java/Spring, PostgreSQL, Drizzle
+- **Cloud & Delivery** — Azure, Azure DevOps, Docker, GitHub Actions, Firebase, CPU/CUDA Releases
+
+## Writing
+
+I publish regular technical articles on software architecture, applied AI workflows, and engineering decisions behind real projects at **[marcusboni.com.br/blog ↗](https://marcusboni.com.br/blog)**.
 
 <details>
 <summary><strong>More work</strong></summary>
 
-- **[Hour estimation](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — a team-based web workflow for task estimates, dashboards and Excel export.
-- **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — a local-first assistant experiment with FastAPI, Ollama, vector memory and a Next.js dashboard.
-- **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — a real-time demo covering tracking, multi-room chat and asynchronous payment status.
+- **[Auto Daily](https://github.com/Marcus-Boni/Auto-Daily-App)** — AI-assisted standup drafts synthesized from Azure DevOps commits and OptTime logs · [Live ↗](https://auto-daily-app.vercel.app)
+- **[Hour Estimation](https://github.com/Marcus-Boni/Ferramenta-Estimativa-Horas)** — team-based estimation workflow wired to Azure DevOps with dashboards and Excel export · [Live ↗](https://ferramenta-estimativa-horas.vercel.app)
+- **[Jarvis](https://github.com/Marcus-Boni/Jarvis)** — local-first developer assistant with FastAPI, Ollama, vector memory, and a Next.js dashboard
+- **[SignalR Meetup](https://github.com/Marcus-Boni/SignalR-Meetup-App)** — real-time .NET SignalR demo with live tracking, multi-room chat, and async payment state
 
 </details>
 
 ## How I build
 
-- **Start with the workflow.** Turn repetitive operational steps into focused tools and integrations.
-- **Make boundaries explicit.** Separate local processing, external providers and data access.
-- **Make the work inspectable.** Document decisions, test meaningful behavior and keep builds reproducible.
+- **Embedded with clients and real constraints.** As a Forward Deployed Engineer, I talk directly with stakeholders and end users — translating business problems into technical decisions, deploying inside client environments, and iterating until adoption holds in production.
+- **AI-assisted engineering, grounded in fundamentals.** I use AI deliberately to explore architectures, understand complex domains, and accelerate delivery — always anchored in clean design, code review, and modern industry standards.
+- **Explicit boundaries & verifiable behavior.** Separate local compute, inference, and data access; verify with retrieval evals, OpenAPI contract tests, strict lints, and reproducible CI.
+- **Continuous learning in public.** Stay current with evolving systems, applied AI, and software craft — documenting real trade-offs and lessons learned on [the blog](https://marcusboni.com.br/blog).
 
 ---
 
-Interested in developer tools, practical AI or thoughtful web experiences? [Let’s talk.](mailto:mgalvaoboni@gmail.com)
+Looking for a Forward Deployed Engineer or building applied AI and developer software? **[Let’s talk ↗](mailto:mgalvaoboni@gmail.com)** · [Portfolio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)

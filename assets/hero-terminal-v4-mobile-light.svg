@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="466" viewBox="0 0 480 466" role="img" aria-labelledby="title desc">
+<title id="title">Marcus Boni — Forward Deployed Engineer</title>
+<desc id="desc">Minimalist monochrome silver-and-graphite developer terminal with an animated ASCII bust portrait of Marcus Boni, Forward Deployed Engineer.</desc>
+<style>
+  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+  .portrait-line{white-space:pre}
+  .portrait-reflection,.portrait-glint,.scan-beam{display:none}
+  @media (prefers-reduced-motion: no-preference){
+    .cli-line{animation:cli-in .38s cubic-bezier(.16,1,.3,1) var(--cli-delay) backwards}
+    .cli-hero{animation:hero-in .45s cubic-bezier(.16,1,.3,1) var(--cli-delay) backwards}
+    #portrait .portrait-line{animation:assemble .42s cubic-bezier(.2,.75,.25,1) var(--row-delay) backwards}
+    .scan-beam{display:inline;animation:raster-scan 1.55s linear .08s both}
+    .portrait-reflection{display:inline}
+    .portrait-glint{display:inline}
+    #reflection-band{animation:sweep 4.8s linear 1.7s infinite backwards}
+    #glint-band{animation:glint 7.6s linear 3.6s infinite backwards}
+    .cursor-block{animation:cursor-blink 1.05s steps(2,end) .8s infinite}
+    .status-halo{animation:led-pulse 2.8s ease-in-out infinite}
+    @keyframes cli-in{from{opacity:.26;transform:translateX(-5px)} to{opacity:1;transform:translateX(0)}}
+    @keyframes hero-in{from{opacity:.40;transform:translateY(4px)} to{opacity:1;transform:translateY(0)}}
+    @keyframes assemble{from{opacity:.34} to{opacity:1}}
+    @keyframes raster-scan{0%{opacity:0;transform:translateY(0)} 6%{opacity:1} 92%{opacity:1;transform:translateY(236px)} 100%{opacity:0;transform:translateY(246px)}}
+    @keyframes sweep{from{transform:translateY(0)} to{transform:translateY(453px)}}
+    @keyframes glint{from{transform:translateY(0)} to{transform:translateY(386px)}}
+    @keyframes cursor-blink{0%,49%{opacity:1} 50%,100%{opacity:0}}
+    @keyframes led-pulse{0%,100%{opacity:.12} 50%{opacity:.42}}
+  }
+</style>
+<defs>
+  <clipPath id="frame"><rect x="1" y="1" width="478" height="464" rx="11"/></clipPath>
+  <clipPath id="plate-clip"><rect x="17" y="51" width="446" height="254" rx="7"/></clipPath>
+  <linearGradient id="heading-fill" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#12161c"/>
+    <stop offset="1" stop-color="#2e3541"/>
+  </linearGradient>
+  <linearGradient id="obsidian" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#060709"/>
+    <stop offset=".55" stop-color="#0f1218"/>
+    <stop offset="1" stop-color="#191e27"/>
+  </linearGradient>
+  <pattern id="scan-grid" width="4" height="4" patternUnits="userSpaceOnUse">
+    <line x1="0" y1="0" x2="4" y2="0" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1"/>
+  </pattern>
+  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="0" y2="310">
+    <stop stop-color="#b4bfd0"/>
+    <stop offset=".35" stop-color="#ffffff"/>
+    <stop offset=".68" stop-color="#dfe5ee"/>
+    <stop offset="1" stop-color="#aeb9c9"/>
+  </linearGradient>
+  <linearGradient id="beam-glow" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#ffffff" stop-opacity="0"/>
+    <stop offset="1" stop-color="#ffffff" stop-opacity=".22"/>
+  </linearGradient>
+  <linearGradient id="reflection-falloff" x2="0" y2="1">
+    <stop stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".28" stop-color="#fff" stop-opacity=".38"/>
+    <stop offset=".50" stop-color="#fff" stop-opacity=".98"/>
+    <stop offset=".72" stop-color="#fff" stop-opacity=".32"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="glint-falloff" x2="0" y2="1">
+    <stop stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".50" stop-color="#e4ebf5" stop-opacity=".42"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="reflection-mask" maskUnits="userSpaceOnUse" x="16" y="50" width="448" height="256">
+    <g transform="skewY(-8) translate(0 2)">
+      <rect id="reflection-band" x="16" y="-74" width="448" height="114" fill="url(#reflection-falloff)"/>
+    </g>
+  </mask>
+  <mask id="glint-mask" maskUnits="userSpaceOnUse" x="16" y="50" width="448" height="256">
+    <g transform="skewY(6) translate(0 -2)">
+      <rect id="glint-band" x="16" y="-22" width="448" height="62" fill="url(#glint-falloff)"/>
+    </g>
+  </mask>
+</defs>
+<rect x="0.5" y="0.5" width="479" height="465" rx="12" fill="#f6f7f9" stroke="#c3cad4"/>
+<rect width="480" height="38" fill="#ebedf1" clip-path="url(#frame)"/>
+<line x1="1" y1="38" x2="479" y2="38" stroke="#d8dde6"/>
+<circle cx="20" cy="19.0" r="3.3" fill="#3f4754"/>
+<circle cx="33" cy="19.0" r="3.3" fill="#707987"/>
+<circle cx="46" cy="19.0" r="3.3" fill="#a1aab7"/>
+<text x="64" y="23.5" fill="#4d5664" font-size="12.5" font-weight="400">marcus@github</text>
+<circle cx="362" cy="19.0" r="5.2" fill="#151921" class="status-halo" opacity="0.2" aria-hidden="true"/>
+<circle cx="362" cy="19.0" r="2.8" fill="#151921" aria-hidden="true"/>
+<text x="460" y="23.5" fill="#4d5664" font-size="11.5" font-weight="400" text-anchor="end">ES-BR · UTC-3</text>
+<rect fill="url(#obsidian)" stroke="#2b323d" x="16" y="50" width="448" height="256" rx="8"/>
+<rect x="17" y="51" width="446" height="254" rx="7" fill="url(#scan-grid)" aria-hidden="true"/>
+<path d="M25 66V59H32M448 59H455V66M25 290V297H32M448 297H455V290" fill="none" stroke="#4d5766" stroke-width="1.0" stroke-linecap="square" aria-hidden="true"/>
+<g id="portrait" fill="url(#silver)"><g id="portrait-glyphs">
+<text x="102.33" y="64.19" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.080s" class="portrait-line" font-size="5.74" xml:space="preserve">                                      .. ..                                     </text>
+<text x="102.33" y="70.29" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.116s" class="portrait-line" font-size="5.74" xml:space="preserve">                                `:`..`-*==:.:-.                                 </text>
+<text x="102.33" y="76.39" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.152s" class="portrait-line" font-size="5.74" xml:space="preserve">                              =c=.... ...    ``:-:`..                           </text>
+<text x="102.33" y="82.49" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.188s" class="portrait-line" font-size="5.74" xml:space="preserve">                         -`.:.-c===:   `    ..:::=:-`:`                         </text>
+<text x="102.33" y="88.6" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.224s" class="portrait-line" font-size="5.74" xml:space="preserve">                      ..*-:c-  `s#+          `::`+=`.:=-..                      </text>
+<text x="102.33" y="94.7" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.260s" class="portrait-line" font-size="5.74" xml:space="preserve">                     c=:*-*=`-::--` .`::`.`-*+`  .`:*=s=.:++                    </text>
+<text x="102.33" y="100.8" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.296s" class="portrait-line" font-size="5.74" xml:space="preserve">                   .-c`:` :::=:      `*s=`:*s=.:` .``-*:`.:++                   </text>
+<text x="102.33" y="106.91" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.332s" class="portrait-line" font-size="5.74" xml:space="preserve">                 -+`` `sc`.  :=..`  .`.      `=*+`.+=   :=::s:                  </text>
+<text x="102.33" y="113.01" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.368s" class="portrait-line" font-size="5.74" xml:space="preserve">                .*``.:+c*`   : =:  `+-`.   .:cc:   ** -+`.-* =c`                </text>
+<text x="102.33" y="119.11" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.404s" class="portrait-line" font-size="5.74" xml:space="preserve">                `.+-`s: ::.:=-==` .=c*=`.=c*:`. `: :-..--` `-:sc                </text>
+<text x="102.33" y="125.21" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.440s" class="portrait-line" font-size="5.74" xml:space="preserve">                :*- `+.  -+*-:+-...-=*::sSc-:```:S* c:  *-==+c*-                </text>
+<text x="102.33" y="131.32" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.476s" class="portrait-line" font-size="5.74" xml:space="preserve">                *-:- `-.`--:    `:`+`c: -+=:-`.`:=--:``:`.*+`::+:               </text>
+<text x="102.33" y="137.42" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.512s" class="portrait-line" font-size="5.74" xml:space="preserve">                  `+*`-`  :-..``.-`.  .`     .``` .` . .--. .cc-:               </text>
+<text x="102.33" y="143.52" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.548s" class="portrait-line" font-size="5.74" xml:space="preserve">                 ``c= `-`. .`:=-....-`++-`-sc-::. .  ..:+- +-.-*-               </text>
+<text x="102.33" y="149.62" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.584s" class="portrait-line" font-size="5.74" xml:space="preserve">                 *::     +=  .`...:``..`=*#@@c+=``:.  . :--*` .+`               </text>
+<text x="102.33" y="155.73" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.620s" class="portrait-line" font-size="5.74" xml:space="preserve">                 =` -::  =:-- .-.:+:`..=*+ssc*+-:+s:. .`:-c.-s=                 </text>
+<text x="102.33" y="161.83" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.656s" class="portrait-line" font-size="5.74" xml:space="preserve">                   +- `  c.`*`  .   :*`..   .` `:-::.: =+ :`.-c=                </text>
+<text x="102.33" y="167.93" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.692s" class="portrait-line" font-size="5.74" xml:space="preserve">                  .=   -`SS-:` .:` `*S..`--::===c*= +* :. -:  :+                </text>
+<text x="102.33" y="174.03" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.728s" class="portrait-line" font-size="5.74" xml:space="preserve">                   .`  ::=*-  -++.`-*S-::S%c*#@s+*-=s-+.==::  .=.               </text>
+<text x="102.33" y="180.14" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.764s" class="portrait-line" font-size="5.74" xml:space="preserve">                      : ```-. `=- `-*s+:`*#c**=. ==S.:=`-`.`.:`:                </text>
+<text x="102.33" y="186.24" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.800s" class="portrait-line" font-size="5.74" xml:space="preserve">                          :++. .::s-cs=+-=cc*- `:`s#c*c`  `:+-                  </text>
+<text x="102.33" y="192.34" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.836s" class="portrait-line" font-size="5.74" xml:space="preserve">                           =-*. `::`:--:s@#s= `=+-+@@s@*  :*.                   </text>
+<text x="102.33" y="198.44" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.872s" class="portrait-line" font-size="5.74" xml:space="preserve">                           .-+s  . .-`+=*cc+:.-#c=+S+-%%==:`                    </text>
+<text x="102.33" y="204.55" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.908s" class="portrait-line" font-size="5.74" xml:space="preserve">                            .-- .::`::-c-.:` .c%SSc:`:#@c:                      </text>
+<text x="102.33" y="210.65" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.944s" class="portrait-line" font-size="5.74" xml:space="preserve">                             .-.. ```.:=-``. :s+=S#+:`s@#+:                     </text>
+<text x="102.33" y="216.75" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:0.980s" class="portrait-line" font-size="5.74" xml:space="preserve">                              -s*= ::`+#S-`=-=-:*@#=:.c@#+ss=.                  </text>
+<text x="102.33" y="222.85" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.016s" class="portrait-line" font-size="5.74" xml:space="preserve">                               S=--``:-+=`:-`  :*@#=`.=*..:=*c*=`               </text>
+<text x="102.33" y="228.96" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.052s" class="portrait-line" font-size="5.74" xml:space="preserve">                               +s c+.     .`:..:s@#=:.   ::=+:-====-`           </text>
+<text x="102.33" y="235.06" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.088s" class="portrait-line" font-size="5.74" xml:space="preserve">                              `-S``=    `+*-`  `=c*-:`..  `-cs-   .:=+*=`       </text>
+<text x="102.33" y="241.16" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.124s" class="portrait-line" font-size="5.74" xml:space="preserve">                           `=cSc+- `  ::-cc: . .*%%s+:.:-:=+`::. .    `+ss+:.   </text>
+<text x="102.33" y="247.26" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.160s" class="portrait-line" font-size="5.74" xml:space="preserve">                         .=*cs%%+: :-+--:+- .- `+%%S*c ````..  .. ..``::-*+=-:: </text>
+<text x="102.33" y="253.37" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.196s" class="portrait-line" font-size="5.74" xml:space="preserve">                    .:-+*-:=c#%s*-.`:`:-`.  :` .::`.+*    .`--``..:. ::::=+++++.</text>
+<text x="102.33" y="259.47" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.232s" class="portrait-line" font-size="5.74" xml:space="preserve">               `::--+cssSc*+==`:-.: +* .:*.:=::. `*=*c=`....:`:`-s=-+:.      .. </text>
+<text x="102.33" y="265.57" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.268s" class="portrait-line" font-size="5.74" xml:space="preserve">            :+*+=+cSS+-*+*ssSc=**s- :@- =`.:`.   ``:=+=-`.`. =+.``-+*:``..      </text>
+<text x="102.33" y="271.67" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.304s" class="portrait-line" font-size="5.74" xml:space="preserve">          `=csS##Ssc-`=ss*s%@%S**+c-.==-*c**=:`.. `=`  ..   .:+` -- .:==-:`.    </text>
+<text x="102.33" y="277.78" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.340s" class="portrait-line" font-size="5.74" xml:space="preserve">         :=s%@%S*: -Sc=:-+S%#c-:c+::=s+*c++sc+--`.    -= :=:.``    .`:=*sc=:.   </text>
+<text x="102.33" y="283.88" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.376s" class="portrait-line" font-size="5.74" xml:space="preserve">       .:=cSs*-`. =#c-:-=+*=-:`.   .+s-.. ..``````````---*#s=-      .`-+#@#+:.  </text>
+<text x="102.33" y="289.98" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.412s" class="portrait-line" font-size="5.74" xml:space="preserve">       `:=-`     `=:.`:---:`..    `.  =+:`:----:`..  ...```::``      .`-+s#*-`  </text>
+<text x="102.33" y="296.08" textLength="275.35" lengthAdjust="spacingAndGlyphs" style="--row-delay:1.448s" class="portrait-line" font-size="5.74" xml:space="preserve">                                      `     .                              .    </text>
+</g></g>
+<use class="portrait-reflection" href="#portrait-glyphs" fill="#ffffff" mask="url(#reflection-mask)" aria-hidden="true"/>
+<use class="portrait-glint" href="#portrait-glyphs" fill="#e8eef7" mask="url(#glint-mask)" aria-hidden="true"/>
+<g class="scan-beam" clip-path="url(#plate-clip)" aria-hidden="true">
+  <rect x="16" y="43" width="448" height="18" fill="url(#beam-glow)"/>
+  <rect x="16" y="59" width="448" height="1.5" fill="#ffffff" opacity="0.88"/>
+</g>
+<g class="cli-line" style="--cli-delay:0.04s"><text x="26" y="344" fill="#151921" font-size="15.5" font-weight="700">$</text><text x="41" y="344" fill="#4d5664" font-size="15.5" font-weight="600">whoami</text></g>
+<g class="cli-hero" style="--cli-delay:0.14s"><text x="24" y="398" fill="url(#heading-fill)" font-size="48" font-weight="800">Marcus Boni</text><text x="26" y="429" fill="#2d3542" font-size="20" font-weight="500">Forward Deployed Engineer</text></g>
+<g class="cli-line" style="--cli-delay:0.32s"><text x="26" y="454" fill="#151921" font-size="12.5" font-weight="700">$</text><text x="40" y="454" fill="#4d5664" font-size="12" font-weight="400" textLength="166" lengthAdjust="spacingAndGlyphs">marcusboni.com.br/blog</text><rect x="211" y="443.5" width="7.5" height="13" rx="1.5" fill="#151921" class="cursor-block" aria-hidden="true"/></g>
+</svg>
