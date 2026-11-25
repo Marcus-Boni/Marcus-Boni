@@ -29,6 +29,7 @@ class ProfileHTML(HTMLParser):
         self.document = document
         self.sources: set[str] = set()
         self.images = 0
+        self.in_open_details = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = dict(attrs)
@@ -37,11 +38,18 @@ class ProfileHTML(HTMLParser):
             value = attributes.get(attribute)
             if value:
                 check_reference(value, self.document)
+        if tag == "details":
+            self.in_open_details = "open" in attributes
         if tag == "img":
+            assert self.in_open_details, "Put the animated header inside an open disclosure"
             self.images += 1
             assert attributes.get("alt", "").strip(), "Image needs alternative text"
         if tag == "source":
             self.sources.add(Path(attributes["srcset"]).name)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "details":
+            self.in_open_details = False
 
 
 def validate_documents() -> None:
@@ -60,7 +68,7 @@ def validate_documents() -> None:
             assert "contrib-heatmap.svg" not in content, "Do not duplicate native activity"
             assert "language-bar.svg" not in content, "Do not use language counts as expertise"
             approach_heading = "## Como construo" if filename.endswith("pt-BR.md") else "## How I build"
-            assert content.index(approach_heading) > content.index("</details>"), "Keep the engineering approach visible"
+            assert content.index(approach_heading) > content.rindex("</details>"), "Keep the engineering approach visible"
             project_sets.append(set(re.findall(r"https://github.com/Marcus-Boni/[\w.-]+", content)))
     assert project_sets[0] == project_sets[1], "README languages must link the same projects"
 
@@ -101,7 +109,12 @@ def validate_assets() -> None:
         assert media_rule and "animation:" not in static_style
         assert ".portrait-reflection{display:none}" in static_style
         assert "@keyframes assemble" in motion_style and "@keyframes sweep" in motion_style
-        assert "infinite" not in motion_style
+        looping_rules = [
+            line.strip() for line in motion_style.splitlines() if "infinite" in line
+        ]
+        assert len(looping_rules) == 1 and looping_rules[0].startswith("#reflection-band{animation:sweep "), (
+            "Only the reflection should loop"
+        )
         assert root.find("svg:use[@href='#portrait-glyphs']", namespace) is not None
         portrait_lines = root.findall(".//svg:g[@id='portrait-glyphs']/svg:text", namespace)
         delays = [float(node.get("style").removeprefix("--row-delay:").removesuffix("s")) for node in portrait_lines]

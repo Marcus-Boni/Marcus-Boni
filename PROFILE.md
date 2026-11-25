@@ -20,17 +20,18 @@ The generator creates four assets from the versioned `assets/chrome-portrait.txt
 
 | Asset | Use |
 | :--- | :--- |
-| `assets/profile-header-silver-motion.svg` | Desktop, dark theme and fallback |
-| `assets/profile-header-silver-motion-light.svg` | Desktop, light theme |
-| `assets/profile-header-silver-motion-mobile.svg` | Mobile, dark theme |
-| `assets/profile-header-silver-motion-mobile-light.svg` | Mobile, light theme |
+| `assets/profile-header-silver-loop.svg` | Desktop, dark theme and fallback |
+| `assets/profile-header-silver-loop-light.svg` | Desktop, light theme |
+| `assets/profile-header-silver-loop-mobile.svg` | Mobile, dark theme |
+| `assets/profile-header-silver-loop-mobile-light.svg` | Mobile, light theme |
 
 Both README languages select the appropriate asset with `picture` and `source`.
 Mobile stacks the portrait and name for a wider portrait at narrow viewports.
-When motion is enabled, the glyph rows assemble from the crown to the shoulders,
-then an angled silver reflection crosses the portrait. The sequence runs once in
-under five seconds. Both READMEs link to the standalone SVG for replay. Viewers
-who prefer reduced motion get the complete still frame.
+When motion is enabled, the glyph rows assemble from the crown to the shoulders.
+An angled reflection then makes a continuous 5.4-second pass across the assembled
+portrait. The open disclosure lets readers hide the animation with the keyboard
+or pointer. Both READMEs link to the standalone SVG for replay. Viewers who prefer
+reduced motion get the complete still frame.
 
 A new visual edition gets new filenames in both READMEs. The GitHub profile
 can serve stale SVG bytes when only a query parameter changes.

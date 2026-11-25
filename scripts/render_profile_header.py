@@ -3,16 +3,17 @@
 from __future__ import annotations
 
 from html import escape
+from math import ceil, radians, tan
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 ASCII_SOURCE = ROOT / "assets" / "chrome-portrait.txt"
 OUTPUTS = {
-    (False, False): "profile-header-silver-motion.svg",
-    (False, True): "profile-header-silver-motion-light.svg",
-    (True, False): "profile-header-silver-motion-mobile.svg",
-    (True, True): "profile-header-silver-motion-mobile-light.svg",
+    (False, False): "profile-header-silver-loop.svg",
+    (False, True): "profile-header-silver-loop-light.svg",
+    (True, False): "profile-header-silver-loop-mobile.svg",
+    (True, True): "profile-header-silver-loop-mobile-light.svg",
 }
 
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
@@ -113,9 +114,12 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     # The mask moves across the glyphs. The artwork and terminal stay fixed.
     mask_x, mask_y = plate["x"], plate["y"]
     mask_width, mask_height = plate["width"], plate["height"]
-    band_height = 92
-    band_y = mask_y - band_height - 40
-    travel = mask_height + band_height + 80
+    band_height = 124
+    band_angle = 7
+    skew = tan(radians(band_angle))
+    # Both ends are outside the plate, so repeating never jumps across a glyph.
+    band_y = mask_y - band_height - 8
+    travel = mask_height + band_height + ceil(mask_width * skew) + 16
 
     return "\n".join([
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
@@ -128,7 +132,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
         "  @media (prefers-reduced-motion: no-preference){",
         "    #portrait .portrait-line{animation:assemble .58s cubic-bezier(.2,.75,.25,1) var(--row-delay) backwards}",
         "    .portrait-reflection{display:inline}",
-        "    #reflection-band{animation:sweep 2s cubic-bezier(.3,.45,.45,1) 2.65s backwards}",
+        "    #reflection-band{animation:sweep 5.4s linear 2.7s infinite backwards}",
         "    @keyframes assemble{from{opacity:.28} to{opacity:1}}",
         f"    @keyframes sweep{{from{{transform:translateY(0)}} to{{transform:translateY({travel}px)}}}}",
         "  }",
@@ -147,13 +151,13 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
         "  </linearGradient>",
         '  <linearGradient id="reflection-falloff" x2="0" y2="1">',
         '    <stop stop-color="#fff" stop-opacity="0"/>',
-        '    <stop offset=".34" stop-color="#fff" stop-opacity=".65"/>',
-        '    <stop offset=".54" stop-color="#fff"/>',
-        '    <stop offset=".78" stop-color="#fff" stop-opacity=".35"/>',
+        '    <stop offset=".32" stop-color="#fff" stop-opacity=".36"/>',
+        '    <stop offset=".52" stop-color="#fff" stop-opacity=".95"/>',
+        '    <stop offset=".74" stop-color="#fff" stop-opacity=".30"/>',
         '    <stop offset="1" stop-color="#fff" stop-opacity="0"/>',
         "  </linearGradient>",
         f'  <mask id="reflection-mask" maskUnits="userSpaceOnUse" x="{mask_x}" y="{mask_y}" width="{mask_width}" height="{mask_height}">',
-        f'    <g transform="skewY(-7) translate(0 {round(mask_x * .123)})">',
+        f'    <g transform="skewY(-{band_angle}) translate(0 {round(mask_x * skew)})">',
         f'      <rect id="reflection-band" x="{mask_x}" y="{band_y}" width="{mask_width}" height="{band_height}" fill="url(#reflection-falloff)"/>',
         "    </g>",
         "  </mask>",
