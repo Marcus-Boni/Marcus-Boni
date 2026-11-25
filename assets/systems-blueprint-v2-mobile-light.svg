@@ -114,5 +114,5 @@
 <text x="34" y="438" fill="#555f6e" font-size="11.5" font-weight="700">›</text>
 <text x="46" y="438" fill="#37404d" font-size="11.5" font-weight="400">CPU/CUDA · CI Releases</text>
 </g>
-<text x="240.0" y="472" fill="#4f5866" font-size="10.2" font-weight="600" text-anchor="middle" letter-spacing="0.03em">WORKFLOW  →  ARCHITECTURE  →  EVAL  →  SHIP</text>
+<text x="240.0" y="472" fill="#4f5866" font-size="10.2" font-weight="600" text-anchor="middle" letter-spacing="0.03em">DISCOVERY  →  ARCHITECTURE  →  EVAL  →  DEPLOY</text>
 </svg>

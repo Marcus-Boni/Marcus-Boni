@@ -14,7 +14,7 @@
 
 ## Visual language
 - Strictly monochrome across both themes: obsidian black, graphite, cool neutral grays, brushed silver, and crisp white in dark mode; paper white, pale silver, charcoal, and deep ink in light mode.
-- Hero (`assets/hero-terminal-v3*.svg`): compact dual-pane chrome terminal pairing a concise 3-line stack readout and live blinking silver cursor beside the animated 82×39 liquid-chrome ASCII bust (white-silver raster scan + dual continuous specular reflections).
+- Hero (`assets/hero-terminal-v4*.svg`): minimalist dual-pane chrome terminal pairing `$ whoami`, `Marcus Boni`, `Forward Deployed Engineer`, and a blinking silver blog prompt beside the animated 82×39 liquid-chrome ASCII bust (white-silver raster scan + dual continuous specular reflections).
 - Architecture (`assets/systems-blueprint-v2*.svg`): minimalist 4-layer ASCII schematic (`Interfaces` → `Applied AI` → `Systems & Data` → `Cloud & Ship`) with animated silver/white signal packets and synchronized border/LED illumination.
 - Reduced motion renders both figures immediately at 100% static clarity.
 

@@ -234,7 +234,7 @@ def build_desktop(p: dict[str, str]) -> str:
         text_el(
             width / 2,
             bus_y + 3.5,
-            "WORKFLOW  →  ARCHITECTURE  →  EVAL  →  SHIP",
+            "DISCOVERY  →  ARCHITECTURE  →  EVAL  →  DEPLOY",
             fill=p["quiet"],
             size=10.2,
             weight=600,
@@ -461,7 +461,7 @@ def build_mobile(p: dict[str, str]) -> str:
         text_el(
             width / 2,
             472,
-            "WORKFLOW  →  ARCHITECTURE  →  EVAL  →  SHIP",
+            "DISCOVERY  →  ARCHITECTURE  →  EVAL  →  DEPLOY",
             fill=p["quiet"],
             size=10.2,
             weight=600,

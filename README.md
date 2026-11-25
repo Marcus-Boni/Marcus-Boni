@@ -1,13 +1,13 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v3-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v3-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v3-light.svg" />
-  <img src="./assets/hero-terminal-v3.svg" width="100%" alt="Marcus Boni, software engineer. Monochrome silver ASCII bust portrait and systems terminal." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v4-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v4-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v4-light.svg" />
+  <img src="./assets/hero-terminal-v4.svg" width="100%" alt="Marcus Boni, Forward Deployed Engineer. Monochrome silver ASCII bust portrait in a terminal." />
 </picture>
 
 <p align="right"><strong>English</strong> · <a href="./README.pt-BR.md">Português</a></p>
 
-I’m **Marcus Boni**, a software engineer based in Espírito Santo, Brazil. I build **full-stack products, native desktop systems, and applied AI workflows** — combining solid engineering fundamentals with AI-assisted development and sharing technical notes on [my blog](https://marcusboni.com.br/blog).
+I’m **Marcus Boni**, a **Forward Deployed Engineer** based in Espírito Santo, Brazil. I work directly with clients from discovery to production deployment — turning real operational needs into **full-stack software, native tools, and applied AI** built for real-world environments, while sharing engineering notes on [my blog](https://marcusboni.com.br/blog).
 
 [Portfolio ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email ↗](mailto:mgalvaoboni@gmail.com)
 
@@ -71,11 +71,11 @@ I publish regular technical articles on software architecture, applied AI workfl
 
 ## How I build
 
+- **Embedded with clients and real constraints.** As a Forward Deployed Engineer, I talk directly with stakeholders and end users — translating business problems into technical decisions, deploying inside client environments, and iterating until adoption holds in production.
 - **AI-assisted engineering, grounded in fundamentals.** I use AI deliberately to explore architectures, understand complex domains, and accelerate delivery — always anchored in clean design, code review, and modern industry standards.
-- **Start with the real workflow.** Turn repetitive operational friction into focused software wired directly into the team’s daily ecosystem.
 - **Explicit boundaries & verifiable behavior.** Separate local compute, inference, and data access; verify with retrieval evals, OpenAPI contract tests, strict lints, and reproducible CI.
-- **Continuous learning in public.** Stay current with evolving systems, applied AI, and web craft — documenting real trade-offs and lessons learned on [the blog](https://marcusboni.com.br/blog).
+- **Continuous learning in public.** Stay current with evolving systems, applied AI, and software craft — documenting real trade-offs and lessons learned on [the blog](https://marcusboni.com.br/blog).
 
 ---
 
-Interested in developer tools, applied AI, or clean software engineering? **[Let’s talk ↗](mailto:mgalvaoboni@gmail.com)** · [Portfolio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)
+Looking for a Forward Deployed Engineer or building applied AI and developer software? **[Let’s talk ↗](mailto:mgalvaoboni@gmail.com)** · [Portfolio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)

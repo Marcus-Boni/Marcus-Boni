@@ -21,10 +21,10 @@ The generators produce eight responsive theme-aware SVG assets:
 
 | Figure | Asset | Use |
 | :--- | :--- | :--- |
-| Hero | `assets/hero-terminal-v3.svg` | Desktop, dark theme & fallback |
-| Hero | `assets/hero-terminal-v3-light.svg` | Desktop, light theme |
-| Hero | `assets/hero-terminal-v3-mobile.svg` | Mobile, dark theme |
-| Hero | `assets/hero-terminal-v3-mobile-light.svg` | Mobile, light theme |
+| Hero | `assets/hero-terminal-v4.svg` | Desktop, dark theme & fallback |
+| Hero | `assets/hero-terminal-v4-light.svg` | Desktop, light theme |
+| Hero | `assets/hero-terminal-v4-mobile.svg` | Mobile, dark theme |
+| Hero | `assets/hero-terminal-v4-mobile-light.svg` | Mobile, light theme |
 | Architecture | `assets/systems-blueprint-v2.svg` | Desktop, dark theme & fallback |
 | Architecture | `assets/systems-blueprint-v2-light.svg` | Desktop, light theme |
 | Architecture | `assets/systems-blueprint-v2-mobile.svg` | Mobile, dark theme |

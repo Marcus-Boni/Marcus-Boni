@@ -15,10 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASCII_SOURCE = ROOT / "assets" / "chrome-portrait.txt"
 OUTPUTS = {
-    (False, False): "hero-terminal-v3.svg",
-    (False, True): "hero-terminal-v3-light.svg",
-    (True, False): "hero-terminal-v3-mobile.svg",
-    (True, True): "hero-terminal-v3-mobile-light.svg",
+    (False, False): "hero-terminal-v4.svg",
+    (False, True): "hero-terminal-v4-light.svg",
+    (True, False): "hero-terminal-v4-mobile.svg",
+    (True, True): "hero-terminal-v4-mobile-light.svg",
 }
 
 FONT_STACK = "ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace"
@@ -31,12 +31,9 @@ PALETTES = {
         "divider": "#232832",
         "heading_top": "#ffffff",
         "heading_bottom": "#cbd3de",
-        "subheading": "#d4dbe4",
-        "copy": "#bcc4d0",
-        "key": "#8892a0",
+        "subheading": "#cfd6e0",
         "quiet": "#929ca9",
         "accent": "#f2f5f9",
-        "accent_glow": "#ffffff",
         "dots": ("#d2d8e1", "#8b94a2", "#515966"),
         "plate_border": "#282e38",
         "plate_tick": "#47505e",
@@ -48,29 +45,14 @@ PALETTES = {
         "divider": "#d8dde6",
         "heading_top": "#12161c",
         "heading_bottom": "#2e3541",
-        "subheading": "#28303b",
-        "copy": "#38414e",
-        "key": "#555f6e",
+        "subheading": "#2d3542",
         "quiet": "#4d5664",
         "accent": "#151921",
-        "accent_glow": "#ffffff",
         "dots": ("#3f4754", "#707987", "#a1aab7"),
         "plate_border": "#2b323d",
         "plate_tick": "#4d5766",
     },
 }
-
-DESKTOP_SPECS: list[tuple[str, str]] = [
-    ("core", "TypeScript · Rust · Python · C#"),
-    ("ai", "MCP Servers · pgvector RAG · local whisper.cpp"),
-    ("web", "Next.js · React · Tauri · PostgreSQL · WebGL"),
-]
-
-MOBILE_SPECS: list[tuple[str, str]] = [
-    ("core", "TypeScript · Rust · Python · C#"),
-    ("ai", "MCP · pgvector RAG · local whisper.cpp"),
-    ("web", "Next.js · React · Tauri · PostgreSQL · WebGL"),
-]
 
 
 def tag(name: str, *, content: str | None = None, **attributes: str | int | float) -> str:
@@ -151,15 +133,15 @@ def portrait(center_x: int, top: int, height: int) -> str:
 
 
 def build_svg(mobile: bool = False, light: bool = False) -> str:
-    """Build one monochrome chrome profile hero SVG as a deterministic string."""
+    """Build one minimalist monochrome chrome profile hero SVG."""
     p = PALETTES[light]
-    width, height = (480, 514) if mobile else (960, 336)
+    width, height = (480, 466) if mobile else (960, 326)
     bar_h = 38 if mobile else 40
 
     plate = (
-        dict(x=16, y=50, width=448, height=252, rx=8)
+        dict(x=16, y=50, width=448, height=256, rx=8)
         if mobile
-        else dict(x=574, y=54, width=370, height=266, rx=8)
+        else dict(x=570, y=54, width=374, height=256, rx=8)
     )
     px, py, pw, ph = plate["x"], plate["y"], plate["width"], plate["height"]
 
@@ -178,8 +160,8 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     glint_travel = ph + glint_h + ceil(pw * glint_skew) + 20
 
     # Initial horizontal silver scanline across the portrait height
-    scan_top = 60 if mobile else 64
-    scan_span = 232 if mobile else 244
+    scan_top = 59 if mobile else 63
+    scan_span = 236 if mobile else 236
 
     # Frame & title bar
     surface = tag(
@@ -208,7 +190,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
         bar_right_text = "ES-BR · UTC-3"
         bar_dot_x = 362
     else:
-        bar_left = text_el(72, 24.5, "marcus@github: ~/systems", fill=p["quiet"], size=12.5)
+        bar_left = text_el(72, 24.5, "marcus@github", fill=p["quiet"], size=13)
         bar_right_x = 938
         bar_right_text = "ES-BR · UTC-3"
         bar_dot_x = 834
@@ -253,9 +235,9 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     plate_corners = corner_ticks(px, py, pw, ph, p["plate_tick"])
 
     if mobile:
-        artwork = portrait(center_x=240, top=60, height=232)
+        artwork = portrait(center_x=240, top=59, height=238)
     else:
-        artwork = portrait(center_x=759, top=64, height=246)
+        artwork = portrait(center_x=757, top=63, height=238)
 
     # Crisp monochrome silver raster scan beam
     scan_beam = "\n".join(
@@ -267,49 +249,30 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
         ]
     )
 
-    # Minimalist terminal content
+    # Pure minimalist identity block (no stack clutter)
     terminal_nodes: list[str] = []
     if mobile:
-        tx = 24
+        tx = 26
         terminal_nodes.append(
             '<g class="cli-line" style="--cli-delay:0.04s">'
-            + text_el(tx, 332, "$", fill=p["accent"], size=14, weight=700)
-            + text_el(tx + 14, 332, "whoami", fill=p["quiet"], size=14, weight=600)
+            + text_el(tx, 344, "$", fill=p["accent"], size=15.5, weight=700)
+            + text_el(tx + 15, 344, "whoami", fill=p["quiet"], size=15.5, weight=600)
             + "</g>"
         )
         terminal_nodes.append(
-            '<g class="cli-hero" style="--cli-delay:0.12s">'
-            + text_el(tx - 2, 380, "Marcus Boni", fill="url(#heading-fill)", size=44, weight=800)
-            + text_el(
-                tx,
-                405,
-                "Software Engineer · Full-Stack, Systems & AI",
-                fill=p["subheading"],
-                size=13,
-                weight=500,
-            )
+            '<g class="cli-hero" style="--cli-delay:0.14s">'
+            + text_el(tx - 2, 398, "Marcus Boni", fill="url(#heading-fill)", size=48, weight=800)
+            + text_el(tx, 429, "Forward Deployed Engineer", fill=p["subheading"], size=20, weight=500)
             + "</g>"
         )
-        terminal_nodes.append(
-            tag("line", x1=tx, y1=420, x2=456, y2=420, stroke=p["divider"], **{"class": "cli-line", "style": "--cli-delay:0.22s"})
-        )
-        for idx, (k, v) in enumerate(MOBILE_SPECS):
-            row_y = 442 + idx * 20
-            delay = 0.28 + idx * 0.10
-            terminal_nodes.append(
-                f'<g class="cli-line" style="--cli-delay:{delay:.2f}s">'
-                + text_el(tx, row_y, k, fill=p["key"], size=11.5, weight=600)
-                + text_el(tx + 54, row_y, v, fill=p["copy"], size=11.5)
-                + "</g>"
-            )
         status_str = "marcusboni.com.br/blog"
         status_w = 166
         terminal_nodes.append(
-            '<g class="cli-line" style="--cli-delay:0.62s">'
-            + text_el(tx, 502, "$", fill=p["accent"], size=12.5, weight=700)
+            '<g class="cli-line" style="--cli-delay:0.32s">'
+            + text_el(tx, 454, "$", fill=p["accent"], size=12.5, weight=700)
             + text_el(
                 tx + 14,
-                502,
+                454,
                 status_str,
                 fill=p["quiet"],
                 size=12,
@@ -319,7 +282,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             + tag(
                 "rect",
                 x=tx + 14 + status_w + 5,
-                y=491.5,
+                y=443.5,
                 width=7.5,
                 height=13,
                 rx=1.5,
@@ -329,58 +292,39 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             + "</g>"
         )
     else:
-        tx = 36
+        tx = 44
         terminal_nodes.append(
             '<g class="cli-line" style="--cli-delay:0.04s">'
-            + text_el(tx, 84, "$", fill=p["accent"], size=15, weight=700)
-            + text_el(tx + 15, 84, "whoami", fill=p["quiet"], size=15, weight=600)
+            + text_el(tx, 118, "$", fill=p["accent"], size=19, weight=700)
+            + text_el(tx + 18, 118, "whoami", fill=p["quiet"], size=19, weight=600)
             + "</g>"
         )
         terminal_nodes.append(
-            '<g class="cli-hero" style="--cli-delay:0.12s">'
-            + text_el(tx - 2, 142, "Marcus Boni", fill="url(#heading-fill)", size=54, weight=800)
-            + text_el(
-                tx,
-                172,
-                "Software Engineer · Full-Stack, Systems & AI",
-                fill=p["subheading"],
-                size=15,
-                weight=500,
-            )
+            '<g class="cli-hero" style="--cli-delay:0.14s">'
+            + text_el(tx - 3, 188, "Marcus Boni", fill="url(#heading-fill)", size=58, weight=800)
+            + text_el(tx, 229, "Forward Deployed Engineer", fill=p["subheading"], size=22.5, weight=500)
             + "</g>"
         )
-        terminal_nodes.append(
-            tag("line", x1=tx, y1=192, x2=542, y2=192, stroke=p["divider"], **{"class": "cli-line", "style": "--cli-delay:0.22s"})
-        )
-        for idx, (k, v) in enumerate(DESKTOP_SPECS):
-            row_y = 220 + idx * 23.5
-            delay = 0.28 + idx * 0.10
-            terminal_nodes.append(
-                f'<g class="cli-line" style="--cli-delay:{delay:.2f}s">'
-                + text_el(tx, row_y, k, fill=p["key"], size=13, weight=600)
-                + text_el(tx + 58, row_y, v, fill=p["copy"], size=13)
-                + "</g>"
-            )
         status_str = "marcusboni.com.br/blog"
-        status_w = 174
+        status_w = 186
         terminal_nodes.append(
-            '<g class="cli-line" style="--cli-delay:0.64s">'
-            + text_el(tx, 306, "$", fill=p["accent"], size=13.5, weight=700)
+            '<g class="cli-line" style="--cli-delay:0.34s">'
+            + text_el(tx, 282, "$", fill=p["accent"], size=14, weight=700)
             + text_el(
-                tx + 15,
-                306,
+                tx + 16,
+                282,
                 status_str,
                 fill=p["quiet"],
-                size=13,
+                size=13.5,
                 textLength=status_w,
                 lengthAdjust="spacingAndGlyphs",
             )
             + tag(
                 "rect",
-                x=tx + 15 + status_w + 6,
-                y=294.5,
-                width=8,
-                height=14,
+                x=tx + 16 + status_w + 6,
+                y=270,
+                width=8.5,
+                height=14.5,
                 rx=1.5,
                 fill=p["accent"],
                 **{"class": "cursor-block", "aria-hidden": "true"},
@@ -391,8 +335,8 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
     return "\n".join(
         [
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-            '<title id="title">Marcus Boni — Software Engineer</title>',
-            '<desc id="desc">Monochrome silver-and-graphite developer terminal with an animated ASCII bust portrait of Marcus Boni and core engineering stack.</desc>',
+            '<title id="title">Marcus Boni — Forward Deployed Engineer</title>',
+            '<desc id="desc">Minimalist monochrome silver-and-graphite developer terminal with an animated ASCII bust portrait of Marcus Boni, Forward Deployed Engineer.</desc>',
             "<style>",
             f"  text{{font-family:{FONT_STACK}}}",
             "  .portrait-line{white-space:pre}",
@@ -406,7 +350,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             "    .portrait-glint{display:inline}",
             "    #reflection-band{animation:sweep 4.8s linear 1.7s infinite backwards}",
             "    #glint-band{animation:glint 7.6s linear 3.6s infinite backwards}",
-            "    .cursor-block{animation:cursor-blink 1.05s steps(2,end) 1.0s infinite}",
+            "    .cursor-block{animation:cursor-blink 1.05s steps(2,end) .8s infinite}",
             "    .status-halo{animation:led-pulse 2.8s ease-in-out infinite}",
             "    @keyframes cli-in{from{opacity:.26;transform:translateX(-5px)} to{opacity:1;transform:translateX(0)}}",
             "    @keyframes hero-in{from{opacity:.40;transform:translateY(4px)} to{opacity:1;transform:translateY(0)}}",
@@ -433,7 +377,7 @@ def build_svg(mobile: bool = False, light: bool = False) -> str:
             '  <pattern id="scan-grid" width="4" height="4" patternUnits="userSpaceOnUse">',
             '    <line x1="0" y1="0" x2="4" y2="0" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1"/>',
             "  </pattern>",
-            '  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="0" y2="320">',
+            '  <linearGradient id="silver" gradientUnits="userSpaceOnUse" x1="0" y1="50" x2="0" y2="310">',
             '    <stop stop-color="#b4bfd0"/>',
             '    <stop offset=".35" stop-color="#ffffff"/>',
             '    <stop offset=".68" stop-color="#dfe5ee"/>',

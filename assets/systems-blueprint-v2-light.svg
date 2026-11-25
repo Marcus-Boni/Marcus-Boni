@@ -56,7 +56,7 @@
 <circle cx="596" cy="214" r="2.3" fill="#a5afbd" aria-hidden="true"/>
 <line x1="132" y1="214" x2="828" y2="214" stroke="#161a22" class="bus-signal" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="54 696" aria-hidden="true"/>
 <rect x="292" y="203" width="376" height="22" rx="4" fill="#ffffff" stroke="#cfd6df"/>
-<text x="480.0" y="217.5" fill="#4f5866" font-size="10.2" font-weight="600" text-anchor="middle" letter-spacing="0.04em">WORKFLOW  →  ARCHITECTURE  →  EVAL  →  SHIP</text>
+<text x="480.0" y="217.5" fill="#4f5866" font-size="10.2" font-weight="600" text-anchor="middle" letter-spacing="0.04em">DISCOVERY  →  ARCHITECTURE  →  EVAL  →  DEPLOY</text>
 <text x="32" y="217.5" fill="#4f5866" font-size="10" font-weight="700">TX</text>
 <rect x="50" y="209.5" width="3.5" height="9" rx="1" fill="#161a22" opacity="0.9" class="tx-bar-1" aria-hidden="true"/>
 <rect x="56" y="209.5" width="3.5" height="9" rx="1" fill="#161a22" opacity="0.55" class="tx-bar-2" aria-hidden="true"/>

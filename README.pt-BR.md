@@ -1,13 +1,13 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v3-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v3-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v3-light.svg" />
-  <img src="./assets/hero-terminal-v3.svg" width="100%" alt="Marcus Boni, engenheiro de software. Busto prateado monocromático animado em ASCII e terminal de sistemas." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/hero-terminal-v4-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/hero-terminal-v4-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-terminal-v4-light.svg" />
+  <img src="./assets/hero-terminal-v4.svg" width="100%" alt="Marcus Boni, Forward Deployed Engineer. Busto prateado monocromático animado em ASCII em um terminal." />
 </picture>
 
 <p align="right"><a href="./README.md">English</a> · <strong>Português</strong></p>
 
-Sou **Marcus Boni**, engenheiro de software no Espírito Santo, Brasil. Construo **produtos full-stack, sistemas desktop nativos e fluxos de IA aplicada** — unindo fundamentos sólidos de engenharia ao desenvolvimento assistido por IA e publicando notas técnicas no [meu blog](https://marcusboni.com.br/blog).
+Sou **Marcus Boni**, **Forward Deployed Engineer** no Espírito Santo, Brasil. Atuo diretamente com clientes do entendimento do problema ao deploy em produção — transformando necessidades operacionais reais em **software full-stack, ferramentas nativas e IA aplicada** feitas para rodar em ambientes reais, além de publicar notas técnicas no [meu blog](https://marcusboni.com.br/blog).
 
 [Portfólio ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/) · [E-mail ↗](mailto:mgalvaoboni@gmail.com)
 
@@ -71,11 +71,11 @@ Publico com frequência artigos sobre engenharia de software, arquitetura, IA ap
 
 ## Como construo
 
+- **Próximo do cliente e do ambiente real.** Como Forward Deployed Engineer, converso diretamente com clientes e usuários finais — traduzindo dores de negócio em decisões técnicas claras, realizando o deploy no ambiente do cliente e iterando até a adoção se sustentar em produção.
 - **Engenharia assistida por IA com base em fundamentos.** Utilizo IA de forma deliberada para explorar arquiteturas, aprofundar entendimento técnico e acelerar entregas — sempre guiado por boas práticas de mercado, revisão crítica e clareza de código.
-- **Começar pelo fluxo real.** Transformar atritos operacionais repetitivos em ferramentas focadas e integradas diretamente ao ecossistema do time.
 - **Limites explícitos e comportamento verificável.** Isolar processamento local, inferência e acesso a dados; validar com avaliações de busca, testes de contrato OpenAPI, lints estritos e CI reproduzível.
-- **Evolução contínua em público.** Acompanhar de perto o avanço em sistemas, IA aplicada e engenharia web — documentando decisões técnicas e aprendizados reais no [blog](https://marcusboni.com.br/blog).
+- **Evolução contínua em público.** Acompanhar de perto o avanço em sistemas, IA aplicada e engenharia de software — documentando decisões técnicas e aprendizados reais no [blog](https://marcusboni.com.br/blog).
 
 ---
 
-Interesse em ferramentas para desenvolvedores, IA aplicada ou engenharia de software bem feita? **[Vamos conversar ↗](mailto:mgalvaoboni@gmail.com)** · [Portfólio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)
+Procurando um Forward Deployed Engineer ou construindo produtos de IA aplicada e engenharia de software? **[Vamos conversar ↗](mailto:mgalvaoboni@gmail.com)** · [Portfólio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)
