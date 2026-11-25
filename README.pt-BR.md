@@ -1,11 +1,16 @@
+<details open>
+<summary>Retrato ASCII animado</summary>
+
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-silver-motion-mobile-light.svg" />
-  <source media="(max-width: 600px)" srcset="./assets/profile-header-silver-motion-mobile.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-silver-motion-light.svg" />
-  <img src="./assets/profile-header-silver-motion.svg" width="100%" alt="Marcus Boni, desenvolvedor de software. Retrato prateado em ASCII num terminal." />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/profile-header-silver-loop-mobile-light.svg" />
+  <source media="(max-width: 600px)" srcset="./assets/profile-header-silver-loop-mobile.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/profile-header-silver-loop-light.svg" />
+  <img src="./assets/profile-header-silver-loop.svg" width="100%" alt="Marcus Boni, desenvolvedor de software. Retrato prateado em ASCII num terminal." />
 </picture>
 
-<p align="right"><a href="./assets/profile-header-silver-motion.svg?raw=true">Rever a animação do retrato ASCII</a> · <a href="./README.md">English</a> · <strong>Português</strong></p>
+</details>
+
+<p align="right"><a href="./assets/profile-header-silver-loop.svg?raw=true">Rever a animação do retrato ASCII</a> · <a href="./README.md">English</a> · <strong>Português</strong></p>
 
 Sou **Marcus**, desenvolvedor de software no Espírito Santo, Brasil. Transformo fluxos complexos em **produtos full-stack e IA aplicada**: ferramentas para desenvolvedores, transcrição local e sistemas de busca que mostram suas fontes.
 
