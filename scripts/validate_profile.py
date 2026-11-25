@@ -29,7 +29,6 @@ class ProfileHTML(HTMLParser):
         self.document = document
         self.sources: set[str] = set()
         self.images = 0
-        self.in_open_details = False
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = dict(attrs)
@@ -38,18 +37,14 @@ class ProfileHTML(HTMLParser):
             value = attributes.get(attribute)
             if value:
                 check_reference(value, self.document)
-        if tag == "details":
-            self.in_open_details = "open" in attributes
+        if tag == "a" and attributes.get("href"):
+            target = Path(urlsplit(attributes["href"]).path).name
+            assert target not in OUTPUTS.values(), "Keep replay links out of the profile header"
         if tag == "img":
-            assert self.in_open_details, "Put the animated header inside an open disclosure"
             self.images += 1
             assert attributes.get("alt", "").strip(), "Image needs alternative text"
         if tag == "source":
             self.sources.add(Path(attributes["srcset"]).name)
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag == "details":
-            self.in_open_details = False
 
 
 def validate_documents() -> None:
@@ -64,7 +59,7 @@ def validate_documents() -> None:
             parser.feed(content)
             assert parser.images == 1, "Keep one header image and native text for the body"
             assert parser.sources == {name for variant, name in OUTPUTS.items() if variant != (False, False)}
-            assert f'./assets/{OUTPUTS[False, False]}?raw=true' in content, "Provide a replay link"
+            assert content.startswith("<picture>\n"), "Place the portrait directly at the top"
             assert "contrib-heatmap.svg" not in content, "Do not duplicate native activity"
             assert "language-bar.svg" not in content, "Do not use language counts as expertise"
             approach_heading = "## Como construo" if filename.endswith("pt-BR.md") else "## How I build"
