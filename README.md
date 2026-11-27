@@ -7,9 +7,9 @@
 
 <p align="right"><strong>English</strong> · <a href="./README.pt-BR.md">Português</a></p>
 
-I’m **Marcus Boni**, a **Forward Deployed Engineer** based in Espírito Santo, Brazil. I work directly with clients from discovery to production deployment — turning real operational needs into **full-stack software, native tools, and applied AI** built for real-world environments, while sharing engineering notes on [my blog](https://marcusboni.com.br/blog).
+I’m **Marcus Boni**, a **Forward Deployed Engineer** based in Espírito Santo, Brazil. I work directly with clients from discovery to production deployment — turning real operational needs into **full-stack software, native tools, and applied AI** built for real-world environments, while sharing engineering notes on [my blog](https://marcusboni.com.br/blog?utm_source=github&utm_medium=readme&utm_campaign=profile).
 
-[Portfolio ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email ↗](mailto:mgalvaoboni@gmail.com)
+[Portfolio ↗](https://marcusboni.com.br/?utm_source=github&utm_medium=readme&utm_campaign=profile) · [Blog ↗](https://marcusboni.com.br/blog?utm_source=github&utm_medium=readme&utm_campaign=profile) · [LinkedIn ↗](https://www.linkedin.com/in/marcus-boni-729a52243/) · [Email ↗](mailto:mgalvaoboni@gmail.com)
 
 ---
 
@@ -37,7 +37,7 @@ Config-driven RAG template for Microsoft Teams transcripts over `pgvector` on Ne
 
 Bilingual portfolio and technical journal with a custom **WebGL/GLSL ink field**, procedural code portrait, Markdown publishing, and first-party analytics. Exposes a public REST API with **OpenAPI contract tests** and agent-readable pages.
 
-`React` `TypeScript` `WebGL` `Firebase` `OpenAPI` · [Site ↗](https://marcusboni.com.br/) · [Blog ↗](https://marcusboni.com.br/blog) · [OpenAPI tests ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/6d9e9b381e04c2a3689f5a1441089a8515d7b6ec/tests/openapi.test.ts)
+`React` `TypeScript` `WebGL` `Firebase` `OpenAPI` · [Site ↗](https://marcusboni.com.br/?utm_source=github&utm_medium=readme&utm_campaign=profile) · [Blog ↗](https://marcusboni.com.br/blog) · [OpenAPI tests ↗](https://github.com/Marcus-Boni/Marcus-Boni-Portfolio/blob/6d9e9b381e04c2a3689f5a1441089a8515d7b6ec/tests/openapi.test.ts)
 
 ---
 
@@ -74,8 +74,8 @@ I publish regular technical articles on software architecture, applied AI workfl
 - **Embedded with clients and real constraints.** As a Forward Deployed Engineer, I talk directly with stakeholders and end users — translating business problems into technical decisions, deploying inside client environments, and iterating until adoption holds in production.
 - **AI-assisted engineering, grounded in fundamentals.** I use AI deliberately to explore architectures, understand complex domains, and accelerate delivery — always anchored in clean design, code review, and modern industry standards.
 - **Explicit boundaries & verifiable behavior.** Separate local compute, inference, and data access; verify with retrieval evals, OpenAPI contract tests, strict lints, and reproducible CI.
-- **Continuous learning in public.** Stay current with evolving systems, applied AI, and software craft — documenting real trade-offs and lessons learned on [the blog](https://marcusboni.com.br/blog).
+- **Continuous learning in public.** Stay current with evolving systems, applied AI, and software craft — documenting real trade-offs and lessons learned on [the blog](https://marcusboni.com.br/blog?utm_source=github&utm_medium=readme&utm_campaign=profile).
 
 ---
 
-Looking for a Forward Deployed Engineer or building applied AI and developer software? **[Let’s talk ↗](mailto:mgalvaoboni@gmail.com)** · [Portfolio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)
+Looking for a Forward Deployed Engineer or building applied AI and developer software? **[Let’s talk ↗](mailto:mgalvaoboni@gmail.com)** · [Portfolio](https://marcusboni.com.br/) · [Blog](https://marcusboni.com.br/blog?utm_source=github&utm_medium=readme&utm_campaign=profile) · [LinkedIn](https://www.linkedin.com/in/marcus-boni-729a52243/)
